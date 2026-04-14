@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+:root {
+  /* Base global del ecosistema */
+  --background: #07090d;
+  --background-elevated: #0d1117;
+  --background-alt: #121821;
+
+  --foreground: #f5f7fa;
+  --foreground-muted: rgba(245, 247, 250, 0.72);
+  --foreground-soft: rgba(245, 247, 250, 0.42);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  /* Variables globales dinamicas por marca */
+  --brand-primary: #e8edf5;
+  --brand-secondary: #aab4c3;
+  --brand-accent: #dce6f5;
+  --brand-glow: rgba(220, 230, 245, 0.14);
+
+  /* Motion */
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 180ms;
+  --duration-base: 280ms;
+  --duration-slow: 600ms;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* Shadows */
+  --shadow-subtle: 0 10px 28px rgba(0, 0, 0, 0.16);
+  --shadow-premium: 0 18px 48px rgba(0, 0, 0, 0.24);
+  --shadow-strong: 0 24px 80px rgba(0, 0, 0, 0.34);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at 50% 12%, rgba(255, 255, 255, 0.03), transparent 28%),
+    radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.02), transparent 44%),
+    linear-gradient(180deg, var(--background) 0%, var(--background) 100%);
+  color: var(--foreground);
+  font-family: var(--font-inter-tight), sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+main {
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+canvas,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* Superficies premium reutilizables */
+.glass-surface {
+  background: rgba(10, 13, 18, 0.58);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-surface-strong {
+  background: rgba(10, 13, 18, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-strong);
+}
+
+.surface-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.surface-outline {
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Sombras */
+.shadow-premium {
+  box-shadow: var(--shadow-premium);
+}
+
+.shadow-subtle {
+  box-shadow: var(--shadow-subtle);
+}
+
+.shadow-strong {
+  box-shadow: var(--shadow-strong);
+}
+
+/* Glow por marca */
+.brand-glow {
+  background: radial-gradient(
+    circle,
+    var(--brand-glow) 0%,
+    rgba(255, 255, 255, 0) 68%
+  );
+}
+
+.brand-border {
+  border-color: var(--brand-glow);
+}
+
+/* Overlays globales */
+.bg-noise-soft {
+  position: relative;
+}
+
+.bg-noise-soft::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.section-fade-top {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 100%);
+}
+
+.section-fade-bottom {
+  mask-image: linear-gradient(to bottom, black 0%, black 90%, transparent 100%);
+}
+
+/* Texto */
+.text-muted {
+  color: var(--foreground-muted);
+}
+
+.text-soft {
+  color: var(--foreground-soft);
+}
+
+/* Seleccion */
+::selection {
+  background: color-mix(in srgb, var(--brand-accent) 22%, transparent);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: color-mix(in srgb, var(--brand-accent) 22%, transparent);
+  color: #ffffff;
+}
