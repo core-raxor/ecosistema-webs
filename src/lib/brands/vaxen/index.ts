@@ -300,6 +300,7 @@ export const vaxen_seo = {
     "business engineering",
     "scalable operations",
   ],
+  siteUrl: "https://vaxen.co",
 } as const;
 
 export const vaxen = {

@@ -299,6 +299,7 @@ export const aelor_seo = {
     "visual identity",
     "conversion design",
   ],
+  siteUrl: "https://aelor.co",
 } as const;
 
 export const aelor = {

@@ -294,6 +294,7 @@ export const dextor_seo = {
     "KPI systems",
     "strategic control",
   ],
+  siteUrl: "https://dextor.co",
 } as const;
 
 export const dextor = {

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { SectionContainer } from "@/components/shared/layout/SectionContainer";
-import type { BrandConfig, ProcessStep } from "@/lib/types";
+import type { BrandConfig } from "@/lib/types";
 
 export default function Process({ brand }: { brand: BrandConfig }) {
   const content = brand.content.process;
@@ -57,7 +57,7 @@ export default function Process({ brand }: { brand: BrandConfig }) {
             backdropFilter: "blur(var(--blur-light))",
           }}
         >
-          {content.steps.map((step: ProcessStep, index) => {
+          {content.steps.map((step, index) => {
             const isActive = activeIndex === index;
 
             return (

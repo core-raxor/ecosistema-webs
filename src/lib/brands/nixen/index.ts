@@ -299,6 +299,7 @@ export const nixen_seo = {
     "process automation",
     "operational scale",
   ],
+  siteUrl: "https://nixen.co",
 } as const;
 
 export const nixen = {

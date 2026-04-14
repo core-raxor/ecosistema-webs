@@ -287,6 +287,7 @@ export const raxor_seo = {
     "CRM systems",
     "business launch systems",
   ],
+  siteUrl: "https://raxor.co",
 } as const;
 
 export const raxor = {

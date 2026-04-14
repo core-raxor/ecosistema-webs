@@ -299,6 +299,7 @@ export const ixera_seo = {
     "operational intelligence",
     "AI integrations",
   ],
+  siteUrl: "https://ixera.co",
 } as const;
 
 export const ixera = {
