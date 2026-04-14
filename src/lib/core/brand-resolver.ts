@@ -1,21 +1,21 @@
-import { notFound } from "next/navigation";
-import type { BrandConfig } from "@/lib/types";
 import { getBrandBySlug } from "@/lib/brands";
+import type { BrandConfig } from "@/lib/types";
+import { notFound } from "next/navigation";
 
 function hasRequiredBrandShape(brand: BrandConfig): boolean {
   return Boolean(
     brand.slug &&
-      brand.name &&
-      brand.theme &&
-      brand.ui &&
-      brand.content &&
-      brand.content.hero &&
-      brand.content.identity &&
-      brand.content.process &&
-      brand.content.services &&
-      brand.content.final &&
-      brand.content.contact &&
-      brand.content.footer
+    brand.name &&
+    brand.theme &&
+    brand.ui &&
+    brand.content &&
+    brand.content.hero &&
+    brand.content.identity &&
+    brand.content.process &&
+    brand.content.services &&
+    brand.content.final &&
+    brand.content.contact &&
+    brand.content.footer,
   );
 }
 

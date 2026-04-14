@@ -3,13 +3,7 @@ import type { BrandPageConfig } from "./sections";
 import type { BrandTheme } from "./theme";
 import type { BrandUI } from "./ui";
 
-export type BrandKey =
-  | "aelor"
-  | "dextor"
-  | "raxor"
-  | "ixera"
-  | "nixen"
-  | "vaxen";
+export type BrandKey = "aelor" | "dextor" | "raxor" | "ixera" | "nixen" | "vaxen";
 
 export type BrandSeo = {
   title: string;
@@ -33,6 +27,7 @@ export type BrandConfig = {
 
   ui: BrandUI;
   content: BrandContent;
+
   page?: BrandPageConfig;
 
   seo?: BrandSeo;

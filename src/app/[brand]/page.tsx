@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
-import { getAllBrands } from "@/lib/brands";
-import { getBrandOrThrow } from "@/lib/core/brand-resolver";
-import { buildBrandMetadata } from "@/lib/core/brand-metadata";
-import {
-  defaultBrandSections,
-  brandSectionRegistry,
-} from "@/components/brand/sections/registry";
 import { BrandPageShell } from "@/components/brand/layout/BrandPageShell";
+import { brandSectionRegistry, defaultBrandSections } from "@/components/brand/sections/registry";
+import { getAllBrands } from "@/lib/brands";
+import { buildBrandMetadata } from "@/lib/core/brand-metadata";
+import { getBrandOrThrow } from "@/lib/core/brand-resolver";
+import type { Metadata } from "next";
 
 type BrandPageProps = {
   params: Promise<{ brand: string }>;
@@ -18,9 +15,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: BrandPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: BrandPageProps): Promise<Metadata> {
   const { brand } = await params;
   const data = getBrandOrThrow(brand);
   return buildBrandMetadata(data);

@@ -9,8 +9,7 @@ const dextor_content = {
     logoText: "DEXTOR",
     navItems: ["Home", "Process", "Services", "Contact"],
     leftText: "Structure systems ",
-    rightText:
-      "that brings clarity",
+    rightText: "that brings clarity",
     primaryCta: "",
     secondaryCta: "",
     microNote: "",
@@ -23,12 +22,7 @@ const dextor_content = {
       "We turn intuition into structure.",
       "Decisions become measurable, repeatable, and profitable.",
     ],
-    highlights: [
-      "Clear model",
-      "Operating control",
-      "Measurable growth",
-      "Decisions with data",
-    ],
+    highlights: ["Clear model", "Operating control", "Measurable growth", "Decisions with data"],
   },
 
   process: {
@@ -64,24 +58,14 @@ const dextor_content = {
         name: "DEXTOR DIAGNOSIS",
         label: "Diagnosis",
         description: "A structural audit for clearer business decisions.",
-        includes: [
-          "Business audit",
-          "Layer map",
-          "Bottlenecks",
-          "Strategic report",
-        ],
+        includes: ["Business audit", "Layer map", "Bottlenecks", "Strategic report"],
         cta: "Request",
       },
       {
         name: "DEXTOR STRUCTURE",
         label: "Structure",
         description: "Business architecture built for clarity and operation.",
-        includes: [
-          "Model design",
-          "Offer structure",
-          "Revenue logic",
-          "Process map",
-        ],
+        includes: ["Model design", "Offer structure", "Revenue logic", "Process map"],
         cta: "Request",
       },
       {
@@ -95,12 +79,7 @@ const dextor_content = {
         name: "DEXTOR INTELLIGENCE",
         label: "Intelligence",
         description: "A business system designed to learn and optimize.",
-        includes: [
-          "Forecasting",
-          "Optimization logic",
-          "AI support",
-          "Growth structure",
-        ],
+        includes: ["Forecasting", "Optimization logic", "AI support", "Growth structure"],
         cta: "Apply",
       },
     ],

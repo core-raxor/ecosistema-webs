@@ -9,8 +9,7 @@ const aelor_content = {
     logoText: "AELOR",
     navItems: ["Home", "Process", "Services", "Contact"],
     leftText: "We shape",
-    rightText:
-      "how brands are understood",
+    rightText: "how brands are understood",
     primaryCta: "Start",
     secondaryCta: "",
     microNote: "",
@@ -19,15 +18,8 @@ const aelor_content = {
   identity: {
     label: "AELOR",
     title: "Design that sharpens perception.",
-    description: [
-      "We turn visual identity, UX, and positioning into one coherent signal.",
-    ],
-    highlights: [
-      "Brand",
-      "Experience",
-      "Positioning",
-      "Clarity",
-    ],
+    description: ["We turn visual identity, UX, and positioning into one coherent signal."],
+    highlights: ["Brand", "Experience", "Positioning", "Clarity"],
   },
 
   process: {

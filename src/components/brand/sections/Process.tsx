@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useState } from "react";
 import { SectionContainer } from "@/components/shared/layout/SectionContainer";
 import type { BrandConfig } from "@/lib/types";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function Process({ brand }: { brand: BrandConfig }) {
   const content = brand.content.process;
@@ -51,8 +51,7 @@ export default function Process({ brand }: { brand: BrandConfig }) {
           style={{
             borderRadius: "var(--radius-xl)",
             borderColor: "var(--border)",
-            background:
-              "color-mix(in srgb, var(--surface) 74%, transparent)",
+            background: "color-mix(in srgb, var(--surface) 74%, transparent)",
             boxShadow: "var(--shadow-soft)",
             backdropFilter: "blur(var(--blur-light))",
           }}
@@ -112,8 +111,7 @@ export default function Process({ brand }: { brand: BrandConfig }) {
                     <span
                       className="pt-2 text-[11px] tracking-[0.18em]"
                       style={{
-                        color:
-                          "color-mix(in srgb, var(--text-muted) 75%, transparent)",
+                        color: "color-mix(in srgb, var(--text-muted) 75%, transparent)",
                         fontFamily: "var(--font-body)",
                       }}
                     >
@@ -157,8 +155,7 @@ export default function Process({ brand }: { brand: BrandConfig }) {
                     <p
                       className="text-base leading-8"
                       style={{
-                        color:
-                          "color-mix(in srgb, var(--text-muted) 94%, transparent)",
+                        color: "color-mix(in srgb, var(--text-muted) 94%, transparent)",
                         fontFamily: "var(--font-body)",
                       }}
                     >

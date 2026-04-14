@@ -9,8 +9,7 @@ const raxor_content = {
     logoText: "RAXOR",
     navItems: ["Home", "Process", "Services", "Contact"],
     leftText: "We build",
-    rightText:
-      "what execution needs",
+    rightText: "what execution needs",
     primaryCta: "",
     secondaryCta: "",
     microNote: "",
@@ -23,12 +22,7 @@ const raxor_content = {
       "We connect acquisition, conversion, and delivery.",
       "The business stops depending on scattered pieces.",
     ],
-    highlights: [
-      "Offer structure",
-      "Client flow",
-      "Connected operations",
-      "Execution first",
-    ],
+    highlights: ["Offer structure", "Client flow", "Connected operations", "Execution first"],
   },
 
   process: {
@@ -64,36 +58,21 @@ const raxor_content = {
         name: "RAXOR Launch",
         label: "Foundation",
         description: "A starting system for a business that needs structure.",
-        includes: [
-          "Landing page",
-          "Lead capture",
-          "CRM base",
-          "Offer structure",
-        ],
+        includes: ["Landing page", "Lead capture", "CRM base", "Offer structure"],
         cta: "Start",
       },
       {
         name: "RAXOR Growth",
         label: "Client Flow",
         description: "A client flow built to generate and manage demand.",
-        includes: [
-          "Sales funnel",
-          "Automation",
-          "Email flow",
-          "Lead tracking",
-        ],
+        includes: ["Sales funnel", "Automation", "Email flow", "Lead tracking"],
         cta: "Start",
       },
       {
         name: "RAXOR Pro",
         label: "Full System",
         description: "A full operating system for execution and control.",
-        includes: [
-          "Infrastructure",
-          "Sales system",
-          "Operations system",
-          "Dashboard",
-        ],
+        includes: ["Infrastructure", "Sales system", "Operations system", "Dashboard"],
         cta: "Apply",
       },
     ],

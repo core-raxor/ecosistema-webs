@@ -109,11 +109,7 @@ video {
 }
 
 .surface-card {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.04) 0%,
-    rgba(255, 255, 255, 0.02) 100%
-  );
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
   border: 1px solid var(--border-subtle);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -139,11 +135,7 @@ video {
 
 /* Glow por marca */
 .brand-glow {
-  background: radial-gradient(
-    circle,
-    var(--brand-glow) 0%,
-    rgba(255, 255, 255, 0) 68%
-  );
+  background: radial-gradient(circle, var(--brand-glow) 0%, rgba(255, 255, 255, 0) 68%);
 }
 
 .brand-border {

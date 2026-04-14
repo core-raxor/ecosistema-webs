@@ -1,9 +1,7 @@
-import type { MetadataRoute } from "next";
 import { getAllBrands } from "@/lib/brands";
+import type { MetadataRoute } from "next";
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ||
-  "http://localhost:3001";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") || "http://localhost:3001";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const brands = getAllBrands();

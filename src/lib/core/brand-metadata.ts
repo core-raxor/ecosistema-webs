@@ -1,9 +1,8 @@
-import type { Metadata } from "next";
 import type { BrandConfig } from "@/lib/types";
+import type { Metadata } from "next";
 
 const DEFAULT_SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ||
-  "http://localhost:3001";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") || "http://localhost:3001";
 
 const DEFAULT_OG_IMAGE = "/og/default-brand.jpg";
 
@@ -22,24 +21,19 @@ export function buildBrandMetadata(brand: BrandConfig): Metadata {
 
   const title = brand.seo?.title ?? brand.name;
   const description =
-    brand.seo?.description ??
-    brand.content.contact.description ??
-    `${brand.name} business system`;
+    brand.seo?.description ?? brand.content.contact.description ?? `${brand.name} business system`;
 
   const path = brand.seo?.path ?? "/";
   const canonical = absoluteUrl(path, baseUrl);
 
   const ogImage = absoluteUrl(
     brand.seo?.image ?? brand.assets?.heroImage ?? DEFAULT_OG_IMAGE,
-    baseUrl
+    baseUrl,
   );
 
-  const keywords = [...(brand.seo?.keywords ?? [
-    brand.name,
-    brand.slug,
-    "business system",
-    "brand ecosystem",
-  ])];
+  const keywords = [
+    ...(brand.seo?.keywords ?? [brand.name, brand.slug, "business system", "brand ecosystem"]),
+  ];
 
   return {
     metadataBase: new URL(baseUrl),
