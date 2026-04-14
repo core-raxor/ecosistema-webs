@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { SectionContainer } from "@/components/shared/layout/SectionContainer";
 import type { BrandConfig } from "@/lib/types";
+import { motion } from "framer-motion";
 
 export default function Identity({ brand }: { brand: BrandConfig }) {
   const content = brand.content.identity;
@@ -12,9 +12,7 @@ export default function Identity({ brand }: { brand: BrandConfig }) {
     ? content.description
     : [content.description].filter(Boolean);
 
-  const highlights = Array.isArray(content.highlights)
-    ? content.highlights
-    : [];
+  const highlights = Array.isArray(content.highlights) ? content.highlights : [];
 
   const isMinimal = variant === "minimal";
   const motionLevel = brand.ui.motion?.intensity || "low";

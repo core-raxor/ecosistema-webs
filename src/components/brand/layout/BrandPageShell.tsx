@@ -1,8 +1,8 @@
-import type { ReactNode } from "react";
-import type { BrandConfig } from "@/lib/types";
-import { getBrandCssVars } from "@/lib/core/theme-vars";
-import { GlobalBackground } from "@/components/shared/background/GlobalBackground";
 import { BrandScene } from "@/components/brand/scene/BrandScene";
+import { GlobalBackground } from "@/components/shared/background/GlobalBackground";
+import { getBrandCssVars } from "@/lib/core/theme-vars";
+import type { BrandConfig } from "@/lib/types";
+import type { ReactNode } from "react";
 
 type BrandPageShellProps = {
   brand: Pick<BrandConfig, "theme" | "ui" | "content" | "links" | "name" | "slug">;
