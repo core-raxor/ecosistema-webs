@@ -9,8 +9,7 @@ const nixen_content = {
     logoText: "NIXEN",
     navItems: ["Home", "Process", "Services", "Contact"],
     leftText: "We remove",
-    rightText:
-      "manual dependence",
+    rightText: "manual dependence",
     primaryCta: "",
     secondaryCta: "",
     microNote: "",
@@ -23,12 +22,7 @@ const nixen_content = {
       "We replace manual loops with structured workflows.",
       "The business runs with less founder dependence.",
     ],
-    highlights: [
-      "Mapped workflows",
-      "Connected tools",
-      "Automated operations",
-      "Scalable flow",
-    ],
+    highlights: ["Mapped workflows", "Connected tools", "Automated operations", "Scalable flow"],
   },
 
   process: {
@@ -64,36 +58,21 @@ const nixen_content = {
         name: "NIXEN Mapping",
         label: "Structure",
         description: "A clear map of the workflows your business runs on.",
-        includes: [
-          "Process mapping",
-          "Workflow structure",
-          "Bottlenecks",
-          "Automation plan",
-        ],
+        includes: ["Process mapping", "Workflow structure", "Bottlenecks", "Automation plan"],
         cta: "Start",
       },
       {
         name: "NIXEN Automation",
         label: "Automation",
         description: "Automation for the operations that waste the most time.",
-        includes: [
-          "Task automation",
-          "Lead automation",
-          "Communication flow",
-          "Tool integration",
-        ],
+        includes: ["Task automation", "Lead automation", "Communication flow", "Tool integration"],
         cta: "Start",
       },
       {
         name: "NIXEN System",
         label: "System",
         description: "A connected operations layer built to run daily.",
-        includes: [
-          "Full workflows",
-          "Client journey",
-          "Operations system",
-          "Control layer",
-        ],
+        includes: ["Full workflows", "Client journey", "Operations system", "Control layer"],
         cta: "Apply",
       },
       {
@@ -232,6 +211,15 @@ const nixen_theme: BrandTheme = {
       style: "systematic, precise, functional",
       duration: "160ms",
       easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+    },
+  },
+
+  backgroundOverlay: {
+    pattern: {
+      type: "grid-lines",
+      color: "rgba(255,255,255,0.035)",
+      size: "80px 80px",
+      opacity: 0.04,
     },
   },
 

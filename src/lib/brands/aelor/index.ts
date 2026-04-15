@@ -227,6 +227,16 @@ const aelor_theme: BrandTheme & {
     glowSubtle: "rgba(255,122,26,0.14)",
   },
 
+  backgroundOverlay: {
+    pattern: {
+      type: "dot-grid",
+      color: "rgba(255,255,255,0.02)",
+      size: "6px 6px",
+      opacity: 0.015,
+      dotRadius: "0.6px",
+    },
+  },
+
   visualSystem: {
     scene: {
       type: "editorial-aura",
@@ -275,6 +285,7 @@ const aelor_ui = {
 
 const aelor_page = {
   sections: ["hero", "identity", "process", "services", "final", "contact"],
+  showScene: false,
 } as const;
 
 export const aelor_seo = {

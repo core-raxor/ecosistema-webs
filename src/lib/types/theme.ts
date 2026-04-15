@@ -1,3 +1,14 @@
+export type BrandBackgroundOverlay = {
+  pattern?: {
+    type: "dot-grid" | "grid-lines";
+    color: string;
+    size: string;
+    opacity: number;
+    dotRadius?: string;
+  };
+  gradientOverlay?: string;
+};
+
 export type BrandTheme = {
   colors: {
     primary: string;
@@ -93,6 +104,8 @@ export type BrandTheme = {
       easing: string;
     };
   };
+
+  backgroundOverlay?: BrandBackgroundOverlay;
 
   visualSystem?: {
     scene: {

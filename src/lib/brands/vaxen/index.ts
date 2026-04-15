@@ -219,6 +219,17 @@ const vaxen_theme: BrandTheme = {
     },
   },
 
+  backgroundOverlay: {
+    pattern: {
+      type: "dot-grid",
+      color: "rgba(168,85,247,0.08)",
+      size: "10px 10px",
+      opacity: 0.04,
+      dotRadius: "1px",
+    },
+    gradientOverlay: "linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.9))",
+  },
+
   visualSystem: {
     scene: {
       type: "technical-depth",

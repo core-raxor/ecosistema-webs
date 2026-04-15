@@ -1,27 +1,39 @@
 "use client";
 
-import type { BrandConfig } from "@/lib/types";
-import { AmbientGlow } from "./AmbientGlow";
+import type { BrandBackgroundOverlay, BrandConfig } from "@/lib/types";
 import { ParticlesLayer } from "./ParticlesLayer";
 
 type GlobalBackgroundProps = {
-  brand: Pick<BrandConfig, "theme" | "slug">;
+  brand: Pick<BrandConfig, "theme">;
 };
 
+function BackgroundPattern({
+  pattern,
+}: {
+  pattern: NonNullable<BrandBackgroundOverlay["pattern"]>;
+}) {
+  const { type, color, size, opacity, dotRadius = "1px" } = pattern;
+
+  const backgroundImage =
+    type === "dot-grid"
+      ? `radial-gradient(${color} ${dotRadius}, transparent ${dotRadius})`
+      : `linear-gradient(${color} 1px, transparent 1px), linear-gradient(90deg, ${color} 1px, transparent 1px)`;
+
+  return (
+    <div className="absolute inset-0" style={{ backgroundImage, backgroundSize: size, opacity }} />
+  );
+}
+
 export function GlobalBackground({ brand }: GlobalBackgroundProps) {
-  const isAelor = brand.slug === "aelor";
-  const isDextor = brand.slug === "dextor";
-  const isRaxor = brand.slug === "raxor";
-  const isIxera = brand.slug === "ixera";
-  const isNixen = brand.slug === "nixen";
-  const isVaxen = brand.slug === "vaxen";
+  const overlay = brand.theme.backgroundOverlay;
+  const particlesMode = brand.theme.visualSystem?.particles?.mode;
+  const hasParticles = particlesMode !== undefined && particlesMode !== "none";
 
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-      <div className="absolute inset-0 bg-[var(--bg)]" />
+      <div className="absolute inset-0 bg-(--bg)]" />
 
-      <AmbientGlow />
-      {isRaxor && <ParticlesLayer brand={brand} />}
+      {hasParticles && <ParticlesLayer brand={brand} />}
 
       <div
         className="absolute inset-0"
@@ -30,73 +42,10 @@ export function GlobalBackground({ brand }: GlobalBackgroundProps) {
         }}
       />
 
-      {isAelor && (
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "radial-gradient(rgba(255,255,255,0.02) 0.6px, transparent 0.6px)",
-            backgroundSize: "6px 6px",
-            opacity: 0.015,
-          }}
-        />
-      )}
+      {overlay?.pattern && <BackgroundPattern pattern={overlay.pattern} />}
 
-      {isDextor && (
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "linear-gradient(180deg, rgba(255,255,255,0.02), transparent 40%)",
-          }}
-        />
-      )}
-
-      {isNixen && (
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
-            opacity: 0.04,
-          }}
-        />
-      )}
-
-      {isVaxen && (
-        <>
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: "radial-gradient(rgba(168,85,247,0.08) 1px, transparent 1px)",
-              backgroundSize: "10px 10px",
-              opacity: 0.04,
-            }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background: "linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.9))",
-            }}
-          />
-        </>
-      )}
-
-      {isIxera && (
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "transparent",
-          }}
-        />
-      )}
-
-      {isRaxor && (
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "linear-gradient(180deg, rgba(255,255,255,0.015), transparent 42%)",
-          }}
-        />
+      {overlay?.gradientOverlay && (
+        <div className="absolute inset-0" style={{ background: overlay.gradientOverlay }} />
       )}
 
       <div

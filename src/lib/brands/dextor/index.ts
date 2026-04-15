@@ -209,6 +209,10 @@ const dextor_theme: BrandTheme = {
     },
   },
 
+  backgroundOverlay: {
+    gradientOverlay: "linear-gradient(180deg, rgba(255,255,255,0.02), transparent 40%)",
+  },
+
   visualSystem: {
     scene: {
       type: "structural-frame",

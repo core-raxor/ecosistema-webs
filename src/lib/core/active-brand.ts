@@ -1,4 +1,4 @@
-import { brands, isBrandKey } from "@/lib/brands";
+import { brandKeys, brands, isBrandKey } from "@/lib/brands";
 import type { BrandConfig, BrandKey } from "@/lib/types";
 
 export function getActiveBrandKey(): BrandKey {
@@ -6,7 +6,9 @@ export function getActiveBrandKey(): BrandKey {
 
   if (!value || !isBrandKey(value)) {
     throw new Error(
-      "Invalid or missing NEXT_PUBLIC_BRAND_SLUG. Expected one of the configured brand keys.",
+      `[ENV ERROR] Invalid or missing NEXT_PUBLIC_BRAND_SLUG: "${value}". ` +
+        `Expected one of: ${brandKeys.join(", ")}. ` +
+        `Check .env.example`,
     );
   }
 

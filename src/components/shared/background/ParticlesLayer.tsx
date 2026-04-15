@@ -13,7 +13,7 @@ type Particle = {
 };
 
 type ParticlesLayerProps = {
-  brand: Pick<BrandConfig, "theme" | "slug">;
+  brand: Pick<BrandConfig, "theme">;
 };
 
 function getParticleCount(
@@ -57,8 +57,6 @@ export function ParticlesLayer({ brand }: ParticlesLayerProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    if (brand.slug !== "raxor") return;
-
     const particlesConfig = brand.theme.visualSystem?.particles ?? {
       mode: "field" as const,
       density: "low" as const,

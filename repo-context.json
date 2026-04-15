@@ -1,0 +1,195 @@
+{
+  "project": {
+    "name": "ecosistema-webs-nextjs",
+    "description": "Sistema multi-brand en Next.js donde cada deploy representa una marca independiente",
+    "framework": "Next.js 16 App Router",
+    "language": "TypeScript strict",
+    "styling": "Tailwind CSS v4 + CSS variables dinámicas por marca",
+    "deployment_model": "1 dominio = 1 marca activa por build",
+    "active_brand_env": "NEXT_PUBLIC_BRAND_SLUG",
+    "site_url_env": "NEXT_PUBLIC_SITE_URL"
+  },
+
+  "architecture": {
+    "layers": [
+      {
+        "name": "app",
+        "path": "src/app",
+        "responsibility": "routing, pages, metadata, sitemap, robots",
+        "can_import_from": [
+          "components/brand",
+          "components/shared",
+          "lib/core",
+          "lib/brands",
+          "lib/types"
+        ]
+      },
+      {
+        "name": "components/brand",
+        "path": "src/components/brand",
+        "responsibility": "renderizado específico por marca (sections, layout, scene)",
+        "can_import_from": ["components/shared", "lib/core", "lib/types"]
+      },
+      {
+        "name": "components/shared",
+        "path": "src/components/shared",
+        "responsibility": "componentes reutilizables agnósticos a marca",
+        "can_import_from": ["lib/core", "lib/types"]
+      },
+      {
+        "name": "lib/core",
+        "path": "src/lib/core",
+        "responsibility": "lógica de negocio: resolución de marca, metadata, theme vars",
+        "can_import_from": ["lib/brands", "lib/types"]
+      },
+      {
+        "name": "lib/brands",
+        "path": "src/lib/brands",
+        "responsibility": "configuración pura de cada marca",
+        "can_import_from": ["lib/types"]
+      },
+      {
+        "name": "lib/types",
+        "path": "src/lib/types",
+        "responsibility": "tipos globales (capa hoja)",
+        "can_import_from": []
+      }
+    ]
+  },
+
+  "brand_system": {
+    "brand_keys": ["aelor", "dextor", "ixera", "nixen", "raxor", "vaxen"],
+    "brand_registry_file": "src/lib/brands/registry.ts",
+    "brand_type_file": "src/lib/types/brand.ts",
+    "brand_file_pattern": "src/lib/brands/<brand>/index.ts",
+
+    "brand_structure_layers": ["content", "links", "assets", "theme", "ui", "page", "seo"],
+
+    "add_new_brand_steps": [
+      "Actualizar BrandKey en src/lib/types/brand.ts",
+      "Crear src/lib/brands/<brand>/index.ts usando satisfies BrandConfig",
+      "Registrar en src/lib/brands/registry.ts",
+      "Ejecutar npm run check"
+    ]
+  },
+
+  "section_system": {
+    "section_registry_file": "src/components/brand/sections/registry.tsx",
+    "section_type_file": "src/lib/types/sections.ts",
+    "section_content_type_file": "src/lib/types/content.ts",
+    "section_component_pattern": "src/components/brand/sections/<Section>.tsx",
+
+    "default_sections": ["hero", "identity", "process", "services", "final", "contact"],
+
+    "add_new_section_steps": [
+      "Actualizar BrandSectionKey en types/sections.ts",
+      "Crear tipos en types/content.ts",
+      "Crear componente en components/brand/sections",
+      "Registrar en registry.tsx",
+      "Actualizar brands si es necesario"
+    ]
+  },
+
+  "routing": {
+    "home": "src/app/page.tsx",
+    "thank_you": "src/app/gracias/page.tsx",
+    "layout": "src/app/layout.tsx",
+    "sitemap": "src/app/sitemap.ts",
+    "robots": "src/app/robots.ts",
+
+    "rule": "no hay rutas por marca; la marca activa se resuelve por variable de entorno en build"
+  },
+
+  "critical_files": [
+    {
+      "file": "src/lib/types/brand.ts",
+      "impact": "rompe todos los brand configs si cambia"
+    },
+    {
+      "file": "src/lib/types/theme.ts",
+      "impact": "rompe sistema visual y todos los brands"
+    },
+    {
+      "file": "src/lib/brands/registry.ts",
+      "impact": "rompe resolución de marcas"
+    },
+    {
+      "file": "src/lib/core/active-brand.ts",
+      "impact": "rompe build completo si falla"
+    },
+    {
+      "file": "src/lib/core/theme-vars.ts",
+      "impact": "rompe estilos globales"
+    },
+    {
+      "file": "eslint.config.mjs",
+      "impact": "rompe reglas de arquitectura si se modifica mal"
+    }
+  ],
+
+  "agent_rules": {
+    "must_read_before_editing": true,
+    "must_run_check_after_changes": true,
+    "check_command": "npm run check",
+
+    "forbidden_patterns": [
+      "if (brand.slug === ...) en components/shared",
+      "lógica específica de marca dentro de shared",
+      "hardcode de colores o nombres de marca fuera de lib/brands",
+      "modificar eslint.config.mjs sin aprobación",
+      "usar any en tipos globales"
+    ],
+
+    "safe_changes": [
+      "editar contenido dentro de brand config",
+      "ajustes UI dentro de una sección",
+      "mejoras de documentación"
+    ],
+
+    "high_risk_changes": [
+      "modificar BrandConfig",
+      "modificar BrandTheme",
+      "cambiar active-brand",
+      "cambiar theme-vars",
+      "cambiar arquitectura de imports"
+    ]
+  },
+
+  "tooling": {
+    "scripts": {
+      "dev": "next dev -p 3001",
+      "build": "next build",
+      "lint": "eslint .",
+      "typecheck": "tsc --noEmit",
+      "format": "prettier . --write",
+      "check": "npm run lint && npm run typecheck && npm run build"
+    },
+
+    "typescript_strict": true,
+    "eslint_architecture_enforced": true,
+    "prettier_enabled": true
+  },
+
+  "env": {
+    "required": ["NEXT_PUBLIC_BRAND_SLUG"],
+    "optional": ["NEXT_PUBLIC_SITE_URL"],
+    "note": "NEXT_PUBLIC_BRAND_SLUG inválido rompe el build"
+  },
+
+  "known_constraints": [
+    "BrandKey es manual",
+    "todas las marcas deben cumplir BrandConfig",
+    "shared no debe tener lógica condicional por slug",
+    "la arquitectura depende de ESLint para enforcement"
+  ],
+
+  "prompt_usage": {
+    "goal": "usar este JSON para que otra IA genere prompts seguros para Claude Code",
+    "expected_output": [
+      "diagnóstico breve",
+      "riesgos",
+      "prompt listo para Claude Code",
+      "orden de ejecución"
+    ]
+  }
+}

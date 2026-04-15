@@ -2,4 +2,5 @@ export type BrandSectionKey = "hero" | "identity" | "process" | "services" | "fi
 
 export type BrandPageConfig = {
   sections: readonly BrandSectionKey[];
+  showScene?: boolean;
 };

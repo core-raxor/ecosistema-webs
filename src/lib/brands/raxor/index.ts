@@ -202,6 +202,10 @@ const raxor_theme: BrandTheme = {
     },
   },
 
+  backgroundOverlay: {
+    gradientOverlay: "linear-gradient(180deg, rgba(255,255,255,0.015), transparent 42%)",
+  },
+
   visualSystem: {
     scene: {
       type: "operational-core",

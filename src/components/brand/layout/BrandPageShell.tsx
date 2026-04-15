@@ -5,12 +5,12 @@ import type { BrandConfig } from "@/lib/types";
 import type { ReactNode } from "react";
 
 type BrandPageShellProps = {
-  brand: Pick<BrandConfig, "theme" | "ui" | "content" | "links" | "name" | "slug">;
+  brand: Pick<BrandConfig, "theme" | "ui" | "content" | "links" | "name" | "slug" | "page">;
   children: ReactNode;
 };
 
 export function BrandPageShell({ brand, children }: BrandPageShellProps) {
-  const showScene = brand.slug !== "aelor";
+  const showScene = brand.page?.showScene !== false;
 
   return (
     <div
