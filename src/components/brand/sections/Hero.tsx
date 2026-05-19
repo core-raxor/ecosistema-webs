@@ -1,10 +1,10 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
 import { Cta } from "@/components/shared/Cta";
 import { useContactModal } from "@/components/shared/modal/ContactModalContext";
 import type { BrandConfig } from "@/lib/types";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const ENTRY = { duration: 0.25 };
 
@@ -154,7 +154,7 @@ export function Hero({ brand }: HeroProps) {
           <div className="flex shrink-0 items-center gap-3">
             {/* Hamburger — mobile only */}
             <button
-              className="md:hidden flex h-9 w-9 flex-col items-center justify-center gap-[5px] rounded-full border border-(--border) bg-(--surface)/80 backdrop-blur-md transition-colors duration-200"
+              className="md:hidden flex h-9 w-9 flex-col items-center justify-center gap-1.25 rounded-full border border-(--border) bg-(--surface)/80 backdrop-blur-md transition-colors duration-200"
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
