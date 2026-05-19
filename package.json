@@ -4,6 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001",
+    "dev:aelor": "NEXT_PUBLIC_BRAND_SLUG=aelor NEXT_PUBLIC_SITE_URL=http://localhost:3001 next dev -p 3001",
+    "dev:dextor": "NEXT_PUBLIC_BRAND_SLUG=dextor NEXT_PUBLIC_SITE_URL=http://localhost:3002 next dev -p 3002",
+    "dev:raxor": "NEXT_PUBLIC_BRAND_SLUG=raxor NEXT_PUBLIC_SITE_URL=http://localhost:3003 next dev -p 3003",
+    "dev:ixera": "NEXT_PUBLIC_BRAND_SLUG=ixera NEXT_PUBLIC_SITE_URL=http://localhost:3004 next dev -p 3004",
+    "dev:nixen": "NEXT_PUBLIC_BRAND_SLUG=nixen NEXT_PUBLIC_SITE_URL=http://localhost:3005 next dev -p 3005",
+    "dev:vaxen": "NEXT_PUBLIC_BRAND_SLUG=vaxen NEXT_PUBLIC_SITE_URL=http://localhost:3006 next dev -p 3006",
+    "dev:all": "concurrently -n aelor,dextor,raxor,ixera,nixen,vaxen -c cyan,blue,magenta,green,red,yellow \"npm run dev:aelor\" \"npm run dev:dextor\" \"npm run dev:raxor\" \"npm run dev:ixera\" \"npm run dev:nixen\" \"npm run dev:vaxen\"",
     "build": "next build",
     "start": "next start -p 3001",
     "lint": "eslint .",
@@ -13,18 +20,25 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
     "next": "16.2.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "tailwind-merge": "^3.5.0"
+    "tailwind-merge": "^3.5.0",
+    "three": "0.182.0"
+  },
+  "overrides": {
+    "three": "0.182.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.1",
     "eslint-config-prettier": "^10.1.8",

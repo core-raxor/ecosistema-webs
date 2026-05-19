@@ -26,10 +26,7 @@ export function buildBrandMetadata(brand: BrandConfig): Metadata {
   const path = brand.seo?.path ?? "/";
   const canonical = absoluteUrl(path, baseUrl);
 
-  const ogImage = absoluteUrl(
-    brand.seo?.image ?? brand.assets?.heroImage ?? DEFAULT_OG_IMAGE,
-    baseUrl,
-  );
+  const ogImage = absoluteUrl(brand.seo?.image ?? DEFAULT_OG_IMAGE, baseUrl);
 
   const keywords = [
     ...(brand.seo?.keywords ?? [brand.name, brand.slug, "business system", "brand ecosystem"]),

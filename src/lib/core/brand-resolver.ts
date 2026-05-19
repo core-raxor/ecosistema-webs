@@ -7,7 +7,6 @@ function hasRequiredBrandShape(brand: BrandConfig): boolean {
     brand.slug &&
     brand.name &&
     brand.theme &&
-    brand.ui &&
     brand.content &&
     brand.content.hero &&
     brand.content.identity &&

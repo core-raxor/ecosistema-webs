@@ -1,24 +1,26 @@
+import { notFound } from "next/navigation";
 import { BrandPageShell } from "@/components/brand/layout/BrandPageShell";
 import { brandSectionRegistry, defaultBrandSections } from "@/components/brand/sections/registry";
-import { getActiveBrand } from "@/lib/core/active-brand";
-import { buildBrandMetadata } from "@/lib/core/brand-metadata";
-import type { Metadata } from "next";
+import { getBrandBySlug } from "@/lib/brands/registry";
 
-export function generateMetadata(): Metadata {
-  const brand = getActiveBrand();
-  return buildBrandMetadata(brand);
-}
+// Dev-only route — blocked in production
+export default async function DevBrandPreviewPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  if (process.env.NODE_ENV === "production") notFound();
 
-export default function HomePage() {
-  const brand = getActiveBrand();
+  const { slug } = await params;
+  const brand = getBrandBySlug(slug);
+
+  if (!brand) notFound();
 
   return (
     <BrandPageShell brand={brand}>
       {defaultBrandSections.map((sectionKey) => {
         const SectionComponent = brandSectionRegistry[sectionKey];
-
         if (!SectionComponent) return null;
-
         return <SectionComponent key={sectionKey} brand={brand} />;
       })}
     </BrandPageShell>

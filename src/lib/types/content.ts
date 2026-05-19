@@ -18,6 +18,7 @@ export type IdentityContent = {
 export type ProcessStep = {
   title: string;
   description: string;
+  benefits?: string;
 };
 
 export type ProcessContent = {

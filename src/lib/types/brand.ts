@@ -1,7 +1,5 @@
 import type { BrandContent } from "./content";
-import type { BrandPageConfig } from "./sections";
 import type { BrandTheme } from "./theme";
-import type { BrandUI } from "./ui";
 
 export type BrandKey = "aelor" | "dextor" | "raxor" | "ixera" | "nixen" | "vaxen";
 
@@ -21,14 +19,9 @@ export type BrandConfig = {
 
   assets?: {
     logo?: string;
-    heroImage?: string;
-    finalImage?: string;
   };
 
-  ui: BrandUI;
   content: BrandContent;
-
-  page?: BrandPageConfig;
 
   seo?: BrandSeo;
 

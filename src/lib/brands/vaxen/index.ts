@@ -1,4 +1,4 @@
-import type { BrandConfig, BrandTheme } from "@/lib/types";
+import type { BrandConfig } from "@/lib/types";
 
 // ============================================================================
 // VAXEN: CONTENT LAYER
@@ -16,43 +16,22 @@ const vaxen_content = {
   },
 
   identity: {
-    label: "WE ARE",
-    title: "Infrastructure engineering for scalable operations.",
+    label: "OUR AGENCY",
+    title: "",
     description: [
-      "We design backend, data, and internal systems as one layer.",
-      "Operations stop depending on fragile tool chains.",
+      "We design and build backend, data, and internal systems as a unified layer. Instead of relying on fragmented tools, we create structured, reliable infrastructure that supports operations, scales with the business, and gives companies full control over how their technology works.",
     ],
-    highlights: [
-      "Backend first",
-      "Connected data",
-      "Stable architecture",
-      "Engineering over patching",
-    ],
+    highlights: ["", "", "", ""],
   },
 
   process: {
     title: "How VAXEN works",
     steps: [
-      {
-        title: "Analyze",
-        description: "We audit the systems, data, and constraints.",
-      },
-      {
-        title: "Architect",
-        description: "We define backend, data, and integration logic.",
-      },
-      {
-        title: "Build",
-        description: "We build the backend and internal tools.",
-      },
-      {
-        title: "Integrate",
-        description: "We connect systems, tools, and data flow.",
-      },
-      {
-        title: "Scale",
-        description: "We prepare the architecture for stability and growth.",
-      },
+      { title: "Analyze", description: "We audit the systems, data, and constraints." },
+      { title: "Architect", description: "We define backend, data, and integration logic." },
+      { title: "Build", description: "We build the backend and internal tools." },
+      { title: "Integrate", description: "We connect systems, tools, and data flow." },
+      { title: "Scale", description: "We prepare the architecture for stability and growth." },
     ],
   },
 
@@ -115,170 +94,8 @@ const vaxen_content = {
 };
 
 // ============================================================================
-// VAXEN: LINKS & ASSETS
+// VAXEN: BRAND CONFIG
 // ============================================================================
-
-const vaxen_links = {
-  primaryCta: "/apply",
-  contact: "/contact",
-  linkedin: "",
-  instagram: "",
-};
-
-const vaxen_assets = {};
-
-// ============================================================================
-// VAXEN: PRESENTATION LAYER (Theme + UI)
-// ============================================================================
-
-const vaxen_theme: BrandTheme = {
-  colors: {
-    primary: "#F3E8FF",
-    secondary: "#05070A",
-    background: "#07090D",
-    surface: "#0B0D17",
-    surfaceAlt: "#121426",
-    border: "rgba(168,85,247,0.14)",
-    text: "#F5F7FA",
-    textMuted: "#94A3B8",
-    accent: "#14532D",
-    success: "#22C55E",
-    warning: "#F59E0B",
-    danger: "#EF4444",
-  },
-
-  typography: {
-    fontHeading: "Inter Tight, Inter, sans-serif",
-    fontBody: "Inter, sans-serif",
-    fontMono: "IBM Plex Mono, monospace",
-    weights: {
-      light: 300,
-      regular: 400,
-      medium: 500,
-      semibold: 600,
-      bold: 800,
-    },
-    scale: {
-      hero: "clamp(3rem, 7vw, 6rem)",
-      h1: "clamp(2.2rem, 4.5vw, 3.8rem)",
-      h2: "clamp(1.6rem, 3vw, 2.6rem)",
-      h3: "clamp(1.2rem, 2vw, 1.6rem)",
-      body: "1rem",
-      small: "0.9rem",
-    },
-    letterSpacing: {
-      tight: "-0.04em",
-      normal: "-0.02em",
-      wide: "0.08em",
-    },
-  },
-
-  surfaces: {
-    page: "technical-infrastructure-dark",
-    cards: "system-architecture",
-    buttons: "precision-action",
-    inputs: "minimal-technical",
-    sections: {
-      hero: "infrastructure statement",
-      identity: "technical problem awareness",
-      process: "system architecture layers",
-      services: "engineering levels",
-      final: "decision trigger",
-      contact: "technical qualification",
-    },
-  },
-
-  effects: {
-    radius: {
-      sm: "8px",
-      md: "14px",
-      lg: "20px",
-      xl: "26px",
-    },
-    shadows: {
-      soft: "0 10px 30px rgba(0,0,0,0.4)",
-      strong: "0 20px 60px rgba(0,0,0,0.6)",
-    },
-    blur: {
-      light: "6px",
-      strong: "12px",
-    },
-    gradients: {
-      hero: "linear-gradient(180deg, rgba(2,3,10,0.2) 0%, rgba(2,3,10,0.95) 100%)",
-      section: "linear-gradient(180deg, #02030A 0%, #0B0D17 100%)",
-    },
-    imageTreatment: {
-      style: "backend systems, infrastructure diagrams, data flows, technical dashboards",
-      overlay: "dark infrastructure overlay",
-      emphasis: "structure, depth, engineering",
-    },
-    motion: {
-      style: "precise, technical, controlled",
-      duration: "160ms",
-      easing: "cubic-bezier(0.22, 1, 0.36, 1)",
-    },
-  },
-
-  backgroundOverlay: {
-    pattern: {
-      type: "dot-grid",
-      color: "rgba(168,85,247,0.08)",
-      size: "10px 10px",
-      opacity: 0.04,
-      dotRadius: "1px",
-    },
-    gradientOverlay: "linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.9))",
-  },
-
-  visualSystem: {
-    scene: {
-      type: "technical-depth",
-      shape: "panel",
-      placement: "right",
-      size: "sm",
-      layerCount: 1,
-      borderStyle: "none",
-      glow: "none",
-    },
-    particles: {
-      mode: "none",
-      density: "none",
-      speed: "static",
-      opacity: "low",
-    },
-    grid: {
-      mode: "technical",
-      opacity: "low",
-    },
-    glow: {
-      mode: "deep",
-      intensity: "high",
-    },
-    atmosphere: {
-      noise: "none",
-      depth: "high",
-      contrast: "strong",
-    },
-  },
-};
-
-const vaxen_ui = {
-  hero: { variant: "split" as const },
-  identity: { variant: "editorial-left" as const },
-  process: { variant: "interactive-list" as const },
-  services: { variant: "stacked-cards" as const },
-  final: { variant: "centered-statement" as const },
-  contact: { variant: "editorial-contact" as const },
-  motion: { intensity: "high" as const },
-};
-
-// ============================================================================
-// VAXEN: FINAL COMPOSITION
-// ============================================================================
-
-const vaxen_page = {
-  sections: ["hero", "identity", "process", "services", "final", "contact"],
-} as const;
 
 export const vaxen_seo = {
   title: "VAXEN | Infrastructure engineering for scalable operations",
@@ -300,11 +117,47 @@ export const vaxen_seo = {
 export const vaxen = {
   slug: "vaxen",
   name: "VAXEN",
-  theme: vaxen_theme,
-  ui: vaxen_ui,
+  theme: {
+    colors: { accent: "#22C55E" },
+    scene: {
+      type: "technical-depth" as const,
+      shape: "panel" as const,
+      objectConfig: {
+        // geometry — pentagonal bipyramid: 7 verts + 15 edges × 7 interior pts + 150 face pts = 262 pts
+        majorSegments: 8,
+        minorSegments: 3,
+        majorRadius: 1.38,
+        minorRadius: 0.35,
+        objectScale: 1.08,
+        targetPointSpacing: 0.2,
+        spacingTolerance: 0.035,
+        // material
+        pointSize: 0.028,
+        pointAlpha: 0.84,
+        basePointColor: "#d7deec",
+        accentMix: 0.045,
+        // pose — Z lean only, pure horizontal Y rotation
+        baseTiltX: 0,
+        baseTiltY: 0.4,
+        baseTiltZ: 0.52,
+        // particle flow — disabled
+        particleFlowEnabled: false,
+        particleFlowSpeed: 0,
+        particleFlowLayerOffset: 0,
+        particleFlowDirection: 1 as const,
+        particleFlowLaneDuration: 0,
+        // rotation — slow horizontal Y spin, Z lean stays fixed
+        objectRotationEnabled: true,
+        objectRotationSpeed: 0.05,
+      },
+    },
+  },
   content: vaxen_content,
-  page: vaxen_page,
   seo: vaxen_seo,
-  links: vaxen_links,
-  assets: vaxen_assets,
+  links: {
+    primaryCta: "/apply",
+    contact: "/contact",
+    linkedin: "",
+    instagram: "",
+  },
 } satisfies BrandConfig;
