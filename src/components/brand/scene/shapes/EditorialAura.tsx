@@ -1,11 +1,11 @@
 "use client";
 
-import { useFrame } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
-import type React from "react";
-import * as THREE from "three";
-import type { ParamObjectConfig } from "@/lib/types/scene";
 import { mergeParamObjectConfig } from "@/components/brand/scene/engine/parametricObjectContract";
+import type { ParamObjectConfig } from "@/lib/types/scene";
+import { useFrame } from "@react-three/fiber";
+import type React from "react";
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
 
 // ── Full Isometric Structural Cube ────────────────────────────────────────────
 //
@@ -106,6 +106,8 @@ interface CubeState {
   baseTiltZ: number;
   objectRotationEnabled: boolean;
   objectRotationSpeed: number;
+  initialColor: THREE.Color;
+  bgColor: THREE.Color;
 }
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -114,9 +116,15 @@ interface EditorialAuraProps {
   accentColor?: string;
   objectConfig?: Partial<ParamObjectConfig> | undefined;
   scrollScaleRef?: React.RefObject<number> | undefined;
+  scrollColorRef?: React.RefObject<number> | undefined;
 }
 
-export function EditorialAura({ accentColor, objectConfig, scrollScaleRef }: EditorialAuraProps) {
+export function EditorialAura({
+  accentColor,
+  objectConfig,
+  scrollScaleRef,
+  scrollColorRef,
+}: EditorialAuraProps) {
   const groupRef = useRef<THREE.Group>(null);
   const stateRef = useRef<CubeState | null>(null);
 
@@ -161,6 +169,8 @@ export function EditorialAura({ accentColor, objectConfig, scrollScaleRef }: Edi
       baseTiltZ: cfg.baseTiltZ,
       objectRotationEnabled: cfg.objectRotationEnabled,
       objectRotationSpeed: cfg.objectRotationSpeed,
+      initialColor: color.clone(),
+      bgColor: new THREE.Color("#07090E"),
     };
 
     return () => {
@@ -183,9 +193,11 @@ export function EditorialAura({ accentColor, objectConfig, scrollScaleRef }: Edi
 
     const t = clock.getElapsedTime();
     const s = scrollScaleRef?.current ?? 1;
-    const alphaM = s >= 0.5 ? 1.0 : 0.05 + Math.max(0, (s - 0.1) / 0.4) * 0.95;
-
-    state.mat.uniforms.uAlpha!.value = state.baseAlpha * alphaM;
+    const colorT = scrollColorRef?.current ?? 0;
+    (state.mat.uniforms.uColor!.value as THREE.Color)
+      .copy(state.initialColor)
+      .lerp(state.bgColor, colorT);
+    state.mat.uniforms.uAlpha!.value = state.baseAlpha;
     group.scale.setScalar(state.objectScale * s);
     group.rotation.x = state.baseTiltX;
     group.rotation.y = state.objectRotationEnabled

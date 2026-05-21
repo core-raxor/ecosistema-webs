@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { BrandConfig } from "@/lib/types";
 import { useContactModal } from "./ContactModalContext";
 
@@ -119,6 +119,7 @@ function Field({
 export function ContactModal({ brand }: ContactModalProps) {
   const { isOpen, closeModal } = useContactModal();
   const contact = brand.content.contact;
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const [form, setForm] = useState<FormState>({ name: "", email: "", company: "", message: "" });
   const [sent, setSent] = useState(false);
@@ -148,6 +149,48 @@ export function ContactModal({ brand }: ContactModalProps) {
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [isOpen, closeModal]);
+
+  // Focus trap — keeps keyboard navigation inside the modal
+  useEffect(() => {
+    if (!isOpen) return;
+    const card = cardRef.current;
+    if (!card) return;
+
+    const getFocusable = () =>
+      Array.from(
+        card.querySelectorAll<HTMLElement>(
+          'button, input, select, textarea, [tabindex]:not([tabindex="-1"])',
+        ),
+      );
+
+    // Focus the first input on open
+    const timer = setTimeout(() => getFocusable()[0]?.focus(), 50);
+
+    const trap = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+      const focusable = getFocusable();
+      if (!focusable.length) return;
+      const first = focusable[0]!;
+      const last = focusable[focusable.length - 1]!;
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener("keydown", trap);
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener("keydown", trap);
+    };
+  }, [isOpen]);
 
   // Reset state when closed
   useEffect(() => {
@@ -188,6 +231,10 @@ export function ContactModal({ brand }: ContactModalProps) {
           {/* Card */}
           <motion.div
             key="card"
+            ref={cardRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="contact-modal-title"
             initial={{ opacity: 0, scale: 0.96, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 8 }}
@@ -242,6 +289,7 @@ export function ContactModal({ brand }: ContactModalProps) {
                     {/* Header */}
                     <div className="mb-8 pr-8">
                       <h2
+                        id="contact-modal-title"
                         className="font-light text-(--text)"
                         style={{
                           fontSize: "clamp(1.6rem, 3vw, 2rem)",
@@ -271,7 +319,6 @@ export function ContactModal({ brand }: ContactModalProps) {
                           value={form.name}
                           onChange={setField("name")}
                           required
-                          autoFocus
                         />
                         <Field
                           id="modal-email"
@@ -313,13 +360,13 @@ export function ContactModal({ brand }: ContactModalProps) {
                           }}
                         >
                           <span className="relative z-10">
-                            {loading ? "Sending…" : contact.cta || "Send message"}
+                            {loading ? "Sending…" : "Send message"}
                           </span>
                         </button>
 
                         {contact.note && (
                           <p
-                            className="text-[10px] uppercase tracking-[0.16em] opacity-35"
+                            className="text-[10px] uppercase tracking-[0.16em] opacity-50"
                             style={{ color: "var(--text-muted)", fontFamily: "var(--font-body)" }}
                           >
                             {contact.note}

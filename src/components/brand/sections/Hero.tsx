@@ -72,8 +72,8 @@ export function Hero({ brand }: HeroProps) {
   }, [menuOpen]);
 
   return (
-    <section id="hero" className="relative min-h-screen overflow-hidden px-5 md:px-8 lg:px-12">
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col">
+    <section id="hero" className="relative min-h-[100svh] overflow-hidden px-5 md:px-8 lg:px-12">
+      <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col">
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <motion.header
           initial={{ opacity: 0, y: -16 }}
@@ -283,16 +283,15 @@ export function Hero({ brand }: HeroProps) {
           >
             {/* Headline */}
             <h1
-              className="max-w-[16ch] font-light uppercase text-(--text)"
+              className="max-w-[16ch] font-normal text-(--text)"
               style={{
-                fontSize: "clamp(3rem, 6vw, 5.5rem)",
+                fontSize: "clamp(3.5rem, 7vw, 6.5rem)",
                 lineHeight: "1.0",
                 letterSpacing: "-0.02em",
                 fontFamily: "var(--font-heading)",
               }}
             >
-              <span className="block">{hero.leftText}</span>
-              <span className="block">{hero.rightText}</span>
+              {hero.headline}
             </h1>
 
             {/* Primary CTA */}

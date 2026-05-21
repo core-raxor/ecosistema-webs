@@ -8,28 +8,51 @@ const aelor_content = {
   hero: {
     logoText: "AELOR",
     navItems: ["Home", "Process", "Services", "Contact"],
-    leftText: "We shape",
-    rightText: "how brands are understood",
-    primaryCta: "Start",
+    headline: "Design that converts.",
+    primaryCta: "Get in touch",
     secondaryCta: "",
     microNote: "",
   },
 
   identity: {
     label: "AELOR",
-    title: "Design that sharpens perception.",
-    description: ["We turn visual identity, UX, and positioning into one coherent signal."],
-    highlights: ["Brand", "Experience", "Positioning", "Clarity"],
+    title:
+      "We design the digital experience your offer deserves — clear, intentional, built to guide the right people toward a decision.",
+    stats: [
+      { value: "+1", label: "Year active" },
+      { value: "+20", label: "Projects delivered" },
+      { value: "2–3 wks", label: "Avg. delivery" },
+    ],
   },
 
   process: {
-    title: "A clear design system",
+    title: "How AELOR works",
     steps: [
-      { title: "Audit", description: "We identify friction, noise, and weak perception." },
-      { title: "Position", description: "We define the signal your brand should own." },
-      { title: "Design", description: "We build the visual and experiential system around it." },
-      { title: "Refine", description: "We tighten hierarchy, clarity, and conversion flow." },
-      { title: "Align", description: "Your brand starts operating with consistency." },
+      {
+        title: "Audit",
+        description: "We review your current experience and find what's costing conversions.",
+        benefits: ["Know what to fix", "Nothing wasted"],
+      },
+      {
+        title: "Position",
+        description: "We define the visual message and hierarchy your brand needs.",
+        benefits: ["Direction set", "Before design begins"],
+      },
+      {
+        title: "Design",
+        description: "We build the visual system around your offer and audience.",
+        benefits: ["Every element justified"],
+      },
+      {
+        title: "Refine",
+        description: "We sharpen hierarchy, flow, and conversion logic.",
+        benefits: ["Nothing distracts from the goal"],
+      },
+      {
+        title: "Deliver",
+        description: "Your brand operates with clarity and visual consistency.",
+        benefits: ["Consistent over time"],
+      },
     ],
   },
 
@@ -37,45 +60,45 @@ const aelor_content = {
     title: "AELOR System",
     items: [
       {
-        name: "Identity",
-        label: "Foundation",
-        description: "A visual base built for clarity and recognition.",
-        includes: ["Logo", "Color", "Typography", "Guidelines"],
-        cta: "Request",
-      },
-      {
-        name: "Experience",
-        label: "Interface",
-        description: "A sharper user experience built to guide and convert.",
-        includes: ["UX/UI", "Landing", "Hierarchy", "Flow"],
-        cta: "Request",
-      },
-      {
-        name: "Positioning",
-        label: "Direction",
-        description: "Brand, message, and design aligned as one system.",
-        includes: ["Strategy", "Narrative", "System", "Direction"],
+        name: "UX Audit",
+        label: "Clarity",
+        description: "A clear picture of what is costing you conversions.",
+        includes: ["UX/UI audit", "Problem mapping", "Improvement plan", "Visual review"],
         cta: "Apply",
+        price: "$300–$800",
+      },
+      {
+        name: "Product Experience",
+        label: "Interface",
+        description: "A complete experience built to guide and convert.",
+        includes: ["Full UX/UI", "Experience flow", "Visual system", "User journeys"],
+        cta: "Apply",
+        price: "$2,000–$5,000",
+      },
+      {
+        name: "CRO Optimization",
+        label: "Conversion",
+        description: "Your existing interface redesigned around results.",
+        includes: ["Deep UX audit", "Interface redesign", "Conversion logic", "Visual testing"],
+        cta: "Apply",
+        price: "$2,000–$6,000",
       },
     ],
   },
 
   final: {
     statement: "A brand should feel clear before it feels impressive.",
-    subline: "That is where perception starts.",
     cta: "Start",
   },
 
   contact: {
     title: "Work with AELOR",
-    description: "We review the brand and define the next move.",
-    cta: "Contact",
-    note: "",
+    description: "We review your brand and define what needs to change.",
+    note: "Design with direction.",
   },
 
   footer: {
-    tagline: "Perception. Experience. Positioning.",
-    minimalText: "Design systems for brands that need clarity.",
+    tagline: "Clarity. Design. Conversion.",
   },
 };
 

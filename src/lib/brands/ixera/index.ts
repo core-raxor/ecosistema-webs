@@ -8,36 +8,51 @@ const ixera_content = {
   hero: {
     logoText: "IXERA",
     navItems: ["Home", "Process", "Services", "Contact"],
-    leftText: "We place AI",
-    rightText: "inside operations",
-    primaryCta: "",
+    headline: "AI built into your operations.",
+    primaryCta: "Get in touch",
     secondaryCta: "",
     microNote: "",
   },
 
   identity: {
-    label: "WE ARE",
-    title: "Operational intelligence for businesses that need leverage.",
-    description: [
-      "We place AI inside communication, decisions, and execution.",
-      "Tools become one coherent intelligence layer.",
-    ],
-    highlights: [
-      "AI in operations",
-      "Decision support",
-      "Connected automations",
-      "Less manual thinking",
+    label: "IXERA",
+    title:
+      "We build AI into your business as a working layer — not a tool you use manually, but one that thinks and acts inside your operations.",
+    stats: [
+      { value: "+1", label: "Year active" },
+      { value: "+10", label: "Projects delivered" },
+      { value: "4–8 wks", label: "Avg. delivery" },
     ],
   },
 
   process: {
     title: "How IXERA works",
     steps: [
-      { title: "Analyze", description: "We find where intelligence should intervene." },
-      { title: "Design", description: "We map the role AI should play in the system." },
-      { title: "Build", description: "We build prompts, agents, and logic." },
-      { title: "Integrate", description: "We connect AI with your channels and operations." },
-      { title: "Optimize", description: "We refine the system around performance." },
+      {
+        title: "Identify",
+        description: "We find where AI creates the most leverage in your operation.",
+        benefits: ["Highest leverage first", "No wasted spend"],
+      },
+      {
+        title: "Design",
+        description: "We define the role AI should play in your specific context.",
+        benefits: ["Strategy before build"],
+      },
+      {
+        title: "Build",
+        description: "We build the models, prompts, agents, and logic.",
+        benefits: ["Built for your context"],
+      },
+      {
+        title: "Integrate",
+        description: "We connect AI with your tools, channels, and operations.",
+        benefits: ["Part of the system"],
+      },
+      {
+        title: "Optimize",
+        description: "We refine around real performance data.",
+        benefits: ["Improves with use"],
+      },
     ],
   },
 
@@ -45,52 +60,45 @@ const ixera_content = {
     title: "IXERA System",
     items: [
       {
-        name: "IXERA Starter",
+        name: "AI Starter",
         label: "Introduction",
-        description: "A first intelligence layer for daily operations.",
-        includes: ["ChatGPT setup", "Prompt system", "Basic automation", "Client responses"],
-        cta: "Start",
-      },
-      {
-        name: "IXERA Growth",
-        label: "Automation",
-        description: "Communication and lead flow handled with AI.",
-        includes: ["AI chatbot", "Lead automation", "Email system", "Content generation"],
-        cta: "Start",
-      },
-      {
-        name: "IXERA Pro",
-        label: "Intelligence System",
-        description: "AI installed as a working layer across the business.",
-        includes: ["AI brain", "Decision system", "Advanced automation", "Internal AI tools"],
+        description: "A first AI layer for your most repetitive operations.",
+        includes: ["AI chatbot", "Prompt system", "Basic automation", "Client responses"],
         cta: "Apply",
+        price: "$300–$1,000",
       },
       {
-        name: "IXERA Scale",
-        label: "Autonomous System",
-        description: "A semi-autonomous system built to keep learning.",
-        includes: ["AI agents", "Full automation", "AI analytics", "Continuous optimization"],
+        name: "AI for Sales",
+        label: "Revenue",
+        description: "Intelligent systems built to support your sales process.",
+        includes: ["Sales bots", "Smart responses", "Lead automation", "Content generation"],
         cta: "Apply",
+        price: "$2,000–$6,000",
+      },
+      {
+        name: "Business AI System",
+        label: "Operations",
+        description: "AI embedded across the core of your operations.",
+        includes: ["AI brain", "Decision support", "Advanced automation", "Internal AI tools"],
+        cta: "Apply",
+        price: "$8,000–$20,000",
       },
     ],
   },
 
   final: {
-    statement: "AI tools are not enough.",
-    subline: "Your business needs intelligence in motion.",
-    cta: "Integrate AI",
+    statement: "AI tools alone will not move your business.",
+    cta: "Build your AI system",
   },
 
   contact: {
     title: "Work with IXERA",
-    description: "We define where AI should think, act, and respond.",
-    cta: "Apply",
-    note: "For operating teams.",
+    description: "We define where AI should think, act, and respond in your business.",
+    note: "For teams ready to operate smarter.",
   },
 
   footer: {
     tagline: "Intelligence. Automation. Decision.",
-    minimalText: "AI integrated into real operations.",
   },
 };
 

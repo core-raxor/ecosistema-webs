@@ -8,31 +8,51 @@ const dextor_content = {
   hero: {
     logoText: "DEXTOR",
     navItems: ["Home", "Process", "Services", "Contact"],
-    leftText: "Structure systems ",
-    rightText: "that brings clarity",
-    primaryCta: "",
+    headline: "Turn your data into decisions.",
+    primaryCta: "Get in touch",
     secondaryCta: "",
     microNote: "",
   },
 
   identity: {
-    label: "WE ARE",
-    title: "Business architecture for companies that need control.",
-    description: [
-      "We turn intuition into structure.",
-      "Decisions become measurable, repeatable, and profitable.",
+    label: "DEXTOR",
+    title:
+      "We give your business the metrics and control it needs to make decisions without guessing.",
+    stats: [
+      { value: "+1", label: "Year active" },
+      { value: "+10", label: "Projects delivered" },
+      { value: "3–6 wks", label: "Avg. delivery" },
     ],
-    highlights: ["Clear model", "Operating control", "Measurable growth", "Decisions with data"],
   },
 
   process: {
     title: "How DEXTOR works",
     steps: [
-      { title: "Diagnose", description: "We find structural gaps, leaks, and friction." },
-      { title: "Redesign", description: "We clarify model, offer, and business direction." },
-      { title: "Architect", description: "We map the system your business should run on." },
-      { title: "Control", description: "We install metrics, dashboards, and decision logic." },
-      { title: "Optimize", description: "We refine the system for cleaner growth." },
+      {
+        title: "Diagnose",
+        description: "We audit your current metrics, data sources, and gaps.",
+        benefits: ["Gaps identified", "Nothing assumed"],
+      },
+      {
+        title: "Structure",
+        description: "We organize your data into clean, usable systems.",
+        benefits: ["Clean input", "Reliable output"],
+      },
+      {
+        title: "Build",
+        description: "We create dashboards, metrics, and control systems.",
+        benefits: ["Full visibility"],
+      },
+      {
+        title: "Connect",
+        description: "We integrate all data sources into one unified view.",
+        benefits: ["One source of truth"],
+      },
+      {
+        title: "Optimize",
+        description: "We refine the system for cleaner, faster decisions.",
+        benefits: ["Adapts as you grow"],
+      },
     ],
   },
 
@@ -40,52 +60,45 @@ const dextor_content = {
     title: "DEXTOR System",
     items: [
       {
-        name: "DEXTOR DIAGNOSIS",
-        label: "Diagnosis",
-        description: "A structural audit for clearer business decisions.",
-        includes: ["Business audit", "Layer map", "Bottlenecks", "Strategic report"],
-        cta: "Request",
+        name: "Business Dashboard",
+        label: "Visibility",
+        description: "A clear view of how your business is actually doing.",
+        includes: ["Custom dashboard", "KPI setup", "Visual reports", "Performance view"],
+        cta: "Apply",
+        price: "$300–$1,000",
       },
       {
-        name: "DEXTOR STRUCTURE",
-        label: "Structure",
-        description: "Business architecture built for clarity and operation.",
-        includes: ["Model design", "Offer structure", "Revenue logic", "Process map"],
-        cta: "Request",
-      },
-      {
-        name: "DEXTOR CONTROL",
+        name: "Financial Control",
         label: "Control",
-        description: "A control layer for decisions backed by data.",
-        includes: ["KPIs", "Tracking", "Dashboard", "Financial control"],
+        description: "A system built to track and understand your finances.",
+        includes: ["Cash flow", "Cost tracking", "Revenue view", "Financial reports"],
         cta: "Apply",
+        price: "$2,000–$5,000",
       },
       {
-        name: "DEXTOR INTELLIGENCE",
+        name: "Business Intelligence",
         label: "Intelligence",
-        description: "A business system designed to learn and optimize.",
-        includes: ["Forecasting", "Optimization logic", "AI support", "Growth structure"],
+        description: "Deep analysis and decision support across the business.",
+        includes: ["Data integration", "Advanced analytics", "BI system", "Strategic insights"],
         cta: "Apply",
+        price: "$8,000–$20,000",
       },
     ],
   },
 
   final: {
-    statement: "Your business can run.",
-    subline: "Control is what scales it.",
-    cta: "Structure business",
+    statement: "You cannot improve what you cannot see.",
+    cta: "Get control",
   },
 
   contact: {
     title: "Work with DEXTOR",
-    description: "We analyze your structure and define the control system.",
-    cta: "Apply",
-    note: "For operating companies.",
+    description: "We analyze your business and build the control system it needs.",
+    note: "For operating businesses.",
   },
 
   footer: {
-    tagline: "Architecture. Control. Profitability.",
-    minimalText: "Business systems built for measurable control.",
+    tagline: "Data. Control. Decisions.",
   },
 };
 
@@ -114,7 +127,7 @@ export const dextor = {
   slug: "dextor",
   name: "DEXTOR",
   theme: {
-    colors: { accent: "#94A3B8" },
+    colors: { accent: "#2DD4BF" },
     scene: {
       type: "structural-frame" as const,
       shape: "soft-square" as const,

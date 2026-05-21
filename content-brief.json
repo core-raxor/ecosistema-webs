@@ -1,0 +1,1013 @@
+[
+  {
+    "phase": "fase_1",
+    "name": "Arquitectura comercial del ecosistema",
+    "ecosystem_type": "ecosistema modular de servicios empresariales",
+    "core_principle": "Cada modelo de negocio resuelve una capa específica del sistema empresarial sin mezclar áreas de forma confusa.",
+    "business_logic": {
+      "mother_company": {
+        "role": "Entrada comercial principal del ecosistema",
+        "function": "Vender paquetes cerrados y estructurados para freelancers, emprendedores, negocios pequeños, empresas en crecimiento y posibles empresas medianas.",
+        "sales_model": "Paquetes cerrados",
+        "consulting_policy": "La consultoría no se vende como área independiente. Es obligatoria una vez el cliente se contacta y realiza el pago.",
+        "communication_policy": {
+          "default_channel": "chat",
+          "video_or_call_access": "Solo para pagos superiores a 5000 USD"
+        },
+        "positioning": "Primera entrada comercial al ecosistema de servicios empresariales."
+      },
+      "specialized_models": {
+        "aelor": {
+          "role": "Experiencia, diseño visual y conversión",
+          "main_focus": "UX/UI, contenido visual, percepción de valor y crecimiento visual"
+        },
+        "raxor": {
+          "role": "Sistemas low-code y no-code profesionales",
+          "main_focus": "Desarrollo profesional con herramientas low-code/no-code, sin enfoque barato ni improvisado"
+        },
+        "nixen": {
+          "role": "Automatización operativa",
+          "main_focus": "Workflows, integraciones y eliminación de tareas manuales"
+        },
+        "ixera": {
+          "role": "Inteligencia artificial aplicada al negocio",
+          "main_focus": "Chatbots, asistentes AI e integración de inteligencia en procesos empresariales"
+        },
+        "dextor": {
+          "role": "Inteligencia de negocio y control empresarial",
+          "main_focus": "Dashboards, métricas, finanzas, datos y BI"
+        },
+        "vaxen": {
+          "role": "Ingeniería de sistemas empresariales",
+          "main_focus": "Desarrollo full-code, sistemas complejos, escalables y de alto control"
+        }
+      }
+    },
+    "strategic_rules": [
+      "No vender el ecosistema como 'hacemos de todo'.",
+      "La empresa madre vende paquetes comerciales.",
+      "Los modelos especializados resuelven áreas concretas.",
+      "Cada servicio debe comunicar resultado, no herramienta.",
+      "No mezclar servicios entre marcas sin una razón estratégica.",
+      "La tecnología debe venderse como solución empresarial: orden, eficiencia, ventas, control, escalabilidad o reducción de costos."
+    ],
+    "service_layers_covered": [
+      "identidad empresarial",
+      "estructura empresarial",
+      "organizacion empresarial",
+      "infraestructura empresarial",
+      "producto",
+      "produccion",
+      "logistica",
+      "marketing",
+      "finanzas",
+      "metricas",
+      "gestion de capital",
+      "marco juridico"
+    ]
+  },
+  {
+    "phase": "fase_2",
+    "name": "Servicios por modelo de negocio",
+    "business_models": {
+      "aelor": {
+        "name": "Aelor",
+        "category": "Experiencia y crecimiento visual",
+        "positioning": "Agencia de experiencia digital enfocada en conversión, percepción de valor y crecimiento visual de negocios.",
+        "main_problem_solved": [
+          "Webs que no convierten",
+          "Productos digitales mal diseñados",
+          "Marcas sin coherencia visual",
+          "Contenido visual sin impacto",
+          "Experiencias digitales poco claras"
+        ],
+        "target_clients": [
+          "emprendedores",
+          "freelancers",
+          "startups",
+          "negocios digitales",
+          "empresas que quieren mejorar conversion"
+        ],
+        "main_services": [
+          {
+            "service": "Diseño UX/UI estratégico",
+            "description": "Diseño de interfaces para webs, apps, SaaS, dashboards y productos digitales con enfoque en claridad, usabilidad y conversión."
+          },
+          {
+            "service": "Diseño de landing pages de conversión",
+            "description": "Diseño de páginas orientadas a captar leads, vender servicios o presentar ofertas comerciales de forma clara."
+          },
+          {
+            "service": "Diseño de producto digital",
+            "description": "Diseño de experiencias completas para productos digitales, desde arquitectura visual hasta sistemas de interfaz."
+          },
+          {
+            "service": "Branding aplicado a digital",
+            "description": "Identidad visual funcional para negocios digitales: logo, paleta, tipografía, dirección visual y sistema gráfico."
+          },
+          {
+            "service": "Diseño de contenido visual",
+            "description": "Piezas visuales para redes, anuncios, campañas, presentaciones y comunicación comercial."
+          },
+          {
+            "service": "Optimización de conversión UX/CRO",
+            "description": "Auditoría y mejora de interfaces existentes para aumentar claridad, confianza y conversión."
+          }
+        ],
+        "secondary_services": [
+          "Auditoría UX/UI",
+          "Rediseño de interfaces",
+          "Diseño visual de dashboards",
+          "Sistemas de diseño",
+          "Creatividades para marketing"
+        ],
+        "does_not_do": [
+          "desarrollo de sistemas complejos",
+          "automatización de procesos",
+          "integración de AI",
+          "análisis de datos o finanzas"
+        ],
+        "sales_message": "Diseñamos experiencias digitales que convierten visitantes en clientes.",
+        "promise": [
+          "mejor percepción de marca",
+          "mayor claridad visual",
+          "mejor experiencia de usuario",
+          "más conversión"
+        ]
+      },
+      "raxor": {
+        "name": "Raxor",
+        "category": "Sistemas low-code y no-code profesionales",
+        "positioning": "Diseño y construcción de sistemas digitales profesionales utilizando tecnologías low-code y no-code, priorizando calidad, estructura y funcionalidad.",
+        "main_problem_solved": [
+          "Negocios sin sistemas digitales",
+          "Procesos operativos desordenados",
+          "Necesidad de plataformas funcionales sin desarrollo complejo",
+          "MVPs que necesitan verse profesionales",
+          "Digitalización de procesos internos"
+        ],
+        "target_clients": [
+          "emprendedores serios",
+          "startups",
+          "negocios en crecimiento",
+          "empresas que necesitan digitalización profesional"
+        ],
+        "main_services": [
+          {
+            "service": "Desarrollo de plataformas web low-code/no-code",
+            "description": "Construcción de webs empresariales, portales, paneles y plataformas funcionales con acabados profesionales."
+          },
+          {
+            "service": "Desarrollo de aplicaciones no-code",
+            "description": "Creación de apps internas, apps para clientes y MVPs funcionales usando herramientas modernas."
+          },
+          {
+            "service": "Sistemas internos profesionales",
+            "description": "Desarrollo de CRM personalizados, sistemas administrativos, gestión de clientes y operaciones."
+          },
+          {
+            "service": "MVPs estructurados",
+            "description": "Construcción de productos funcionales para validar ideas de negocio con estructura profesional."
+          },
+          {
+            "service": "Arquitectura de sistemas no-code",
+            "description": "Diseño de la estructura lógica, datos, herramientas y funcionamiento interno de sistemas low-code/no-code."
+          }
+        ],
+        "secondary_services": [
+          "Migración de procesos manuales a digital",
+          "Optimización de sistemas existentes",
+          "Rediseño de sistemas no-code",
+          "Soporte funcional",
+          "Escalamiento de herramientas"
+        ],
+        "does_not_do": [
+          "software altamente complejo",
+          "automatización avanzada como servicio principal",
+          "integración AI como servicio principal",
+          "análisis financiero o BI"
+        ],
+        "sales_message": "Construimos sistemas digitales profesionales para que tu negocio opere mejor sin depender de desarrollos largos y costosos.",
+        "promise": [
+          "sistemas funcionales",
+          "estructura profesional",
+          "costos optimizados",
+          "base sólida para crecer"
+        ]
+      },
+      "nixen": {
+        "name": "Nixen",
+        "category": "Automatización operativa",
+        "positioning": "Diseño e implementación de sistemas automatizados que eliminan tareas manuales y optimizan el funcionamiento del negocio.",
+        "main_problem_solved": [
+          "Procesos manuales repetitivos",
+          "Errores humanos",
+          "Pérdida de tiempo operativa",
+          "Herramientas desconectadas",
+          "Equipos poco eficientes"
+        ],
+        "target_clients": [
+          "freelancers",
+          "negocios con operaciones manuales",
+          "startups en crecimiento",
+          "empresas que quieren eficiencia"
+        ],
+        "automation_levels": [
+          {
+            "level": "basico",
+            "description": "Automatizaciones simples con herramientas como Zapier, Make o integraciones directas."
+          },
+          {
+            "level": "intermedio",
+            "description": "Integraciones entre múltiples sistemas, condiciones, rutas lógicas y procesos conectados."
+          },
+          {
+            "level": "avanzado",
+            "description": "Sistemas completos de automatización operativa y orquestación de procesos empresariales."
+          }
+        ],
+        "main_services": [
+          {
+            "service": "Automatización de procesos operativos",
+            "description": "Automatización de tareas repetitivas, procesos administrativos y flujos internos."
+          },
+          {
+            "service": "Integración de herramientas",
+            "description": "Conexión entre CRM, email, formularios, pagos, bases de datos, plataformas y sistemas internos."
+          },
+          {
+            "service": "Automatización de ventas",
+            "description": "Flujos automatizados para captación de leads, seguimiento, notificaciones y pipeline comercial."
+          },
+          {
+            "service": "Automatización de comunicación",
+            "description": "Automatización de correos, mensajes, alertas internas y respuestas operativas."
+          },
+          {
+            "service": "Sistemas de workflows completos",
+            "description": "Diseño de flujos de trabajo empresariales automatizados para reducir carga operativa."
+          }
+        ],
+        "secondary_services": [
+          "Auditoría de procesos",
+          "Optimización de automatizaciones existentes",
+          "Mantenimiento de automatizaciones",
+          "Rediseño de flujos",
+          "Escalamiento de sistemas automatizados"
+        ],
+        "does_not_do": [
+          "construcción de plataformas como servicio principal",
+          "diseño de interfaces",
+          "AI avanzada como servicio principal",
+          "análisis de datos o finanzas"
+        ],
+        "sales_message": "Eliminamos tareas manuales de tu negocio para que funcione de forma más rápida, eficiente y escalable.",
+        "promise": [
+          "ahorro de tiempo",
+          "menos errores",
+          "mayor eficiencia",
+          "operaciones más ordenadas"
+        ]
+      },
+      "ixera": {
+        "name": "Ixera",
+        "category": "Inteligencia artificial aplicada al negocio",
+        "positioning": "Diseño e integración de sistemas de inteligencia artificial que permiten a los negocios operar, vender y crecer de forma más inteligente.",
+        "main_problem_solved": [
+          "Atención al cliente lenta",
+          "Equipos saturados",
+          "Procesos que requieren pensamiento repetitivo",
+          "Falta de aprovechamiento de AI",
+          "Baja eficiencia en marketing, ventas u operaciones"
+        ],
+        "target_clients": [
+          "negocios en crecimiento",
+          "empresas digitales",
+          "startups",
+          "equipos que quieren escalar sin contratar más personal"
+        ],
+        "ai_levels": [
+          {
+            "level": "basico",
+            "description": "Chatbots simples, automatizaciones con AI e integraciones ligeras."
+          },
+          {
+            "level": "negocio",
+            "description": "AI aplicada a ventas, soporte, marketing, atención al cliente y operaciones."
+          },
+          {
+            "level": "avanzado",
+            "description": "Asistentes empresariales, sistemas inteligentes, procesamiento de información y soluciones híbridas AI + automatización + datos."
+          }
+        ],
+        "main_services": [
+          {
+            "service": "Chatbots inteligentes",
+            "description": "Bots para atención al cliente, captación de leads, soporte y respuestas automatizadas."
+          },
+          {
+            "service": "Asistentes AI",
+            "description": "Asistentes internos o externos para equipos, clientes, operaciones o gestión de información."
+          },
+          {
+            "service": "Integración de AI en sistemas existentes",
+            "description": "Conexión de inteligencia artificial con webs, CRM, apps, plataformas internas o sistemas operativos."
+          },
+          {
+            "service": "AI para marketing y ventas",
+            "description": "Sistemas inteligentes para generación de contenido, respuestas comerciales, segmentación y apoyo a campañas."
+          },
+          {
+            "service": "AI para operaciones",
+            "description": "Procesamiento de información, análisis asistido y apoyo a decisiones operativas."
+          }
+        ],
+        "secondary_services": [
+          "Auditoría de oportunidades AI",
+          "Optimización de sistemas AI",
+          "Mantenimiento de sistemas AI",
+          "Entrenamiento de asistentes",
+          "Escalamiento de soluciones inteligentes"
+        ],
+        "does_not_do": [
+          "construcción de plataformas como servicio principal",
+          "automatización sin inteligencia",
+          "diseño de interfaces",
+          "análisis financiero puro"
+        ],
+        "sales_message": "Integramos inteligencia artificial en tu negocio para que puedas operar con menos esfuerzo, tomar mejores decisiones y crecer con más eficiencia.",
+        "promise": [
+          "reducción de trabajo humano repetitivo",
+          "mayor eficiencia",
+          "mejor atención",
+          "ventaja competitiva"
+        ]
+      },
+      "dextor": {
+        "name": "Dextor",
+        "category": "Inteligencia de negocio y control empresarial",
+        "positioning": "Diseño de sistemas de inteligencia empresarial que permiten medir, entender y controlar el negocio con datos reales.",
+        "main_problem_solved": [
+          "Negocios que no saben si ganan o pierden",
+          "Falta de claridad financiera",
+          "Métricas desordenadas",
+          "Decisiones sin datos",
+          "Información dispersa entre herramientas"
+        ],
+        "target_clients": [
+          "negocios en crecimiento",
+          "empresas con operaciones activas",
+          "startups con volumen de datos",
+          "empresas que quieren escalar con control"
+        ],
+        "bi_levels": [
+          {
+            "level": "visualizacion",
+            "description": "Dashboards, KPIs y reportes claros."
+          },
+          {
+            "level": "control_empresarial",
+            "description": "Sistemas de seguimiento financiero, operativo y comercial."
+          },
+          {
+            "level": "bi_completo",
+            "description": "Integración de datos, análisis profundo e inteligencia de negocio para toma de decisiones."
+          }
+        ],
+        "main_services": [
+          {
+            "service": "Dashboards empresariales",
+            "description": "Paneles personalizados para visualizar KPIs, operaciones, ventas, finanzas y rendimiento."
+          },
+          {
+            "service": "Sistemas de métricas empresariales",
+            "description": "Definición y seguimiento de métricas clave para controlar áreas del negocio."
+          },
+          {
+            "service": "Sistemas financieros",
+            "description": "Control de flujo de caja, costos, rentabilidad, ingresos, egresos y análisis financiero."
+          },
+          {
+            "service": "Integración de datos",
+            "description": "Unificación de fuentes de información y estructuración de datos para análisis."
+          },
+          {
+            "service": "Business Intelligence",
+            "description": "Análisis de datos, generación de insights y soporte para decisiones estratégicas."
+          }
+        ],
+        "secondary_services": [
+          "Auditoría de métricas",
+          "Optimización de dashboards",
+          "Rediseño de sistemas de control",
+          "Mantenimiento de sistemas de datos",
+          "Consultoría basada en datos incluida dentro del proceso del servicio"
+        ],
+        "does_not_do": [
+          "diseño visual como servicio principal",
+          "construcción de plataformas base",
+          "automatización como servicio principal",
+          "AI como servicio principal"
+        ],
+        "sales_message": "Te ayudamos a entender y controlar tu negocio con datos claros para que tomes mejores decisiones.",
+        "promise": [
+          "claridad del negocio",
+          "mejor toma de decisiones",
+          "control financiero",
+          "crecimiento con datos"
+        ]
+      },
+      "vaxen": {
+        "name": "Vaxen",
+        "category": "Ingeniería de sistemas empresariales",
+        "positioning": "Diseño y desarrollo de sistemas empresariales complejos, escalables y de alto rendimiento, construidos completamente a medida.",
+        "main_problem_solved": [
+          "Sistemas que ya no escalan",
+          "Necesidad de control total sobre software",
+          "Integraciones complejas",
+          "Alto volumen de datos",
+          "Operaciones que requieren arquitectura sólida"
+        ],
+        "target_clients": [
+          "empresas en crecimiento avanzado",
+          "startups con producto validado",
+          "negocios con operaciones complejas",
+          "empresas que superaron el low-code/no-code"
+        ],
+        "engineering_levels": [
+          {
+            "level": "desarrollo_a_medida",
+            "description": "Web apps personalizadas, sistemas internos y backend personalizado."
+          },
+          {
+            "level": "sistemas_empresariales",
+            "description": "Plataformas completas, integraciones complejas y arquitectura backend sólida."
+          },
+          {
+            "level": "ingenieria_avanzada",
+            "description": "Sistemas escalables, arquitectura distribuida, alto rendimiento y sistemas de datos complejos."
+          }
+        ],
+        "main_services": [
+          {
+            "service": "Desarrollo de software a medida",
+            "description": "Construcción de sistemas empresariales, plataformas digitales y aplicaciones completas desde código."
+          },
+          {
+            "service": "Arquitectura de sistemas",
+            "description": "Diseño técnico de estructuras backend, frontend, bases de datos, infraestructura y escalabilidad."
+          },
+          {
+            "service": "Backend avanzado",
+            "description": "Desarrollo de APIs, lógica de negocio compleja, integraciones profundas y procesamiento de datos."
+          },
+          {
+            "service": "Integraciones complejas",
+            "description": "Conexión avanzada entre sistemas externos, plataformas, servicios, APIs y datos."
+          },
+          {
+            "service": "Sistemas de datos avanzados",
+            "description": "Diseño de bases de datos, procesamiento de información e infraestructura de datos para sistemas complejos."
+          }
+        ],
+        "secondary_services": [
+          "Auditoría técnica",
+          "Optimización de sistemas existentes",
+          "Migración de sistemas",
+          "Escalamiento de infraestructura",
+          "Mantenimiento técnico"
+        ],
+        "does_not_do": [
+          "soluciones low-code/no-code como servicio principal",
+          "automatización simple",
+          "AI como servicio aislado",
+          "diseño UX/UI como servicio principal",
+          "dashboards básicos"
+        ],
+        "sales_message": "Construimos la base tecnológica de tu negocio para que pueda escalar con control, seguridad y rendimiento.",
+        "promise": [
+          "escalabilidad real",
+          "control total",
+          "alto rendimiento",
+          "seguridad",
+          "arquitectura preparada para crecer"
+        ],
+        "difference_vs_raxor": {
+          "raxor": "Low-code/no-code profesional para soluciones funcionales y estructuradas.",
+          "vaxen": "Full-code avanzado para sistemas complejos, escalables y de mayor control."
+        }
+      }
+    }
+  },
+  {
+    "phase": "fase_3",
+    "name": "Paquetes comerciales",
+    "business_models": {
+      "aelor": {
+        "packages": [
+          {
+            "name": "UX Audit",
+            "level": "entry",
+            "target_client": "Negocios con web o app que no convierten",
+            "includes": [
+              "Auditoría UX/UI completa",
+              "Identificación de problemas",
+              "Recomendaciones claras",
+              "Mejora de estructura visual"
+            ],
+            "result": ["Claridad de problemas", "Plan de mejora", "Mejor experiencia base"],
+            "price_range": "300 - 800 USD"
+          },
+          {
+            "name": "Landing Conversion",
+            "level": "basic",
+            "target_client": "Negocios que quieren vender con una landing optimizada",
+            "includes": [
+              "Diseño UX/UI de landing",
+              "Estructura de conversión",
+              "Copy base estructurado",
+              "Diseño visual completo"
+            ],
+            "result": ["Página lista para vender", "Mayor conversión", "Mensaje claro"],
+            "price_range": "800 - 2000 USD"
+          },
+          {
+            "name": "Product Experience",
+            "level": "mid",
+            "target_client": "Startups o negocios con producto digital",
+            "includes": [
+              "UX/UI completo",
+              "Arquitectura de experiencia",
+              "Sistema visual",
+              "Flujos de usuario"
+            ],
+            "result": ["Producto usable", "Experiencia clara", "Base profesional"],
+            "price_range": "2000 - 5000 USD"
+          },
+          {
+            "name": "Brand Experience System",
+            "level": "mid_high",
+            "target_client": "Negocios que quieren una identidad sólida",
+            "includes": [
+              "Branding completo",
+              "Sistema visual",
+              "Aplicación digital",
+              "Diseño de comunicación"
+            ],
+            "result": ["Marca profesional", "Coherencia visual", "Diferenciación"],
+            "price_range": "1500 - 4000 USD"
+          },
+          {
+            "name": "CRO Optimization",
+            "level": "advanced",
+            "target_client": "Negocios con tráfico que buscan mejorar resultados",
+            "includes": [
+              "Auditoría profunda",
+              "Rediseño UX/UI",
+              "Optimización de conversión",
+              "Testing visual"
+            ],
+            "result": ["Más ventas", "Mejor rendimiento", "Optimización continua"],
+            "price_range": "2000 - 6000 USD"
+          }
+        ]
+      },
+      "raxor": {
+        "packages": [
+          {
+            "name": "Sistema Base",
+            "level": "entry",
+            "target_client": "Negocios que necesitan digitalizarse",
+            "includes": ["Web funcional", "Estructura básica", "Sistema simple"],
+            "result": ["Presencia digital funcional"],
+            "price_range": "500 - 1500 USD"
+          },
+          {
+            "name": "Sistema Operativo",
+            "level": "basic",
+            "target_client": "Negocios que necesitan organización interna",
+            "includes": ["Web + estructura interna", "Gestión de clientes", "Panel básico"],
+            "result": ["Negocio organizado"],
+            "price_range": "1500 - 4000 USD"
+          },
+          {
+            "name": "Plataforma Funcional",
+            "level": "mid",
+            "target_client": "Negocios que necesitan operar con sistemas",
+            "includes": ["Plataforma completa", "Gestión interna", "Flujos operativos"],
+            "result": ["Sistema listo para operar"],
+            "price_range": "4000 - 10000 USD"
+          },
+          {
+            "name": "MVP Profesional",
+            "level": "mid",
+            "target_client": "Startups que quieren validar producto",
+            "includes": ["Producto funcional", "Estructura escalable", "UX base integrado"],
+            "result": ["Producto listo para validar"],
+            "price_range": "3000 - 8000 USD"
+          },
+          {
+            "name": "Sistema Escalable",
+            "level": "advanced",
+            "target_client": "Negocios en crecimiento",
+            "includes": ["Arquitectura no-code avanzada", "Integraciones base", "Optimización"],
+            "result": ["Base para escalar"],
+            "price_range": "6000 - 12000 USD"
+          }
+        ]
+      },
+      "nixen": {
+        "packages": [
+          {
+            "name": "Automatización Básica",
+            "level": "entry",
+            "target_client": "Freelancers o pequeños negocios",
+            "includes": ["1-3 automatizaciones simples", "Flujos básicos"],
+            "result": ["Ahorro de tiempo inmediato"],
+            "price_range": "200 - 800 USD"
+          },
+          {
+            "name": "Automatización Operativa",
+            "level": "basic",
+            "target_client": "Negocios con procesos repetitivos",
+            "includes": ["Integraciones", "Flujos intermedios"],
+            "result": ["Operación más eficiente"],
+            "price_range": "800 - 2500 USD"
+          },
+          {
+            "name": "Sistema Automatizado",
+            "level": "mid",
+            "target_client": "Negocios en crecimiento",
+            "includes": ["Automatización completa de procesos"],
+            "result": ["Negocio semi-automatizado"],
+            "price_range": "2500 - 6000 USD"
+          },
+          {
+            "name": "Automatización de Ventas",
+            "level": "mid_high",
+            "target_client": "Negocios que buscan escalar ventas",
+            "includes": ["Captación de leads", "Seguimiento automático", "Pipeline automatizado"],
+            "result": ["Sistema que vende automáticamente"],
+            "price_range": "1500 - 5000 USD"
+          },
+          {
+            "name": "Automatización Empresarial",
+            "level": "advanced",
+            "target_client": "Empresas con operaciones complejas",
+            "includes": ["Flujos complejos", "Integración total de sistemas"],
+            "result": ["Operación automatizada"],
+            "price_range": "5000 - 12000 USD"
+          }
+        ]
+      },
+      "ixera": {
+        "packages": [
+          {
+            "name": "AI Básica",
+            "level": "entry",
+            "target_client": "Negocios que quieren empezar con AI",
+            "includes": ["Chatbot simple", "Automatización básica con AI"],
+            "result": ["Uso inicial de inteligencia artificial"],
+            "price_range": "300 - 1000 USD"
+          },
+          {
+            "name": "AI Aplicada",
+            "level": "basic",
+            "target_client": "Negocios que buscan eficiencia",
+            "includes": ["AI en marketing o soporte"],
+            "result": ["Mejor eficiencia operativa"],
+            "price_range": "1000 - 3000 USD"
+          },
+          {
+            "name": "AI para Ventas",
+            "level": "mid",
+            "target_client": "Negocios enfocados en crecimiento",
+            "includes": ["Bots de ventas", "Respuestas inteligentes"],
+            "result": ["Incremento en ventas automatizadas"],
+            "price_range": "2000 - 6000 USD"
+          },
+          {
+            "name": "Asistente Empresarial",
+            "level": "mid_high",
+            "target_client": "Equipos operativos",
+            "includes": ["Sistema inteligente interno"],
+            "result": ["Soporte inteligente en operaciones"],
+            "price_range": "4000 - 10000 USD"
+          },
+          {
+            "name": "Sistema Inteligente",
+            "level": "advanced",
+            "target_client": "Empresas en crecimiento",
+            "includes": ["AI + automatización + datos"],
+            "result": ["Negocio inteligente y optimizado"],
+            "price_range": "8000 - 20000 USD"
+          }
+        ]
+      },
+      "dextor": {
+        "packages": [
+          {
+            "name": "Dashboard Básico",
+            "level": "entry",
+            "price_range": "300 - 1000 USD"
+          },
+          {
+            "name": "Sistema de Métricas",
+            "level": "basic",
+            "price_range": "1000 - 3000 USD"
+          },
+          {
+            "name": "Control Financiero",
+            "level": "mid",
+            "price_range": "2000 - 5000 USD"
+          },
+          {
+            "name": "BI Empresarial",
+            "level": "mid_high",
+            "price_range": "4000 - 10000 USD"
+          },
+          {
+            "name": "Sistema de Inteligencia",
+            "level": "advanced",
+            "price_range": "8000 - 20000 USD"
+          }
+        ]
+      },
+      "vaxen": {
+        "packages": [
+          {
+            "name": "Desarrollo a medida",
+            "level": "entry",
+            "price_range": "3000 - 8000 USD"
+          },
+          {
+            "name": "Sistema empresarial",
+            "level": "basic",
+            "price_range": "8000 - 20000 USD"
+          },
+          {
+            "name": "Plataforma avanzada",
+            "level": "mid",
+            "price_range": "15000 - 40000 USD"
+          },
+          {
+            "name": "Arquitectura completa",
+            "level": "mid_high",
+            "price_range": "20000 - 60000 USD"
+          },
+          {
+            "name": "Ingeniería avanzada",
+            "level": "advanced",
+            "price_range": "50000 - 150000 USD"
+          }
+        ]
+      }
+    }
+  },
+
+  {
+    "phase": "fase_4",
+    "name": "Propuesta comercial",
+    "global_principles": {
+      "sales_focus": ["resultados", "crecimiento", "eficiencia", "control", "reduccion de costos"],
+      "avoid_selling": ["tecnologia", "herramientas", "terminos tecnicos complejos"],
+      "core_message": "No vendemos servicios tecnicos, vendemos soluciones empresariales que generan resultados reales.",
+      "business_model_strategy": {
+        "entry_point": "empresa madre",
+        "specialized_models_role": "backend operativo que ejecuta soluciones",
+        "client_visibility": "el cliente compra resultados, no modelos tecnicos"
+      }
+    },
+    "business_models": {
+      "aelor": {
+        "name": "Aelor",
+        "hook": "Tu negocio no necesita mas diseño. Necesita convertir.",
+        "problem": "Muchos negocios tienen web, marca o producto, pero no generan resultados porque la experiencia no esta bien diseñada.",
+        "solution": "Diseñamos experiencias digitales enfocadas en conversion, claridad y percepcion de valor.",
+        "result": ["mas clientes", "mejor imagen de marca", "mayor conversion"],
+        "differentiator": "No hacemos diseño estetico. Diseñamos para vender.",
+        "process": [
+          "analisis del negocio",
+          "diseño de experiencia",
+          "optimizacion para resultados"
+        ],
+        "communication_tone": "claro, directo, enfocado en resultados"
+      },
+      "raxor": {
+        "name": "Raxor",
+        "hook": "Tu negocio necesita un sistema, no solo una web.",
+        "problem": "Muchos negocios operan sin estructura digital real, lo que genera desorden y limita el crecimiento.",
+        "solution": "Construimos sistemas digitales funcionales que organizan y permiten operar el negocio de forma eficiente.",
+        "result": ["orden operativo", "mejor gestion", "base solida para crecer"],
+        "differentiator": "No hacemos webs. Creamos sistemas funcionales.",
+        "process": ["analisis de operacion", "diseño del sistema", "implementacion funcional"],
+        "communication_tone": "estructurado, profesional, enfocado en operacion"
+      },
+      "nixen": {
+        "name": "Nixen",
+        "hook": "Tu negocio esta trabajando mas de lo que deberia.",
+        "problem": "Procesos manuales repetitivos que consumen tiempo, generan errores y limitan la eficiencia.",
+        "solution": "Automatizamos la operacion del negocio para eliminar tareas manuales y mejorar el rendimiento.",
+        "result": ["ahorro de tiempo", "reduccion de errores", "mayor eficiencia operativa"],
+        "differentiator": "No automatizamos tareas. Optimizamos tu negocio.",
+        "process": [
+          "deteccion de procesos manuales",
+          "diseño de automatizaciones",
+          "implementacion de flujos"
+        ],
+        "communication_tone": "practico, orientado a eficiencia"
+      },
+      "ixera": {
+        "name": "Ixera",
+        "hook": "La inteligencia artificial no reemplaza tu negocio. Lo potencia.",
+        "problem": "Muchas empresas no aprovechan la inteligencia artificial o la implementan sin estrategia clara.",
+        "solution": "Integramos inteligencia artificial en el negocio para mejorar ventas, soporte y operaciones.",
+        "result": ["mayor eficiencia", "mejor atencion al cliente", "decisiones mas inteligentes"],
+        "differentiator": "No usamos AI por tendencia. La aplicamos con estrategia.",
+        "process": [
+          "identificacion de oportunidades",
+          "diseño de soluciones AI",
+          "integracion en el negocio"
+        ],
+        "communication_tone": "innovador, estrategico, claro"
+      },
+      "dextor": {
+        "name": "Dextor",
+        "hook": "No puedes mejorar lo que no puedes medir.",
+        "problem": "Negocios sin claridad en datos, metricas o finanzas que toman decisiones sin informacion real.",
+        "solution": "Creamos sistemas de control empresarial basados en datos claros y organizados.",
+        "result": ["claridad total del negocio", "mejores decisiones", "control financiero"],
+        "differentiator": "No mostramos datos. Te ayudamos a entenderlos.",
+        "process": [
+          "organizacion de datos",
+          "creacion de sistema de metricas",
+          "implementacion de control"
+        ],
+        "communication_tone": "analitico, claro, orientado a negocio"
+      },
+      "vaxen": {
+        "name": "Vaxen",
+        "hook": "Cuando tu negocio crece, las herramientas simples dejan de funcionar.",
+        "problem": "Sistemas limitados que no escalan y generan problemas a medida que el negocio crece.",
+        "solution": "Desarrollamos sistemas empresariales a medida con alto rendimiento y control total.",
+        "result": ["escalabilidad real", "seguridad", "control total del sistema"],
+        "differentiator": "No desarrollamos software. Construimos la base tecnologica del negocio.",
+        "process": [
+          "diseño de arquitectura",
+          "desarrollo del sistema",
+          "preparacion para escalamiento"
+        ],
+        "communication_tone": "premium, tecnico simplificado, enfocado en crecimiento"
+      }
+    },
+    "sales_system": {
+      "entry_strategy": {
+        "main_entry": "empresa madre",
+        "client_flow": [
+          "cliente entra por necesidad",
+          "selecciona paquete",
+          "contacto por chat",
+          "pago",
+          "inicio de servicio con consultoria incluida"
+        ]
+      },
+      "visibility_strategy": {
+        "client_view": "soluciones empresariales",
+        "internal_view": "modelos especializados ejecutando servicios"
+      },
+      "communication_rules": [
+        "hablar en resultados",
+        "evitar tecnicismos innecesarios",
+        "enfocarse en problemas reales del cliente",
+        "mantener tono profesional con cercania",
+        "no sobreexplicar tecnologia"
+      ]
+    }
+  },
+  {
+    "phase": "fase_5",
+    "name": "Empresa madre - Ecosistema digital",
+    "positioning": {
+      "type": "ecosistema digital",
+      "description": "Un ecosistema digital que construye, optimiza y escala negocios a traves de sistemas empresariales modernos.",
+      "core_identity": "Empresa que resuelve negocios completos por medio de sistemas, no servicios aislados."
+    },
+    "value_proposition": {
+      "main_hook": "Tu negocio no necesita mas esfuerzo. Necesita un sistema.",
+      "description": "Diseñamos y construimos sistemas empresariales que permiten lanzar, organizar y escalar negocios sin depender del caos operativo.",
+      "differentiator": "No ofrecemos servicios individuales. Construimos sistemas completos que trabajan en conjunto.",
+      "client_focus": [
+        "emprendedores",
+        "freelancers",
+        "negocios pequeños",
+        "negocios en crecimiento",
+        "empresas"
+      ]
+    },
+    "problems_solved": [
+      "falta de estructura empresarial",
+      "negocios desorganizados",
+      "procesos manuales",
+      "falta de sistemas",
+      "dificultad para escalar",
+      "baja eficiencia operativa"
+    ],
+    "packages": [
+      {
+        "name": "Lanzamiento Digital",
+        "target_client": ["emprendedores", "freelancers"],
+        "includes_models": ["aelor", "raxor"],
+        "includes": ["branding base", "web profesional", "estructura digital inicial"],
+        "result": ["negocio listo para operar", "presencia profesional", "base estructurada"],
+        "price_range": "800 - 2500 USD"
+      },
+      {
+        "name": "Negocio Organizado",
+        "target_client": ["negocios en crecimiento"],
+        "includes_models": ["raxor", "nixen", "aelor"],
+        "includes": ["sistema interno", "automatizacion base", "optimizacion UX"],
+        "result": ["negocio estructurado", "operacion organizada", "mejor gestion interna"],
+        "price_range": "2500 - 6000 USD"
+      },
+      {
+        "name": "Negocio Automatizado",
+        "target_client": ["negocios con operacion activa"],
+        "includes_models": ["nixen", "raxor"],
+        "includes": ["automatizacion operativa", "integraciones", "sistema funcional"],
+        "result": ["operacion eficiente", "reduccion de trabajo manual", "mejor rendimiento"],
+        "price_range": "5000 - 12000 USD"
+      },
+      {
+        "name": "Negocio Inteligente",
+        "target_client": ["empresas en crecimiento"],
+        "includes_models": ["ixera", "nixen", "raxor"],
+        "includes": ["integracion de AI", "automatizacion avanzada", "sistema base optimizado"],
+        "result": ["negocio optimizado con inteligencia", "mejores decisiones", "mayor eficiencia"],
+        "price_range": "8000 - 20000 USD"
+      },
+      {
+        "name": "Escalamiento Empresarial",
+        "target_client": ["empresas en crecimiento avanzado"],
+        "includes_models": ["vaxen", "dextor", "nixen", "ixera"],
+        "includes": [
+          "sistemas avanzados",
+          "data y metricas",
+          "automatizacion y AI",
+          "arquitectura escalable"
+        ],
+        "result": [
+          "empresa lista para escalar",
+          "control total del negocio",
+          "infraestructura solida"
+        ],
+        "price_range": "15000 - 50000+ USD"
+      }
+    ],
+    "sales_system": {
+      "flow": [
+        "usuario entra a la web",
+        "identifica su problema",
+        "selecciona paquete",
+        "contacto por chat",
+        "pago",
+        "inicio del servicio"
+      ],
+      "communication": {
+        "primary_channel": "chat",
+        "calls_enabled_after": "5000 USD"
+      },
+      "consulting_model": "consultoria incluida despues del pago",
+      "visibility": {
+        "client_sees": "soluciones empresariales",
+        "client_does_not_see": ["modelos tecnicos", "estructura interna del ecosistema"]
+      }
+    },
+    "brand_tone": {
+      "type": "hibrido",
+      "characteristics": [
+        "profesional",
+        "claro",
+        "directo",
+        "humano",
+        "sin tecnicismos innecesarios"
+      ]
+    },
+    "web_structure_base": [
+      "hero",
+      "problema",
+      "solucion",
+      "como_funciona",
+      "paquetes",
+      "resultados",
+      "call_to_action"
+    ],
+    "strategic_rules": [
+      "no vender servicios tecnicos directamente",
+      "vender soluciones empresariales",
+      "simplificar el mensaje al maximo",
+      "mostrar resultados, no procesos",
+      "ocultar complejidad tecnica",
+      "guiar al usuario, no educarlo en exceso"
+    ]
+  }
+]

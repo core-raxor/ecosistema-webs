@@ -1,6 +1,5 @@
 export type HeroContent = {
-  leftText: string;
-  rightText: string;
+  headline: string;
   primaryCta: string;
   secondaryCta?: string;
   microNote?: string;
@@ -8,17 +7,21 @@ export type HeroContent = {
   logoText?: string;
 };
 
+export type IdentityStat = {
+  value: string;
+  label: string;
+};
+
 export type IdentityContent = {
   label: string;
   title: string;
-  description: string[];
-  highlights: string[];
+  stats?: IdentityStat[];
 };
 
 export type ProcessStep = {
   title: string;
   description: string;
-  benefits?: string;
+  benefits?: string[];
 };
 
 export type ProcessContent = {
@@ -32,6 +35,7 @@ export type ServiceItem = {
   description: string;
   includes: string[];
   cta: string;
+  price?: string;
 };
 
 export type ServicesContent = {
@@ -41,20 +45,17 @@ export type ServicesContent = {
 
 export type FinalContent = {
   statement: string;
-  subline?: string;
   cta: string;
 };
 
 export type ContactContent = {
   title: string;
   description: string;
-  cta: string;
   note?: string;
 };
 
 export type FooterContent = {
   tagline: string;
-  minimalText?: string;
 };
 
 export type BrandContent = {

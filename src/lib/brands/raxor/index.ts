@@ -8,31 +8,51 @@ const raxor_content = {
   hero: {
     logoText: "RAXOR",
     navItems: ["Home", "Process", "Services", "Contact"],
-    leftText: "We build",
-    rightText: "what execution needs",
-    primaryCta: "",
+    headline: "Build systems that work.",
+    primaryCta: "Get in touch",
     secondaryCta: "",
     microNote: "",
   },
 
   identity: {
-    label: "WE ARE",
-    title: "Business infrastructure built for execution.",
-    description: [
-      "We connect acquisition, conversion, and delivery.",
-      "The business stops depending on scattered pieces.",
+    label: "RAXOR",
+    title:
+      "We build the operational foundation your business needs to capture clients, deliver consistently, and scale.",
+    stats: [
+      { value: "+1", label: "Year active" },
+      { value: "+50", label: "Projects delivered" },
+      { value: "2–4 wks", label: "Avg. delivery" },
     ],
-    highlights: ["Offer structure", "Client flow", "Connected operations", "Execution first"],
   },
 
   process: {
     title: "How RAXOR works",
     steps: [
-      { title: "Define", description: "We clarify the offer and operating logic." },
-      { title: "Structure", description: "We map acquisition, conversion, and delivery." },
-      { title: "Build", description: "We build the assets and system layer." },
-      { title: "Integrate", description: "We connect each moving part into one flow." },
-      { title: "Activate", description: "The system starts running with real client flow." },
+      {
+        title: "Define",
+        description: "We map how your business currently operates and where it needs structure.",
+        benefits: ["Clear scope", "Realistic plan"],
+      },
+      {
+        title: "Design",
+        description: "We architect the system logic, data flow, and tooling.",
+        benefits: ["No wasted cycles", "Structured logic"],
+      },
+      {
+        title: "Build",
+        description: "We construct the platform with professional standards throughout.",
+        benefits: ["Clean output", "On schedule"],
+      },
+      {
+        title: "Integrate",
+        description: "We connect your tools, data, and operating layers.",
+        benefits: ["One connected system"],
+      },
+      {
+        title: "Launch",
+        description: "The system goes live, tested and ready to run.",
+        benefits: ["Operational from day one"],
+      },
     ],
   },
 
@@ -40,45 +60,50 @@ const raxor_content = {
     title: "RAXOR System",
     items: [
       {
-        name: "RAXOR Launch",
+        name: "Base System",
         label: "Foundation",
-        description: "A starting system for a business that needs structure.",
-        includes: ["Landing page", "Lead capture", "CRM base", "Offer structure"],
-        cta: "Start",
-      },
-      {
-        name: "RAXOR Growth",
-        label: "Client Flow",
-        description: "A client flow built to generate and manage demand.",
-        includes: ["Sales funnel", "Automation", "Email flow", "Lead tracking"],
-        cta: "Start",
-      },
-      {
-        name: "RAXOR Pro",
-        label: "Full System",
-        description: "A full operating system for execution and control.",
-        includes: ["Infrastructure", "Sales system", "Operations system", "Dashboard"],
+        description: "The digital base your business needs to operate.",
+        includes: [
+          "Functional website",
+          "Internal structure",
+          "Client management",
+          "Core system setup",
+        ],
         cta: "Apply",
+        price: "$500–$1,500",
+      },
+      {
+        name: "Operating Platform",
+        label: "Operations",
+        description: "A complete platform built for daily operations.",
+        includes: ["Full platform", "Operating flows", "Team management", "Control panel"],
+        cta: "Apply",
+        price: "$4,000–$10,000",
+      },
+      {
+        name: "Scalable System",
+        label: "Scale",
+        description: "Advanced architecture built for serious growth.",
+        includes: ["No-code architecture", "System integrations", "MVP structure", "Optimization"],
+        cta: "Apply",
+        price: "$6,000–$12,000",
       },
     ],
   },
 
   final: {
-    statement: "More tools will not fix it.",
-    subline: "A working system will.",
-    cta: "Build system",
+    statement: "Your business deserves more than a website.",
+    cta: "Build your system",
   },
 
   contact: {
     title: "Work with RAXOR",
-    description: "We map the system your business needs to operate.",
-    cta: "Apply",
-    note: "For serious projects.",
+    description: "We design systems built around how your business actually works.",
+    note: "For serious operations.",
   },
 
   footer: {
-    tagline: "System. Structure. Execution.",
-    minimalText: "Operational infrastructure for real businesses.",
+    tagline: "System. Structure. Scale.",
   },
 };
 

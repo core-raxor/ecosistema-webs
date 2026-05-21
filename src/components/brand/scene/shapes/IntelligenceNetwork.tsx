@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import type React from "react";
-import { useFrame } from "@react-three/fiber";
-import * as THREE from "three";
-import type { ParamObjectConfig } from "@/lib/types/scene";
 import { mergeParamObjectConfig } from "@/components/brand/scene/engine/parametricObjectContract";
+import type { ParamObjectConfig } from "@/lib/types/scene";
+import { useFrame } from "@react-three/fiber";
+import type React from "react";
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
 
 // ── Horizontal Cognitive Grid — Oblate Spherical Field ────────────────────────
 //
@@ -150,6 +150,8 @@ interface SphereState {
   baseTiltX: number;
   baseTiltY: number;
   baseTiltZ: number;
+  initialColor: THREE.Color;
+  bgColor: THREE.Color;
 }
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -158,12 +160,14 @@ interface IntelligenceNetworkProps {
   accentColor?: string;
   objectConfig?: Partial<ParamObjectConfig> | undefined;
   scrollScaleRef?: React.RefObject<number> | undefined;
+  scrollColorRef?: React.RefObject<number> | undefined;
 }
 
 export function IntelligenceNetwork({
   accentColor,
   objectConfig,
   scrollScaleRef,
+  scrollColorRef,
 }: IntelligenceNetworkProps) {
   const groupRef = useRef<THREE.Group>(null);
   const stateRef = useRef<SphereState | null>(null);
@@ -214,6 +218,8 @@ export function IntelligenceNetwork({
       baseTiltX: cfg.baseTiltX,
       baseTiltY: cfg.baseTiltY,
       baseTiltZ: cfg.baseTiltZ,
+      initialColor: color.clone(),
+      bgColor: new THREE.Color("#07090E"),
     };
 
     return () => {
@@ -236,8 +242,11 @@ export function IntelligenceNetwork({
 
     const t = clock.getElapsedTime();
     const s = scrollScaleRef?.current ?? 1;
-    const alphaM = s >= 0.5 ? 1.0 : 0.05 + Math.max(0, (s - 0.1) / 0.4) * 0.95;
-    state.mat.uniforms.uAlpha!.value = state.baseAlpha * alphaM;
+    const colorT = scrollColorRef?.current ?? 0;
+    (state.mat.uniforms.uColor!.value as THREE.Color)
+      .copy(state.initialColor)
+      .lerp(state.bgColor, colorT);
+    state.mat.uniforms.uAlpha!.value = state.baseAlpha;
 
     const thetaOffset = t * FLOW_SPEED;
 

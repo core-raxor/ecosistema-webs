@@ -55,7 +55,7 @@ export function Cta({ href, children, size = "md", className = "", onClick }: Ct
         },
       }}
       transition={CTA_TRANSITION}
-      className={`relative overflow-hidden inline-flex items-center rounded-full text-[11px] uppercase tracking-[0.14em] text-(--text) backdrop-blur-md ${SIZE[size]} ${className}`}
+      className={`relative overflow-hidden inline-flex items-center rounded-full text-[11px] uppercase tracking-[0.14em] text-(--text) backdrop-blur-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--brand-accent) focus-visible:ring-offset-2 ${SIZE[size]} ${className}`}
       style={{
         background: "color-mix(in srgb, var(--surface) 92%, white 3%)",
         border: "1px solid rgba(255,255,255,0.12)",

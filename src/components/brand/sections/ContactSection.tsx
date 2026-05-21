@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import type { BrandConfig } from "@/lib/types";
+import { motion } from "framer-motion";
 
 const TRANSITION = {
   duration: 0.25,
@@ -30,12 +30,8 @@ export default function ContactSection({ brand }: { brand: BrandConfig }) {
   const rawNavItems = brand.content.hero.navItems ?? ["Home", "Process", "Services", "Contact"];
   const navLinks = rawNavItems.map((label) => ({ label, href: navHref(label) }));
 
-  // ── Social media column ────────────────────────────────────────────────────
-  const socialLinks = [
-    { label: "Instagram", href: instagram || "#" },
-    { label: "Twitter", href: "#" },
-    { label: "YouTube", href: "#" },
-  ];
+  // ── Social media column — only render links with real URLs ────────────────
+  const socialLinks = instagram ? [{ label: "Instagram", href: instagram }] : [];
 
   // ── System / legal column ─────────────────────────────────────────────────
   const legalLinks = [
@@ -58,7 +54,7 @@ export default function ContactSection({ brand }: { brand: BrandConfig }) {
           transition={{ ...TRANSITION, delay: 0.06 }}
           className="mt-12 pt-12"
         >
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-8">
             {/* Column 1 — Company */}
             <div>
               <p
@@ -86,17 +82,6 @@ export default function ContactSection({ brand }: { brand: BrandConfig }) {
               >
                 {footer.tagline}
               </p>
-              {footer.minimalText && (
-                <p
-                  className="mt-3 text-sm leading-6"
-                  style={{
-                    color: "color-mix(in srgb, var(--text-muted) 60%, transparent)",
-                    fontFamily: "var(--font-body)",
-                  }}
-                >
-                  {footer.minimalText}
-                </p>
-              )}
             </div>
 
             {/* Column 2 — Navigation */}

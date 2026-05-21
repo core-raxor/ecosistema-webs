@@ -17,11 +17,18 @@ interface SceneCanvasProps {
   accentColor: string;
   objectConfig?: Partial<ParamObjectConfig> | undefined;
   scrollScaleRef?: RefObject<number> | undefined;
+  scrollColorRef?: RefObject<number> | undefined;
 }
 
 // ── Shape dispatcher ──────────────────────────────────────────────────────────
 
-function ActiveShape({ sceneType, accentColor, objectConfig, scrollScaleRef }: SceneCanvasProps) {
+function ActiveShape({
+  sceneType,
+  accentColor,
+  objectConfig,
+  scrollScaleRef,
+  scrollColorRef,
+}: SceneCanvasProps) {
   switch (sceneType) {
     case "operational-core":
       return (
@@ -29,6 +36,7 @@ function ActiveShape({ sceneType, accentColor, objectConfig, scrollScaleRef }: S
           accentColor={accentColor}
           objectConfig={objectConfig}
           scrollScaleRef={scrollScaleRef}
+          scrollColorRef={scrollColorRef}
         />
       );
     case "editorial-aura":
@@ -37,6 +45,7 @@ function ActiveShape({ sceneType, accentColor, objectConfig, scrollScaleRef }: S
           accentColor={accentColor}
           objectConfig={objectConfig}
           scrollScaleRef={scrollScaleRef}
+          scrollColorRef={scrollColorRef}
         />
       );
     case "structural-frame":
@@ -45,6 +54,7 @@ function ActiveShape({ sceneType, accentColor, objectConfig, scrollScaleRef }: S
           accentColor={accentColor}
           objectConfig={objectConfig}
           scrollScaleRef={scrollScaleRef}
+          scrollColorRef={scrollColorRef}
         />
       );
     case "intelligence-network":
@@ -53,6 +63,7 @@ function ActiveShape({ sceneType, accentColor, objectConfig, scrollScaleRef }: S
           accentColor={accentColor}
           objectConfig={objectConfig}
           scrollScaleRef={scrollScaleRef}
+          scrollColorRef={scrollColorRef}
         />
       );
     case "automation-flow":
@@ -61,6 +72,7 @@ function ActiveShape({ sceneType, accentColor, objectConfig, scrollScaleRef }: S
           accentColor={accentColor}
           objectConfig={objectConfig}
           scrollScaleRef={scrollScaleRef}
+          scrollColorRef={scrollColorRef}
         />
       );
     case "technical-depth":
@@ -69,6 +81,7 @@ function ActiveShape({ sceneType, accentColor, objectConfig, scrollScaleRef }: S
           accentColor={accentColor}
           objectConfig={objectConfig}
           scrollScaleRef={scrollScaleRef}
+          scrollColorRef={scrollColorRef}
         />
       );
   }
@@ -81,6 +94,7 @@ export function SceneCanvas({
   accentColor,
   objectConfig,
   scrollScaleRef,
+  scrollColorRef,
 }: SceneCanvasProps) {
   return (
     <Canvas
@@ -94,6 +108,7 @@ export function SceneCanvas({
         accentColor={accentColor}
         objectConfig={objectConfig}
         scrollScaleRef={scrollScaleRef}
+        scrollColorRef={scrollColorRef}
       />
     </Canvas>
   );

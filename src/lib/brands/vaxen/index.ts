@@ -8,30 +8,51 @@ const vaxen_content = {
   hero: {
     logoText: "VAXEN",
     navItems: ["Home", "Process", "Services", "Contact"],
-    leftText: "We engineer",
-    rightText: "the system layer beneath growth",
-    primaryCta: "",
+    headline: "Systems engineered to last.",
+    primaryCta: "Get in touch",
     secondaryCta: "",
     microNote: "",
   },
 
   identity: {
-    label: "OUR AGENCY",
-    title: "",
-    description: [
-      "We design and build backend, data, and internal systems as a unified layer. Instead of relying on fragmented tools, we create structured, reliable infrastructure that supports operations, scales with the business, and gives companies full control over how their technology works.",
+    label: "VAXEN",
+    title:
+      "We architect and build the custom technical systems your business needs to scale — no templates, no shortcuts.",
+    stats: [
+      { value: "+1", label: "Year active" },
+      { value: "+5", label: "Projects delivered" },
+      { value: "6–12 wks", label: "Avg. delivery" },
     ],
-    highlights: ["", "", "", ""],
   },
 
   process: {
     title: "How VAXEN works",
     steps: [
-      { title: "Analyze", description: "We audit the systems, data, and constraints." },
-      { title: "Architect", description: "We define backend, data, and integration logic." },
-      { title: "Build", description: "We build the backend and internal tools." },
-      { title: "Integrate", description: "We connect systems, tools, and data flow." },
-      { title: "Scale", description: "We prepare the architecture for stability and growth." },
+      {
+        title: "Assess",
+        description: "We audit technical constraints, gaps, and growth blockers.",
+        benefits: ["No surprises", "Clear constraints"],
+      },
+      {
+        title: "Architect",
+        description: "We design the system structure from the ground up.",
+        benefits: ["Correct from the start"],
+      },
+      {
+        title: "Build",
+        description: "We develop the backend, APIs, and core systems.",
+        benefits: ["Full control", "No shortcuts"],
+      },
+      {
+        title: "Integrate",
+        description: "We connect all systems, data layers, and services.",
+        benefits: ["One foundation"],
+      },
+      {
+        title: "Scale",
+        description: "We prepare the architecture for real operational load.",
+        benefits: ["Ready for growth"],
+      },
     ],
   },
 
@@ -39,57 +60,55 @@ const vaxen_content = {
     title: "VAXEN System",
     items: [
       {
-        name: "VAXEN Setup",
+        name: "Custom Development",
         label: "Foundation",
-        description: "The technical base your operations need first.",
-        includes: [
-          "Infrastructure setup",
-          "Database structure",
-          "Tool integration",
-          "Basic automation",
-        ],
-        cta: "Start",
-      },
-      {
-        name: "VAXEN Systems",
-        label: "System",
-        description: "An internal system built to run core operations.",
-        includes: ["Internal tools", "System links", "Data flow", "Advanced automation"],
-        cta: "Start",
-      },
-      {
-        name: "VAXEN Engineering",
-        label: "Engineering",
-        description: "Advanced architecture for serious technical scale.",
-        includes: ["API development", "Database design", "Modular systems", "Cloud infrastructure"],
+        description: "A fully custom system built for how you operate.",
+        includes: ["Custom software", "Backend architecture", "API design", "Data structure"],
         cta: "Apply",
+        price: "$3,000–$8,000",
       },
       {
-        name: "VAXEN Platform",
+        name: "Enterprise System",
         label: "Platform",
-        description: "A platform layer for scalable products and systems.",
-        includes: ["Micro SaaS", "User platform", "Dashboards", "Scalable architecture"],
+        description: "A complete technical platform built for scale.",
+        includes: [
+          "Full platform",
+          "Complex integrations",
+          "System architecture",
+          "Advanced backend",
+        ],
         cta: "Apply",
+        price: "$15,000–$40,000",
+      },
+      {
+        name: "Advanced Engineering",
+        label: "Scale",
+        description: "Distributed architecture for serious technical scale.",
+        includes: [
+          "Scalable systems",
+          "Data infrastructure",
+          "High performance",
+          "Cloud architecture",
+        ],
+        cta: "Apply",
+        price: "$50,000–$150,000",
       },
     ],
   },
 
   final: {
-    statement: "Fragile operations do not scale.",
-    subline: "Infrastructure does.",
-    cta: "Build infrastructure",
+    statement: "Some systems you outgrow. Build one you will not.",
+    cta: "Build your infrastructure",
   },
 
   contact: {
     title: "Work with VAXEN",
-    description: "We define the architecture your business needs to run.",
-    cta: "Apply",
+    description: "We define the architecture your business needs to operate at scale.",
     note: "For technical operations.",
   },
 
   footer: {
-    tagline: "Backend. System. Infrastructure.",
-    minimalText: "Engineering the layer behind growth.",
+    tagline: "Engineering. Architecture. Scale.",
   },
 };
 

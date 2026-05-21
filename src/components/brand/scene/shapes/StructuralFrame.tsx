@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import type React from "react";
-import { useFrame } from "@react-three/fiber";
-import * as THREE from "three";
-import type { ParamObjectConfig } from "@/lib/types/scene";
 import { mergeParamObjectConfig } from "@/components/brand/scene/engine/parametricObjectContract";
+import type { ParamObjectConfig } from "@/lib/types/scene";
+import { useFrame } from "@react-three/fiber";
+import type React from "react";
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
 
 // ── Snub Cube — Archimedean solid, fully triangulated ────────────────────────
 //
@@ -208,6 +208,8 @@ interface SnubState {
   baseTiltZ: number;
   objectRotationEnabled: boolean;
   objectRotationSpeed: number;
+  initialColor: THREE.Color;
+  bgColor: THREE.Color;
 }
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -216,12 +218,14 @@ interface StructuralFrameProps {
   accentColor?: string;
   objectConfig?: Partial<ParamObjectConfig> | undefined;
   scrollScaleRef?: React.RefObject<number> | undefined;
+  scrollColorRef?: React.RefObject<number> | undefined;
 }
 
 export function StructuralFrame({
   accentColor,
   objectConfig,
   scrollScaleRef,
+  scrollColorRef,
 }: StructuralFrameProps) {
   const groupRef = useRef<THREE.Group>(null);
   const stateRef = useRef<SnubState | null>(null);
@@ -285,6 +289,8 @@ export function StructuralFrame({
       baseTiltZ: cfg.baseTiltZ,
       objectRotationEnabled: cfg.objectRotationEnabled,
       objectRotationSpeed: cfg.objectRotationSpeed,
+      initialColor: color.clone(),
+      bgColor: new THREE.Color("#07090E"),
     };
 
     return () => {
@@ -312,10 +318,15 @@ export function StructuralFrame({
 
     const t = clock.getElapsedTime();
     const sc = scrollScaleRef?.current ?? 1;
-    const alphaM = sc >= 0.5 ? 1.0 : 0.05 + Math.max(0, (sc - 0.1) / 0.4) * 0.95;
-
-    state.edgeMat.uniforms.uAlpha!.value = state.baseAlpha * alphaM;
-    state.nodeMat.uniforms.uAlpha!.value = state.baseAlpha * alphaM;
+    const colorT = scrollColorRef?.current ?? 0;
+    (state.edgeMat.uniforms.uColor!.value as THREE.Color)
+      .copy(state.initialColor)
+      .lerp(state.bgColor, colorT);
+    (state.nodeMat.uniforms.uColor!.value as THREE.Color)
+      .copy(state.initialColor)
+      .lerp(state.bgColor, colorT);
+    state.edgeMat.uniforms.uAlpha!.value = state.baseAlpha;
+    state.nodeMat.uniforms.uAlpha!.value = state.baseAlpha;
     group.scale.setScalar(state.objectScale * sc);
     group.rotation.x = state.baseTiltX;
     group.rotation.y = state.objectRotationEnabled

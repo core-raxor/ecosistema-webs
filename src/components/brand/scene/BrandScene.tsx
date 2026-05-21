@@ -1,8 +1,8 @@
 "use client";
 
 import type { BrandConfig } from "@/lib/types";
-import dynamic from "next/dynamic";
 import { useScroll } from "framer-motion";
+import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 
 // ── Lazy-load the R3F canvas — Three.js is not SSR-compatible ─────────────────
@@ -18,14 +18,30 @@ export function BrandScene({ brand }: { brand: Pick<BrandConfig, "theme"> }) {
 
   const { scrollY } = useScroll();
 
-  // Plain ref — updated on every scroll event, read inside R3F useFrame at 60fps.
-  // Maps scrollY [0, 650px] → scaleFactor [1.0, 0.30]. Clamped at both ends.
+  // scrollScaleRef: scale 1.0 → 0.05 over Hero scroll (0 → identityTopRef)
+  // scrollColorRef: color lerp 0 → 1 from Identity start to Services start
   const scrollScaleRef = useRef(1);
+  const scrollColorRef = useRef(0);
+  const identityTopRef = useRef(800); // fallback ≈ window.innerHeight
+  const servicesTopRef = useRef(2400); // fallback; overwritten after mount
+
+  useEffect(() => {
+    identityTopRef.current = window.innerHeight;
+    const el = document.getElementById("services");
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY;
+      if (top > identityTopRef.current) servicesTopRef.current = top;
+    }
+  }, []);
 
   useEffect(() => {
     return scrollY.on("change", (y: number) => {
-      const t = Math.min(Math.max(y / 550, 0), 1);
-      scrollScaleRef.current = 1 - t * 0.9;
+      // Scale: compresses during Hero, reaches 0.05 exactly at Identity start
+      const tScale = Math.min(Math.max(y / identityTopRef.current, 0), 1);
+      scrollScaleRef.current = 1 - tScale * 0.95;
+
+      // Color: dissolves during Hero (0 → Identity start), same range as scale
+      scrollColorRef.current = tScale;
     });
   }, [scrollY]);
 
@@ -39,6 +55,7 @@ export function BrandScene({ brand }: { brand: Pick<BrandConfig, "theme"> }) {
           accentColor={brand.theme.colors.accent}
           objectConfig={scene.objectConfig}
           scrollScaleRef={scrollScaleRef}
+          scrollColorRef={scrollColorRef}
         />
       </div>
     </div>

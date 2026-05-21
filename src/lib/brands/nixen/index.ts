@@ -8,31 +8,51 @@ const nixen_content = {
   hero: {
     logoText: "NIXEN",
     navItems: ["Home", "Process", "Services", "Contact"],
-    leftText: "We remove",
-    rightText: "manual dependence",
-    primaryCta: "",
+    headline: "Remove what slows you down.",
+    primaryCta: "Get in touch",
     secondaryCta: "",
     microNote: "",
   },
 
   identity: {
-    label: "WE ARE",
-    title: "Operational automation for businesses that need autonomy.",
-    description: [
-      "We replace manual loops with structured workflows.",
-      "The business runs with less founder dependence.",
+    label: "NIXEN",
+    title:
+      "We automate the manual overhead slowing your operations so your team can focus on what actually matters.",
+    stats: [
+      { value: "+1", label: "Year active" },
+      { value: "+20", label: "Projects delivered" },
+      { value: "2–4 wks", label: "Avg. delivery" },
     ],
-    highlights: ["Mapped workflows", "Connected tools", "Automated operations", "Scalable flow"],
   },
 
   process: {
     title: "How NIXEN works",
     steps: [
-      { title: "Map", description: "We identify the workflows creating friction." },
-      { title: "Design", description: "We define the automation architecture." },
-      { title: "Automate", description: "We remove manual work across key operations." },
-      { title: "Integrate", description: "We connect tools, CRM, and system logic." },
-      { title: "Optimize", description: "We tune the system for cleaner scale." },
+      {
+        title: "Map",
+        description: "We identify which workflows are creating friction and cost.",
+        benefits: ["Losses identified", "Priorities clear"],
+      },
+      {
+        title: "Design",
+        description: "We define the automation architecture for your operations.",
+        benefits: ["Structured first"],
+      },
+      {
+        title: "Build",
+        description: "We implement the automations across your key processes.",
+        benefits: ["Tested", "Production-ready"],
+      },
+      {
+        title: "Integrate",
+        description: "We connect tools, CRM, forms, and systems.",
+        benefits: ["No manual input"],
+      },
+      {
+        title: "Optimize",
+        description: "We refine flows for cleaner, more stable performance.",
+        benefits: ["More efficient over time"],
+      },
     ],
   },
 
@@ -40,57 +60,50 @@ const nixen_content = {
     title: "NIXEN System",
     items: [
       {
-        name: "NIXEN Mapping",
-        label: "Structure",
-        description: "A clear map of the workflows your business runs on.",
-        includes: ["Process mapping", "Workflow structure", "Bottlenecks", "Automation plan"],
-        cta: "Start",
-      },
-      {
-        name: "NIXEN Automation",
-        label: "Automation",
-        description: "Automation for the operations that waste the most time.",
-        includes: ["Task automation", "Lead automation", "Communication flow", "Tool integration"],
-        cta: "Start",
-      },
-      {
-        name: "NIXEN System",
-        label: "System",
-        description: "A connected operations layer built to run daily.",
-        includes: ["Full workflows", "Client journey", "Operations system", "Control layer"],
+        name: "Core Automation",
+        label: "Foundation",
+        description: "The first automations that save the most time.",
+        includes: ["Key workflows", "Basic integrations", "Task automation", "Flow setup"],
         cta: "Apply",
+        price: "$200–$800",
       },
       {
-        name: "NIXEN Autonomous",
-        label: "Autonomous",
-        description: "A semi-autonomous business system for scale.",
+        name: "Sales Automation",
+        label: "Revenue",
+        description: "A system that captures and follows leads automatically.",
+        includes: ["Lead capture", "Auto follow-up", "Pipeline flows", "CRM integration"],
+        cta: "Apply",
+        price: "$1,500–$5,000",
+      },
+      {
+        name: "Business Automation",
+        label: "Operations",
+        description: "End-to-end automation for complex operations.",
         includes: [
-          "End-to-end automation",
-          "AI integration",
-          "Operational agents",
-          "Self-optimization",
+          "Full workflow design",
+          "System integration",
+          "Advanced logic",
+          "Scale-ready flows",
         ],
         cta: "Apply",
+        price: "$5,000–$12,000",
       },
     ],
   },
 
   final: {
-    statement: "Working more is not the answer.",
-    subline: "A system that runs is.",
-    cta: "Automate business",
+    statement: "Working harder is not the answer.",
+    cta: "Automate your business",
   },
 
   contact: {
     title: "Work with NIXEN",
-    description: "We define the workflows that should stop depending on you.",
-    cta: "Apply",
+    description: "We find the manual work slowing you down and remove it.",
     note: "For real operations.",
   },
 
   footer: {
-    tagline: "Automation. System. Scale.",
-    minimalText: "Operations rebuilt as a system.",
+    tagline: "Automation. Efficiency. Scale.",
   },
 };
 

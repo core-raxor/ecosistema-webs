@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import type React from "react";
-import { useFrame } from "@react-three/fiber";
-import * as THREE from "three";
-import type { ParamObjectConfig } from "@/lib/types/scene";
 import { mergeParamObjectConfig } from "@/components/brand/scene/engine/parametricObjectContract";
+import type { ParamObjectConfig } from "@/lib/types/scene";
+import { useFrame } from "@react-three/fiber";
+import type React from "react";
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
 
 // ── Pentagonal Bipyramid ───────────────────────────────────────────────────────
 //
@@ -120,6 +120,8 @@ interface BipyramidState {
   baseTiltX: number;
   baseTiltY: number;
   baseTiltZ: number;
+  initialColor: THREE.Color;
+  bgColor: THREE.Color;
 }
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -128,9 +130,15 @@ interface TechnicalDepthProps {
   accentColor?: string;
   objectConfig?: Partial<ParamObjectConfig> | undefined;
   scrollScaleRef?: React.RefObject<number> | undefined;
+  scrollColorRef?: React.RefObject<number> | undefined;
 }
 
-export function TechnicalDepth({ accentColor, objectConfig, scrollScaleRef }: TechnicalDepthProps) {
+export function TechnicalDepth({
+  accentColor,
+  objectConfig,
+  scrollScaleRef,
+  scrollColorRef,
+}: TechnicalDepthProps) {
   const groupRef = useRef<THREE.Group>(null);
   const stateRef = useRef<BipyramidState | null>(null);
 
@@ -174,6 +182,8 @@ export function TechnicalDepth({ accentColor, objectConfig, scrollScaleRef }: Te
       baseTiltX: cfg.baseTiltX,
       baseTiltY: cfg.baseTiltY,
       baseTiltZ: cfg.baseTiltZ,
+      initialColor: color.clone(),
+      bgColor: new THREE.Color("#07090E"),
     };
 
     return () => {
@@ -196,9 +206,11 @@ export function TechnicalDepth({ accentColor, objectConfig, scrollScaleRef }: Te
 
     const t = clock.getElapsedTime();
     const s = scrollScaleRef?.current ?? 1;
-    const alphaM = s >= 0.5 ? 1.0 : 0.05 + Math.max(0, (s - 0.1) / 0.4) * 0.95;
-
-    state.mat.uniforms.uAlpha!.value = state.baseAlpha * alphaM;
+    const colorT = scrollColorRef?.current ?? 0;
+    (state.mat.uniforms.uColor!.value as THREE.Color)
+      .copy(state.initialColor)
+      .lerp(state.bgColor, colorT);
+    state.mat.uniforms.uAlpha!.value = state.baseAlpha;
     group.scale.setScalar(state.objectScale * s);
     group.rotation.x = state.baseTiltX;
     group.rotation.y = state.baseTiltY + t * state.rotSpeed;
