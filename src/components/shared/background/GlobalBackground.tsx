@@ -5,7 +5,7 @@ export function GlobalBackground() {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-      <div className="absolute inset-0 bg-[var(--bg)]" />
+      <div className="absolute inset-0 bg-(--bg)" />
       <div className="absolute inset-0" style={{ background: depthTop }} />
       <div className="absolute inset-0" style={{ background: depthCenter }} />
     </div>

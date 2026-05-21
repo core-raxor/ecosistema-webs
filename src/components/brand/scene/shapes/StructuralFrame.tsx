@@ -2,7 +2,7 @@
 
 import { mergeParamObjectConfig } from "@/components/brand/scene/engine/parametricObjectContract";
 import type { ParamObjectConfig } from "@/lib/types/scene";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import type React from "react";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
@@ -229,6 +229,7 @@ export function StructuralFrame({
 }: StructuralFrameProps) {
   const groupRef = useRef<THREE.Group>(null);
   const stateRef = useRef<SnubState | null>(null);
+  const { gl } = useThree();
 
   useEffect(() => {
     const group = groupRef.current;
@@ -290,7 +291,9 @@ export function StructuralFrame({
       objectRotationEnabled: cfg.objectRotationEnabled,
       objectRotationSpeed: cfg.objectRotationSpeed,
       initialColor: color.clone(),
-      bgColor: new THREE.Color("#07090E"),
+      bgColor: new THREE.Color(
+        getComputedStyle(gl.domElement).getPropertyValue("--bg").trim() || "#07090E",
+      ),
     };
 
     return () => {
@@ -301,7 +304,7 @@ export function StructuralFrame({
       nodeMat.dispose();
       stateRef.current = null;
     };
-  }, [accentColor, objectConfig]);
+  }, [accentColor, objectConfig, gl]);
 
   useFrame(({ camera, gl, clock }) => {
     const state = stateRef.current;
@@ -325,8 +328,8 @@ export function StructuralFrame({
     (state.nodeMat.uniforms.uColor!.value as THREE.Color)
       .copy(state.initialColor)
       .lerp(state.bgColor, colorT);
-    state.edgeMat.uniforms.uAlpha!.value = state.baseAlpha;
-    state.nodeMat.uniforms.uAlpha!.value = state.baseAlpha;
+    state.edgeMat.uniforms.uAlpha!.value = state.baseAlpha * Math.pow(1 - colorT, 2);
+    state.nodeMat.uniforms.uAlpha!.value = state.baseAlpha * Math.pow(1 - colorT, 2);
     group.scale.setScalar(state.objectScale * sc);
     group.rotation.x = state.baseTiltX;
     group.rotation.y = state.objectRotationEnabled

@@ -72,8 +72,8 @@ export function Hero({ brand }: HeroProps) {
   }, [menuOpen]);
 
   return (
-    <section id="hero" className="relative min-h-[100svh] overflow-hidden px-5 md:px-8 lg:px-12">
-      <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col">
+    <section id="hero" className="relative min-h-svh overflow-hidden px-5 md:px-8 lg:px-12">
+      <div className="relative z-10 mx-auto flex min-h-svh w-full max-w-7xl flex-col">
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <motion.header
           initial={{ opacity: 0, y: -16 }}
