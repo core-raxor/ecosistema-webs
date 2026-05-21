@@ -14,7 +14,7 @@ export default function HomePage() {
 
   return (
     <BrandPageShell brand={brand}>
-      {defaultBrandSections.map((sectionKey) => {
+      {(brand.sections ?? defaultBrandSections).map((sectionKey) => {
         const SectionComponent = brandSectionRegistry[sectionKey];
 
         if (!SectionComponent) return null;

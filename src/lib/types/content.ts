@@ -58,6 +58,42 @@ export type FooterContent = {
   tagline: string;
 };
 
+export type MoreServicesCard = {
+  slug: string;
+  title: string;
+  description: string;
+  services: string[];
+  cta: string;
+  url: string;
+};
+
+export type MoreServicesContent = {
+  title: string;
+  cards: MoreServicesCard[];
+};
+
+export type TestimonialItem = {
+  name: string;
+  role: string;
+  text: string;
+  rating: number;
+};
+
+export type TestimonialsContent = {
+  title: string;
+  items: TestimonialItem[];
+};
+
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+export type FaqsContent = {
+  title: string;
+  items: FaqItem[];
+};
+
 export type BrandContent = {
   hero: HeroContent;
   identity: IdentityContent;
@@ -66,4 +102,7 @@ export type BrandContent = {
   final: FinalContent;
   contact: ContactContent;
   footer: FooterContent;
+  moreServices?: MoreServicesContent;
+  testimonials?: TestimonialsContent;
+  faqs?: FaqsContent;
 };

@@ -6,7 +6,8 @@ export type SceneType =
   | "operational-core"
   | "intelligence-network"
   | "automation-flow"
-  | "technical-depth";
+  | "technical-depth"
+  | "globe-grid";
 
 export type SceneShape = "circle" | "soft-square" | "square" | "panel";
 

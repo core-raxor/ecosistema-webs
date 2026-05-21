@@ -1,7 +1,8 @@
 import type { BrandContent } from "./content";
+import type { BrandSectionKey } from "./sections";
 import type { BrandTheme } from "./theme";
 
-export type BrandKey = "aelor" | "dextor" | "raxor" | "ixera" | "nixen" | "vaxen";
+export type BrandKey = "aelor" | "dextor" | "raxor" | "ixera" | "nixen" | "vaxen" | "kyrexis";
 
 export type BrandSeo = {
   title: string;
@@ -22,6 +23,8 @@ export type BrandConfig = {
   };
 
   content: BrandContent;
+
+  sections?: BrandSectionKey[];
 
   seo?: BrandSeo;
 

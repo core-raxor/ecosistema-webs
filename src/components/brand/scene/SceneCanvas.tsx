@@ -5,6 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import type { RefObject } from "react";
 import { AutomationFlow } from "./shapes/AutomationFlow";
 import { EditorialAura } from "./shapes/EditorialAura";
+import { GlobeGrid } from "./shapes/GlobeGrid";
 import { IntelligenceNetwork } from "./shapes/IntelligenceNetwork";
 import { OperationalCore } from "./shapes/OperationalCore";
 import { StructuralFrame } from "./shapes/StructuralFrame";
@@ -78,6 +79,15 @@ function ActiveShape({
     case "technical-depth":
       return (
         <TechnicalDepth
+          accentColor={accentColor}
+          objectConfig={objectConfig}
+          scrollScaleRef={scrollScaleRef}
+          scrollColorRef={scrollColorRef}
+        />
+      );
+    case "globe-grid":
+      return (
+        <GlobeGrid
           accentColor={accentColor}
           objectConfig={objectConfig}
           scrollScaleRef={scrollScaleRef}

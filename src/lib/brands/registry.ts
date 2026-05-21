@@ -2,6 +2,7 @@ import type { BrandConfig, BrandKey, BrandsMap } from "@/lib/types";
 import { aelor } from "./aelor";
 import { dextor } from "./dextor";
 import { ixera } from "./ixera";
+import { kyrexis } from "./kyrexis";
 import { nixen } from "./nixen";
 import { raxor } from "./raxor";
 import { vaxen } from "./vaxen";
@@ -10,6 +11,7 @@ export const brands: BrandsMap = {
   aelor,
   dextor,
   ixera,
+  kyrexis,
   nixen,
   raxor,
   vaxen,
