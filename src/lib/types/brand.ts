@@ -26,6 +26,11 @@ export type BrandConfig = {
 
   sections?: BrandSectionKey[];
 
+  translations?: {
+    en?: BrandContent;
+    es?: BrandContent;
+  };
+
   seo?: BrandSeo;
 
   links?: {

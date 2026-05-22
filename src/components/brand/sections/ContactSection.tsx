@@ -1,6 +1,8 @@
 "use client";
 
 import { SectionLabel } from "@/components/shared/SectionLabel";
+import { useLocale } from "@/lib/context/LocaleContext";
+import { UI_STRINGS } from "@/lib/i18n/ui-strings";
 import type { BrandConfig } from "@/lib/types";
 import { motion } from "framer-motion";
 
@@ -13,13 +15,18 @@ const TRANSITION = {
 
 function navHref(label: string): string {
   const key = label.toLowerCase();
-  if (key === "home") return "#hero";
+  if (key === "home" || key === "inicio") return "#hero";
+  if (key === "proceso") return "#process";
+  if (key === "servicios") return "#services";
+  if (key === "contacto") return "#contact";
   return `#${key}`;
 }
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function ContactSection({ brand }: { brand: BrandConfig }) {
+  const { locale } = useLocale();
+  const ui = UI_STRINGS[locale].contact;
   const footer = brand.content.footer;
   const contactHref = brand.links?.contact || "#contact";
   const instagram = brand.links?.instagram || "";
@@ -35,16 +42,16 @@ export default function ContactSection({ brand }: { brand: BrandConfig }) {
 
   // ── System / legal column ─────────────────────────────────────────────────
   const legalLinks = [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Cookie Policy", href: "#" },
-    { label: "Terms", href: "#" },
+    { label: ui.legalPrivacy, href: "#" },
+    { label: ui.legalCookies, href: "#" },
+    { label: ui.legalTerms, href: "#" },
   ];
 
   return (
     <section id="contact" className="relative overflow-hidden" style={{ background: "var(--bg)" }}>
       {/* ── Constrained content ─────────────────────────────────────────────── */}
       <div className="mx-auto max-w-7xl px-5 pb-0 pt-16 md:px-8 md:pt-20 lg:px-12">
-        <SectionLabel>Contact</SectionLabel>
+        <SectionLabel>{ui.sectionLabel}</SectionLabel>
 
         {/* ── FOOTER COLUMNS ────────────────────────────────────────────────── */}
         <motion.div
@@ -61,7 +68,7 @@ export default function ContactSection({ brand }: { brand: BrandConfig }) {
                 className="mb-5 text-[10px] uppercase tracking-[0.22em]"
                 style={{ color: "var(--text-muted)", fontFamily: "var(--font-body)" }}
               >
-                Company
+                {ui.colCompany}
               </p>
               <p
                 className="mb-3 font-light text-(--text)"
@@ -90,7 +97,7 @@ export default function ContactSection({ brand }: { brand: BrandConfig }) {
                 className="mb-5 text-[10px] uppercase tracking-[0.22em]"
                 style={{ color: "var(--text-muted)", fontFamily: "var(--font-body)" }}
               >
-                Navigation
+                {ui.colNavigation}
               </p>
               <ul className="flex flex-col gap-3">
                 {navLinks.map(({ label, href }) => (
@@ -113,7 +120,7 @@ export default function ContactSection({ brand }: { brand: BrandConfig }) {
                 className="mb-5 text-[10px] uppercase tracking-[0.22em]"
                 style={{ color: "var(--text-muted)", fontFamily: "var(--font-body)" }}
               >
-                Contact
+                {ui.colContact}
               </p>
               <ul className="flex flex-col gap-3">
                 <li>
@@ -124,7 +131,7 @@ export default function ContactSection({ brand }: { brand: BrandConfig }) {
                     className="text-sm text-(--text-muted) opacity-55 transition-all duration-150 hover:opacity-90 hover:text-(--text)"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
-                    Contact
+                    {ui.linkContact}
                   </a>
                 </li>
               </ul>
@@ -136,7 +143,7 @@ export default function ContactSection({ brand }: { brand: BrandConfig }) {
                 className="mb-5 text-[10px] uppercase tracking-[0.22em]"
                 style={{ color: "var(--text-muted)", fontFamily: "var(--font-body)" }}
               >
-                Social
+                {ui.colSocial}
               </p>
               <ul className="flex flex-col gap-3">
                 {socialLinks.map(({ label, href }) => (
@@ -161,7 +168,7 @@ export default function ContactSection({ brand }: { brand: BrandConfig }) {
                 className="mb-5 text-[10px] uppercase tracking-[0.22em]"
                 style={{ color: "var(--text-muted)", fontFamily: "var(--font-body)" }}
               >
-                System
+                {ui.colSystem}
               </p>
               <ul className="flex flex-col gap-3">
                 {legalLinks.map(({ label, href }) => (
@@ -192,7 +199,7 @@ export default function ContactSection({ brand }: { brand: BrandConfig }) {
               fontFamily: "var(--font-body)",
             }}
           >
-            © {year} {brand.name}. All rights reserved.
+            © {year} {brand.name}. {ui.copyright}
           </p>
           <p
             className="text-[11px] uppercase tracking-[0.16em]"

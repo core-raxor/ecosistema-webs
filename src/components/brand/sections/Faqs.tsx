@@ -2,6 +2,8 @@
 
 import { SectionContainer } from "@/components/shared/layout/SectionContainer";
 import { SectionLabel } from "@/components/shared/SectionLabel";
+import { useLocale } from "@/lib/context/LocaleContext";
+import { UI_STRINGS } from "@/lib/i18n/ui-strings";
 import type { BrandConfig } from "@/lib/types";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
@@ -9,6 +11,7 @@ import { useState } from "react";
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 export default function Faqs({ brand }: { brand: BrandConfig }) {
+  const { locale } = useLocale();
   const content = brand.content.faqs;
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -19,7 +22,7 @@ export default function Faqs({ brand }: { brand: BrandConfig }) {
   return (
     <div className="relative">
       <SectionContainer id="faqs" className="pt-28 md:pt-36 pb-24 md:pb-32">
-        <SectionLabel centered>FAQ</SectionLabel>
+        <SectionLabel centered>{UI_STRINGS[locale].sections.faq}</SectionLabel>
 
         <motion.h2
           initial={{ opacity: 0, y: 16 }}

@@ -2,10 +2,13 @@
 
 import { SectionContainer } from "@/components/shared/layout/SectionContainer";
 import { SectionLabel } from "@/components/shared/SectionLabel";
+import { useLocale } from "@/lib/context/LocaleContext";
+import { UI_STRINGS } from "@/lib/i18n/ui-strings";
 import type { BrandConfig } from "@/lib/types";
 import { motion } from "framer-motion";
 
 export default function Testimonials({ brand }: { brand: BrandConfig }) {
+  const { locale } = useLocale();
   const content = brand.content.testimonials;
 
   if (!content) return null;
@@ -15,7 +18,7 @@ export default function Testimonials({ brand }: { brand: BrandConfig }) {
 
   return (
     <SectionContainer id="testimonials" className="pt-28 md:pt-36 pb-24 md:pb-32 overflow-hidden">
-      <SectionLabel centered>Testimonials</SectionLabel>
+      <SectionLabel centered>{UI_STRINGS[locale].sections.testimonials}</SectionLabel>
 
       <motion.h2
         initial={{ opacity: 0, y: 16 }}

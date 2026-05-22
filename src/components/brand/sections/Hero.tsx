@@ -30,10 +30,10 @@ type HeroProps = {
 function getSectionHref(label: string) {
   const key = label.toLowerCase();
 
-  if (key === "home" || key === "hero") return "#hero";
-  if (key === "process") return "#process";
-  if (key === "services") return "#services";
-  if (key === "contact") return "#contact";
+  if (key === "home" || key === "hero" || key === "inicio") return "#hero";
+  if (key === "process" || key === "proceso") return "#process";
+  if (key === "services" || key === "servicios") return "#services";
+  if (key === "contact" || key === "contacto") return "#contact";
   if (key === "identity") return "#identity";
   if (key === "final") return "#final";
 

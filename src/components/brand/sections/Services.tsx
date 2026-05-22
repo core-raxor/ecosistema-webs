@@ -2,9 +2,11 @@
 
 import { motion, useScroll } from "framer-motion";
 import { SectionLabel } from "@/components/shared/SectionLabel";
+import { useLocale } from "@/lib/context/LocaleContext";
+import { UI_STRINGS } from "@/lib/i18n/ui-strings";
 import { useContactModal } from "@/components/shared/modal/ContactModalContext";
 import type { BrandConfig } from "@/lib/types";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useSyncExternalStore } from "react";
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -21,9 +23,19 @@ const EXIT_TRANSITION = {
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function Services({ brand }: { brand: BrandConfig }) {
+  const { locale } = useLocale();
   const { items } = brand.content.services;
   const maxIndex = items.length - 1;
   const { openModal } = useContactModal();
+  const touch = useSyncExternalStore(
+    (cb) => {
+      const mq = window.matchMedia("(hover: none)");
+      mq.addEventListener("change", cb);
+      return () => mq.removeEventListener("change", cb);
+    },
+    () => window.matchMedia("(hover: none)").matches,
+    () => false,
+  );
 
   // totalSteps = 1 intro + N cards + 1 exit
   const totalSteps = items.length + 2;
@@ -87,7 +99,7 @@ export default function Services({ brand }: { brand: BrandConfig }) {
         >
           <SectionLabel centered className="max-w-48 md:max-w-sm">
             <span>{brand.name}</span>
-            <span className="opacity-60"> services</span>
+            <span className="opacity-60"> {UI_STRINGS[locale].sections.services}</span>
           </SectionLabel>
         </motion.div>
 
@@ -238,9 +250,9 @@ export default function Services({ brand }: { brand: BrandConfig }) {
                           <motion.button
                             type="button"
                             onClick={openModal}
-                            whileHover={{ y: -1 }}
+                            {...(!touch && { whileHover: { y: -1 } })}
                             transition={{ duration: 0.15, ease: [0.22, 1, 0.36, 1] }}
-                            className="self-start text-[11px] uppercase tracking-[0.14em] opacity-55 transition-opacity duration-200 hover:opacity-90"
+                            className={`self-start text-[11px] uppercase tracking-[0.14em] transition-opacity duration-200 ${touch ? "opacity-90" : "opacity-55 hover:opacity-90"}`}
                             style={{
                               color: "var(--text)",
                               fontFamily: "var(--font-body)",

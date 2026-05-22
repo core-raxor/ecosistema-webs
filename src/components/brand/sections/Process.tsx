@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll } from "framer-motion";
 import { SectionContainer } from "@/components/shared/layout/SectionContainer";
 import { SectionLabel } from "@/components/shared/SectionLabel";
+import { useLocale } from "@/lib/context/LocaleContext";
+import { UI_STRINGS } from "@/lib/i18n/ui-strings";
 import type { BrandConfig } from "@/lib/types";
 
 const TRANSITION = {
@@ -12,6 +14,7 @@ const TRANSITION = {
 };
 
 export default function Process({ brand }: { brand: BrandConfig }) {
+  const { locale } = useLocale();
   const content = brand.content.process;
   const N = content.steps.length;
   const accentHex = brand.theme.colors.accent;
@@ -39,7 +42,7 @@ export default function Process({ brand }: { brand: BrandConfig }) {
       <SectionContainer id="process" className="pt-28 md:pt-32 pb-4 md:pb-6">
         <SectionLabel>
           <span>{brand.name}</span>
-          <span className="opacity-60"> process</span>
+          <span className="opacity-60"> {UI_STRINGS[locale].sections.process}</span>
         </SectionLabel>
 
         {/* Steps — open editorial list */}

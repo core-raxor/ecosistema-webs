@@ -1,14 +1,14 @@
 import type { BrandConfig } from "@/lib/types";
 
 // ============================================================================
-// VAXEN: CONTENT LAYER
+// VAXEN: ENGLISH CONTENT
 // ============================================================================
 
-const vaxen_content = {
+const vaxen_en = {
   hero: {
     logoText: "VAXEN",
     navItems: ["Home", "Process", "Services", "Contact"],
-    headline: "Systems engineered to last.",
+    headline: "Engineered for businesses built to scale.",
     primaryCta: "Get in touch",
     secondaryCta: "",
     microNote: "",
@@ -17,11 +17,11 @@ const vaxen_content = {
   identity: {
     label: "VAXEN",
     title:
-      "We architect and build the custom technical systems your business needs to scale — no templates, no shortcuts.",
+      "We architect and develop custom technical infrastructure designed for businesses that need performance, control and long-term scalability.",
     stats: [
-      { value: "+1", label: "Year active" },
-      { value: "+5", label: "Projects delivered" },
-      { value: "6–12 wks", label: "Avg. delivery" },
+      { value: "1+", label: "Year Active" },
+      { value: "5+", label: "Projects Delivered" },
+      { value: "6–12 wks", label: "Avg. Delivery" },
     ],
   },
 
@@ -30,28 +30,33 @@ const vaxen_content = {
     steps: [
       {
         title: "Assess",
-        description: "We audit technical constraints, gaps, and growth blockers.",
-        benefits: ["No surprises", "Clear constraints"],
+        description:
+          "We analyze technical limitations, operational bottlenecks and future scalability requirements.",
+        benefits: ["Clear technical direction"],
       },
       {
         title: "Architect",
-        description: "We design the system structure from the ground up.",
-        benefits: ["Correct from the start"],
+        description:
+          "We design the infrastructure, backend logic and system architecture around your operational needs.",
+        benefits: ["Built correctly from the foundation"],
       },
       {
         title: "Build",
-        description: "We develop the backend, APIs, and core systems.",
-        benefits: ["Full control", "No shortcuts"],
+        description:
+          "We develop the backend systems, APIs and technical infrastructure with full engineering control.",
+        benefits: ["No shortcuts", "Full customization"],
       },
       {
         title: "Integrate",
-        description: "We connect all systems, data layers, and services.",
-        benefits: ["One foundation"],
+        description:
+          "We connect services, databases, operational systems and external platforms into one stable architecture.",
+        benefits: ["Connected technical ecosystem"],
       },
       {
         title: "Scale",
-        description: "We prepare the architecture for real operational load.",
-        benefits: ["Ready for growth"],
+        description:
+          "We prepare the infrastructure to support growth, complexity and long-term operational demands.",
+        benefits: ["Built for sustained scalability"],
       },
     ],
   },
@@ -62,20 +67,22 @@ const vaxen_content = {
       {
         name: "Custom Development",
         label: "Foundation",
-        description: "A fully custom system built for how you operate.",
-        includes: ["Custom software", "Backend architecture", "API design", "Data structure"],
+        description:
+          "Fully custom software systems designed around how your business actually operates.",
+        includes: ["Custom software", "Backend systems", "API architecture", "Data structure"],
         cta: "Apply",
         price: "$3,000–$8,000",
       },
       {
         name: "Enterprise System",
         label: "Platform",
-        description: "A complete technical platform built for scale.",
+        description:
+          "Advanced technical platforms engineered for operational scale and complex business requirements.",
         includes: [
           "Full platform",
-          "Complex integrations",
-          "System architecture",
-          "Advanced backend",
+          "Advanced integrations",
+          "Backend architecture",
+          "Operational infrastructure",
         ],
         cta: "Apply",
         price: "$15,000–$40,000",
@@ -83,12 +90,13 @@ const vaxen_content = {
       {
         name: "Advanced Engineering",
         label: "Scale",
-        description: "Distributed architecture for serious technical scale.",
+        description:
+          "High-performance engineering infrastructure designed for large-scale and technically demanding operations.",
         includes: [
           "Scalable systems",
-          "Data infrastructure",
-          "High performance",
-          "Cloud architecture",
+          "Cloud infrastructure",
+          "Data engineering",
+          "High-performance architecture",
         ],
         cta: "Apply",
         price: "$50,000–$150,000",
@@ -97,18 +105,145 @@ const vaxen_content = {
   },
 
   final: {
-    statement: "Some systems you outgrow. Build one you will not.",
+    statement: "Infrastructure engineered to last.",
     cta: "Build your infrastructure",
   },
 
   contact: {
     title: "Work with VAXEN",
-    description: "We define the architecture your business needs to operate at scale.",
-    note: "For technical operations.",
+    description:
+      "We design and engineer the technical infrastructure your business needs to operate reliably and scale with confidence.",
+    note: "Engineering without shortcuts.",
   },
 
   footer: {
-    tagline: "Engineering. Architecture. Scale.",
+    tagline: "Engineering. Infrastructure. Scale.",
+  },
+};
+
+// ============================================================================
+// VAXEN: SPANISH CONTENT
+// ============================================================================
+
+const vaxen_es = {
+  hero: {
+    logoText: "VAXEN",
+    navItems: ["Inicio", "Proceso", "Servicios", "Contacto"],
+    headline: "Ingeniería para negocios que escalan.",
+    primaryCta: "Contactar",
+    secondaryCta: "",
+    microNote: "",
+  },
+
+  identity: {
+    label: "VAXEN",
+    title:
+      "Arquitectamos y desarrollamos infraestructura técnica personalizada diseñada para negocios que necesitan rendimiento, control y escalabilidad a largo plazo.",
+    stats: [
+      { value: "1+", label: "Año Activo" },
+      { value: "5+", label: "Proyectos Entregados" },
+      { value: "6–12 sem", label: "Entrega Promedio" },
+    ],
+  },
+
+  process: {
+    title: "Cómo funciona VAXEN",
+    steps: [
+      {
+        title: "Assess",
+        description:
+          "Analizamos limitaciones técnicas, cuellos de botella operativos y necesidades futuras de escalabilidad.",
+        benefits: ["Dirección técnica clara"],
+      },
+      {
+        title: "Architect",
+        description:
+          "Diseñamos la infraestructura, lógica backend y arquitectura de sistemas alrededor de tus necesidades operativas.",
+        benefits: ["Construido correctamente desde la base"],
+      },
+      {
+        title: "Build",
+        description:
+          "Desarrollamos sistemas backend, APIs e infraestructura técnica con control total de ingeniería.",
+        benefits: ["Sin atajos", "Personalización completa"],
+      },
+      {
+        title: "Integrate",
+        description:
+          "Conectamos servicios, bases de datos, sistemas operativos y plataformas externas dentro de una arquitectura estable.",
+        benefits: ["Ecosistema técnico conectado"],
+      },
+      {
+        title: "Scale",
+        description:
+          "Preparamos la infraestructura para soportar crecimiento, complejidad y exigencias operativas a largo plazo.",
+        benefits: ["Diseñado para escalabilidad sostenida"],
+      },
+    ],
+  },
+
+  services: {
+    title: "Sistema VAXEN",
+    items: [
+      {
+        name: "Desarrollo Personalizado",
+        label: "Foundation",
+        description:
+          "Sistemas de software completamente personalizados diseñados alrededor de cómo realmente opera tu negocio.",
+        includes: [
+          "Software personalizado",
+          "Sistemas backend",
+          "Arquitectura API",
+          "Estructura de datos",
+        ],
+        cta: "Solicitar",
+        price: "$3,000–$8,000",
+      },
+      {
+        name: "Sistema Enterprise",
+        label: "Platform",
+        description:
+          "Plataformas técnicas avanzadas diseñadas para escalabilidad operativa y necesidades empresariales complejas.",
+        includes: [
+          "Plataforma completa",
+          "Integraciones avanzadas",
+          "Arquitectura backend",
+          "Infraestructura operativa",
+        ],
+        cta: "Solicitar",
+        price: "$15,000–$40,000",
+      },
+      {
+        name: "Ingeniería Avanzada",
+        label: "Scale",
+        description:
+          "Infraestructura de ingeniería de alto rendimiento diseñada para operaciones técnicas exigentes y de gran escala.",
+        includes: [
+          "Sistemas escalables",
+          "Infraestructura cloud",
+          "Ingeniería de datos",
+          "Arquitectura de alto rendimiento",
+        ],
+        cta: "Solicitar",
+        price: "$50,000–$150,000",
+      },
+    ],
+  },
+
+  final: {
+    statement: "Infraestructura diseñada para durar.",
+    cta: "Construir infraestructura",
+  },
+
+  contact: {
+    title: "Trabaja con VAXEN",
+    description:
+      "Diseñamos y desarrollamos la infraestructura técnica que tu negocio necesita para operar con estabilidad y escalar con confianza.",
+    note: "Ingeniería sin atajos.",
+  },
+
+  footer: {
+    tagline: "Ingeniería. Infraestructura. Escala.",
   },
 };
 
@@ -117,18 +252,19 @@ const vaxen_content = {
 // ============================================================================
 
 export const vaxen_seo = {
-  title: "VAXEN | Infrastructure engineering for scalable operations",
+  title: "VAXEN | Engineering systems and scalable technical infrastructure",
   description:
-    "VAXEN builds backend, data, internal tools and technical infrastructure for businesses that need stable scalable operations.",
+    "VAXEN designs and develops backend systems, technical infrastructure and scalable software architecture for businesses that require long-term operational stability and control.",
   path: "/vaxen",
   image: "/og/vaxen.jpg",
   keywords: [
     "VAXEN",
     "technical infrastructure",
     "backend systems",
-    "internal tools",
-    "business engineering",
-    "scalable operations",
+    "scalable architecture",
+    "engineering systems",
+    "custom software",
+    "enterprise engineering",
   ],
   siteUrl: "https://vaxen.co",
 } as const;
@@ -142,7 +278,6 @@ export const vaxen = {
       type: "technical-depth" as const,
       shape: "panel" as const,
       objectConfig: {
-        // geometry — pentagonal bipyramid: 7 verts + 15 edges × 7 interior pts + 150 face pts = 262 pts
         majorSegments: 8,
         minorSegments: 3,
         majorRadius: 1.38,
@@ -150,28 +285,27 @@ export const vaxen = {
         objectScale: 1.08,
         targetPointSpacing: 0.2,
         spacingTolerance: 0.035,
-        // material
         pointSize: 0.028,
         pointAlpha: 0.84,
         basePointColor: "#d7deec",
         accentMix: 0.045,
-        // pose — Z lean only, pure horizontal Y rotation
         baseTiltX: 0,
         baseTiltY: 0.4,
         baseTiltZ: 0.52,
-        // particle flow — disabled
         particleFlowEnabled: false,
         particleFlowSpeed: 0,
         particleFlowLayerOffset: 0,
         particleFlowDirection: 1 as const,
         particleFlowLaneDuration: 0,
-        // rotation — slow horizontal Y spin, Z lean stays fixed
         objectRotationEnabled: true,
         objectRotationSpeed: 0.05,
       },
     },
   },
-  content: vaxen_content,
+  content: vaxen_en,
+  translations: {
+    es: vaxen_es,
+  },
   seo: vaxen_seo,
   links: {
     primaryCta: "/apply",

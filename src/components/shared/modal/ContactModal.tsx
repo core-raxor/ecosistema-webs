@@ -2,6 +2,8 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "@/lib/context/LocaleContext";
+import { UI_STRINGS } from "@/lib/i18n/ui-strings";
 import type { BrandConfig } from "@/lib/types";
 import { useContactModal } from "./ContactModalContext";
 
@@ -49,6 +51,7 @@ function Field({
   multiline,
   autoFocus,
 }: FieldProps) {
+  const { locale } = useLocale();
   const [focused, setFocused] = useState(false);
   const hasValue = value.trim().length > 0;
 
@@ -65,7 +68,7 @@ function Field({
         {label}
         {optional && (
           <span className="normal-case tracking-normal opacity-40" style={{ fontSize: "10px" }}>
-            optional
+            {UI_STRINGS[locale].modal.optional}
           </span>
         )}
       </label>
@@ -118,6 +121,8 @@ function Field({
 
 export function ContactModal({ brand }: ContactModalProps) {
   const { isOpen, closeModal } = useContactModal();
+  const { locale } = useLocale();
+  const ui = UI_STRINGS[locale].modal;
   const contact = brand.content.contact;
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -315,14 +320,14 @@ export function ContactModal({ brand }: ContactModalProps) {
                       <div className="flex flex-col gap-6">
                         <Field
                           id="modal-name"
-                          label="Full Name"
+                          label={ui.fullName}
                           value={form.name}
                           onChange={setField("name")}
                           required
                         />
                         <Field
                           id="modal-email"
-                          label="Email"
+                          label={ui.email}
                           type="email"
                           value={form.email}
                           onChange={setField("email")}
@@ -330,14 +335,14 @@ export function ContactModal({ brand }: ContactModalProps) {
                         />
                         <Field
                           id="modal-company"
-                          label="Company"
+                          label={ui.company}
                           value={form.company}
                           onChange={setField("company")}
                           optional
                         />
                         <Field
                           id="modal-message"
-                          label="Message"
+                          label={ui.message}
                           value={form.message}
                           onChange={setField("message")}
                           optional
@@ -359,9 +364,7 @@ export function ContactModal({ brand }: ContactModalProps) {
                             fontFamily: "var(--font-body)",
                           }}
                         >
-                          <span className="relative z-10">
-                            {loading ? "Sending…" : "Send message"}
-                          </span>
+                          <span className="relative z-10">{loading ? ui.sending : ui.send}</span>
                         </button>
 
                         {contact.note && (
@@ -400,13 +403,13 @@ export function ContactModal({ brand }: ContactModalProps) {
                         fontFamily: "var(--font-heading)",
                       }}
                     >
-                      Message sent.
+                      {ui.sent}
                     </h2>
                     <p
                       className="text-sm leading-6"
                       style={{ color: "var(--text-muted)", fontFamily: "var(--font-body)" }}
                     >
-                      We&apos;ll be in touch.
+                      {ui.inTouch}
                     </p>
                     <p
                       className="mt-4 text-[10px] uppercase tracking-[0.22em] opacity-35"
