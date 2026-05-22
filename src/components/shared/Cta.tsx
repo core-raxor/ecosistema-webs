@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { useSyncExternalStore } from "react";
 
 type CtaSize = "sm" | "md";
 
@@ -29,6 +30,16 @@ const SIZE: Record<CtaSize, string> = {
 };
 
 export function Cta({ href, children, size = "md", className = "", onClick }: CtaProps) {
+  const touch = useSyncExternalStore(
+    (cb) => {
+      const mq = window.matchMedia("(hover: none)");
+      mq.addEventListener("change", cb);
+      return () => mq.removeEventListener("change", cb);
+    },
+    () => window.matchMedia("(hover: none)").matches,
+    () => false,
+  );
+
   return (
     <motion.a
       href={href}
@@ -40,7 +51,7 @@ export function Cta({ href, children, size = "md", className = "", onClick }: Ct
             }
           : undefined
       }
-      whileHover="hover"
+      {...(!touch && { whileHover: "hover" })}
       whileTap="tap"
       variants={{
         hover: {
@@ -58,11 +69,13 @@ export function Cta({ href, children, size = "md", className = "", onClick }: Ct
       className={`relative overflow-hidden inline-flex items-center rounded-full text-[11px] uppercase tracking-[0.14em] text-(--text) backdrop-blur-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--brand-accent) focus-visible:ring-offset-2 ${SIZE[size]} ${className}`}
       style={{
         background: "color-mix(in srgb, var(--surface) 92%, white 3%)",
-        border: "1px solid rgba(255,255,255,0.12)",
-        boxShadow: "0 4px 16px rgba(0,0,0,0.50), inset 0 1px 0 rgba(255,255,255,0.05)",
+        border: touch ? "1px solid rgba(255,255,255,0.24)" : "1px solid rgba(255,255,255,0.12)",
+        boxShadow: touch
+          ? "0 8px 28px rgba(0,0,0,0.62), inset 0 1px 0 rgba(255,255,255,0.08)"
+          : "0 4px 16px rgba(0,0,0,0.50), inset 0 1px 0 rgba(255,255,255,0.05)",
       }}
     >
-      {/* Brightness overlay — fades in on hover, compresses on tap */}
+      {/* Brightness overlay — always visible on touch, fades in on hover */}
       <motion.span
         variants={{
           default: { opacity: 0, transition: CTA_TRANSITION },
@@ -70,25 +83,27 @@ export function Cta({ href, children, size = "md", className = "", onClick }: Ct
           tap: { opacity: 0.4, transition: CTA_TRANSITION },
         }}
         initial="default"
-        animate="default"
+        animate={touch ? "hover" : "default"}
         className="pointer-events-none absolute inset-0 rounded-full"
         style={{ background: "rgba(255,255,255,0.08)" }}
       />
-      {/* Light sweep — crosses once on hover, resets instantly */}
-      <motion.span
-        variants={{
-          default: { x: "-100%", transition: { duration: 0 } },
-          hover: { x: "220%", transition: SWEEP_TRANSITION },
-          tap: { x: "-100%", transition: { duration: 0 } },
-        }}
-        initial="default"
-        animate="default"
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.10) 50%, transparent 65%)",
-        }}
-      />
+      {/* Light sweep — only on non-touch devices */}
+      {!touch && (
+        <motion.span
+          variants={{
+            default: { x: "-100%", transition: { duration: 0 } },
+            hover: { x: "220%", transition: SWEEP_TRANSITION },
+            tap: { x: "-100%", transition: { duration: 0 } },
+          }}
+          initial="default"
+          animate="default"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.10) 50%, transparent 65%)",
+          }}
+        />
+      )}
       <span className="relative z-10">{children}</span>
     </motion.a>
   );

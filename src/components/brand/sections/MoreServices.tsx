@@ -4,7 +4,7 @@ import { SectionContainer } from "@/components/shared/layout/SectionContainer";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import type { BrandConfig } from "@/lib/types";
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 const CARD_TRANSITION = {
   duration: 0.4,
@@ -18,6 +18,15 @@ const MOBILE_GAP = 16;
 export default function MoreServices({ brand }: { brand: BrandConfig }) {
   const content = brand.content.moreServices;
   const [activeIndex, setActiveIndex] = useState(0);
+  const touch = useSyncExternalStore(
+    (cb) => {
+      const mq = window.matchMedia("(hover: none)");
+      mq.addEventListener("change", cb);
+      return () => mq.removeEventListener("change", cb);
+    },
+    () => window.matchMedia("(hover: none)").matches,
+    () => false,
+  );
 
   const desktopRef = useRef<HTMLDivElement>(null);
   const mobileRef = useRef<HTMLDivElement>(null);
@@ -99,7 +108,7 @@ export default function MoreServices({ brand }: { brand: BrandConfig }) {
                     flexShrink: 0,
                   }}
                 >
-                  <ServiceCard card={card} index={i} />
+                  <ServiceCard card={card} index={i} touch={touch} />
                 </div>
               ))}
             </motion.div>
@@ -133,7 +142,7 @@ export default function MoreServices({ brand }: { brand: BrandConfig }) {
                     flexShrink: 0,
                   }}
                 >
-                  <ServiceCard card={card} index={i} />
+                  <ServiceCard card={card} index={i} touch={touch} />
                 </div>
               ))}
             </motion.div>
@@ -159,6 +168,7 @@ export default function MoreServices({ brand }: { brand: BrandConfig }) {
 function ServiceCard({
   card,
   index,
+  touch,
 }: {
   card: {
     slug: string;
@@ -169,6 +179,7 @@ function ServiceCard({
     url: string;
   };
   index: number;
+  touch: boolean;
 }) {
   return (
     <motion.article
@@ -229,20 +240,24 @@ function ServiceCard({
         rel="noopener noreferrer"
         className="mt-1 inline-block rounded-lg px-4 py-2.5 text-center text-xs font-medium uppercase tracking-[0.12em] transition-all duration-200"
         style={{
-          border: "1px solid color-mix(in srgb, var(--border) 80%, transparent)",
-          color: "var(--text-muted)",
+          border: touch
+            ? "1px solid var(--text-muted)"
+            : "1px solid color-mix(in srgb, var(--border) 80%, transparent)",
+          color: touch ? "var(--text)" : "var(--text-muted)",
           fontFamily: "var(--font-body)",
         }}
-        onMouseEnter={(e) => {
-          const el = e.currentTarget as HTMLAnchorElement;
-          el.style.borderColor = "var(--text-muted)";
-          el.style.color = "var(--text)";
-        }}
-        onMouseLeave={(e) => {
-          const el = e.currentTarget as HTMLAnchorElement;
-          el.style.borderColor = "color-mix(in srgb, var(--border) 80%, transparent)";
-          el.style.color = "var(--text-muted)";
-        }}
+        {...(!touch && {
+          onMouseEnter: (e: React.MouseEvent<HTMLAnchorElement>) => {
+            const el = e.currentTarget;
+            el.style.borderColor = "var(--text-muted)";
+            el.style.color = "var(--text)";
+          },
+          onMouseLeave: (e: React.MouseEvent<HTMLAnchorElement>) => {
+            const el = e.currentTarget;
+            el.style.borderColor = "color-mix(in srgb, var(--border) 80%, transparent)";
+            el.style.color = "var(--text-muted)";
+          },
+        })}
       >
         {card.cta}
       </a>
