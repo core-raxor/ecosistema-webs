@@ -266,6 +266,9 @@ export const ixera_seo = {
 export const ixera = {
   slug: "ixera",
   name: "IXERA",
+  assets: {
+    logoMark: true,
+  },
   theme: {
     colors: { accent: "#93C5FD" },
     scene: {

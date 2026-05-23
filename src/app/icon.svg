@@ -1,0 +1,10 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .a { fill: #111; }
+    @media (prefers-color-scheme: dark) { .a { fill: #fff; } }
+  </style>
+  <path class="a" d="M10 8L18.5 8L24.25 20L15.75 20Z"/>
+  <path class="a" d="M15.75 20L24.25 20L30 32L21.5 32Z" opacity="0.55"/>
+  <path class="a" d="M30 8L21.5 8L15.75 20L24.25 20Z" opacity="0.78"/>
+  <path class="a" d="M24.25 20L15.75 20L10 32L18.5 32Z" opacity="0.40"/>
+</svg>

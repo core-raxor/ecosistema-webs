@@ -272,6 +272,9 @@ export const vaxen_seo = {
 export const vaxen = {
   slug: "vaxen",
   name: "VAXEN",
+  assets: {
+    logoMark: true,
+  },
   theme: {
     colors: { accent: "#22C55E" },
     scene: {

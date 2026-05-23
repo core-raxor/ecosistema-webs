@@ -1,6 +1,7 @@
 "use client";
 
 import { Cta } from "@/components/shared/Cta";
+import { KyrexisMark } from "@/components/system/KyrexisMark";
 import { useContactModal } from "@/components/shared/modal/ContactModalContext";
 import type { BrandConfig } from "@/lib/types";
 import { AnimatePresence, motion } from "framer-motion";
@@ -51,6 +52,7 @@ export function Hero({ brand }: HeroProps) {
     : ["Home", "Process", "Services", "Contact"];
 
   const logoText = hero.logoText || brand.name;
+  const hasLogoMark = brand.assets?.logoMark ?? false;
   const ctaLabel = hero.primaryCta?.trim() || "Get in touch";
 
   // Close drawer on Escape
@@ -85,9 +87,9 @@ export function Hero({ brand }: HeroProps) {
           <div className="shrink-0">
             <a
               href="#hero"
-              className="inline-flex items-center rounded-full border border-(--border) bg-(--surface)/80 px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-(--text) backdrop-blur-md transition-colors duration-200"
+              className={`inline-flex items-center rounded-full border border-(--border) bg-(--surface)/80 backdrop-blur-md transition-opacity duration-200 hover:opacity-70 text-(--text) ${hasLogoMark ? "p-2" : "px-4 py-2 text-[11px] uppercase tracking-[0.18em]"}`}
             >
-              {logoText}
+              {hasLogoMark ? <KyrexisMark className="size-7 md:size-14" /> : logoText}
             </a>
           </div>
 
@@ -217,9 +219,9 @@ export function Hero({ brand }: HeroProps) {
                   <a
                     href="#hero"
                     onClick={() => setMenuOpen(false)}
-                    className="inline-flex items-center rounded-full border border-(--border) bg-(--surface)/80 px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-(--text)"
+                    className={`inline-flex items-center rounded-full border border-(--border) bg-(--surface)/80 transition-opacity duration-200 hover:opacity-70 text-(--text) ${hasLogoMark ? "p-2" : "px-4 py-2 text-[11px] uppercase tracking-[0.18em]"}`}
                   >
-                    {logoText}
+                    {hasLogoMark ? <KyrexisMark className="size-[22px]" /> : logoText}
                   </a>
                   <button
                     onClick={() => setMenuOpen(false)}

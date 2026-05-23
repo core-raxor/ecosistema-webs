@@ -631,6 +631,9 @@ export const kyrexis_seo = {
 export const kyrexis = {
   slug: "kyrexis",
   name: "KYREXIS",
+  assets: {
+    logoMark: true,
+  },
   theme: {
     colors: { accent: "#A8B4C0" },
     scene: {

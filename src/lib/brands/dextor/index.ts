@@ -267,6 +267,9 @@ export const dextor_seo = {
 export const dextor = {
   slug: "dextor",
   name: "DEXTOR",
+  assets: {
+    logoMark: true,
+  },
   theme: {
     colors: { accent: "#2DD4BF" },
     scene: {

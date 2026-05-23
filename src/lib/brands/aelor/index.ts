@@ -256,6 +256,9 @@ export const aelor_seo = {
 export const aelor = {
   slug: "aelor",
   name: "AELOR",
+  assets: {
+    logoMark: true,
+  },
   theme: {
     colors: { accent: "#FF7A1A" },
     scene: {

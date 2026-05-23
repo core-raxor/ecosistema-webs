@@ -25,6 +25,14 @@ export const metadata: Metadata = {
   },
 };
 
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "KYREXIS",
+  url: SITE_URL,
+  logo: `${SITE_URL}/icon.svg`,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,6 +40,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${interTight.variable} h-full antialiased`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <LocaleProvider>{children}</LocaleProvider>
       </body>

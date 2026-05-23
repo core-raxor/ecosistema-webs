@@ -20,6 +20,7 @@ export type BrandConfig = {
 
   assets?: {
     logo?: string;
+    logoMark?: boolean;
   };
 
   content: BrandContent;

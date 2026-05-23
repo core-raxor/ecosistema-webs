@@ -265,6 +265,9 @@ export const raxor_seo = {
 export const raxor = {
   slug: "raxor",
   name: "RAXOR",
+  assets: {
+    logoMark: true,
+  },
   theme: {
     colors: { accent: "#8B5CF6" },
     scene: {

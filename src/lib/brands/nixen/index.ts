@@ -272,6 +272,9 @@ export const nixen_seo = {
 export const nixen = {
   slug: "nixen",
   name: "NIXEN",
+  assets: {
+    logoMark: true,
+  },
   theme: {
     colors: { accent: "#EF4444" },
     scene: {
