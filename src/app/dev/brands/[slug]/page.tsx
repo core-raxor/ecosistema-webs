@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BrandPageShell } from "@/components/brand/layout/BrandPageShell";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 import { brandSectionRegistry, defaultBrandSections } from "@/components/brand/sections/registry";
 import { getBrandBySlug } from "@/lib/brands/registry";
 

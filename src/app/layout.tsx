@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter_Tight } from "next/font/google";
 import { LocaleProvider } from "@/lib/context/LocaleContext";
+import { getActiveBrand } from "@/lib/core/active-brand";
 import "./globals.css";
 
 const interTight = Inter_Tight({
@@ -13,24 +14,10 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") || "http:
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: "Ecosistema empresarial modular",
-    template: "%s",
-  },
-  description:
-    "Sistema modular multi-brand construido para servicios, operaciones, automatización, diseño, infraestructura e inteligencia empresarial.",
   robots: {
     index: true,
     follow: true,
   },
-};
-
-const orgSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "KYREXIS",
-  url: SITE_URL,
-  logo: `${SITE_URL}/icon.svg`,
 };
 
 export default function RootLayout({
@@ -38,12 +25,38 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const brand = getActiveBrand();
+  const brandUrl = brand.seo?.siteUrl ?? SITE_URL;
+
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: brand.name,
+    url: brandUrl,
+    logo: `${brandUrl}/icon.svg`,
+    description: brand.seo?.description,
+    sameAs: [brand.links?.instagram, brand.links?.linkedin].filter(
+      (v): v is string => typeof v === "string" && v.length > 0,
+    ),
+  };
+
+  const webSiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: brand.name,
+    url: brandUrl,
+  };
+
   return (
     <html lang="en" className={`${interTight.variable} h-full antialiased`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
       </head>
       <body className="min-h-full flex flex-col">

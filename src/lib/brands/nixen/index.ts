@@ -255,7 +255,7 @@ export const nixen_seo = {
   title: "NIXEN | Automation systems and workflows for scalable operations",
   description:
     "NIXEN designs automation systems, workflows and operational integrations that reduce manual work and help businesses operate more efficiently at scale.",
-  path: "/nixen",
+  path: "/",
   image: "/og/nixen.jpg",
   keywords: [
     "NIXEN",

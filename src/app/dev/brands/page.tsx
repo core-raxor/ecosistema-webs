@@ -1,6 +1,11 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllBrands } from "@/lib/brands/registry";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 // Dev-only route — blocked in production
 export default function DevBrandsPage() {

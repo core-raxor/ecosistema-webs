@@ -255,7 +255,7 @@ export const vaxen_seo = {
   title: "VAXEN | Engineering systems and scalable technical infrastructure",
   description:
     "VAXEN designs and develops backend systems, technical infrastructure and scalable software architecture for businesses that require long-term operational stability and control.",
-  path: "/vaxen",
+  path: "/",
   image: "/og/vaxen.jpg",
   keywords: [
     "VAXEN",

@@ -250,7 +250,7 @@ export const dextor_seo = {
   title: "DEXTOR | Business intelligence and operational control systems",
   description:
     "DEXTOR structures data, metrics and operational visibility systems for businesses that need clearer decisions, stronger control and scalable growth.",
-  path: "/dextor",
+  path: "/",
   image: "/og/dextor.jpg",
   keywords: [
     "DEXTOR",

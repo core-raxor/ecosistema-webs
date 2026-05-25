@@ -239,7 +239,7 @@ export const aelor_seo = {
   title: "AELOR | Branding, UX/UI and conversion-focused digital experiences",
   description:
     "AELOR designs brand identity, UX/UI systems and digital experiences that improve perception, strengthen positioning and increase conversion.",
-  path: "/aelor",
+  path: "/",
   image: "/og/aelor.jpg",
   keywords: [
     "AELOR",

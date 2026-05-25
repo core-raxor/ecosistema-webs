@@ -613,7 +613,7 @@ export const kyrexis_seo = {
   title: "KYREXIS | Digital systems built for business growth",
   description:
     "KYREXIS helps businesses launch, organize, automate and scale through connected digital systems — combining design, automation, AI, data and engineering into one operational ecosystem.",
-  path: "/kyrexis",
+  path: "/",
   image: "/og/kyrexis.jpg",
   keywords: [
     "KYREXIS",

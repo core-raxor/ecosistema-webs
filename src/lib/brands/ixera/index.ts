@@ -249,7 +249,7 @@ export const ixera_seo = {
   title: "IXERA | AI systems and operational intelligence for modern businesses",
   description:
     "IXERA integrates AI, automation and operational intelligence into business workflows to improve execution, support, decision-making and scalability.",
-  path: "/ixera",
+  path: "/",
   image: "/og/ixera.jpg",
   keywords: [
     "IXERA",

@@ -248,7 +248,7 @@ export const raxor_seo = {
   title: "RAXOR | Digital infrastructure and operational systems for modern businesses",
   description:
     "RAXOR builds professional digital platforms, internal systems and operational infrastructures that help businesses launch, organize and grow efficiently.",
-  path: "/raxor",
+  path: "/",
   image: "/og/raxor.jpg",
   keywords: [
     "RAXOR",

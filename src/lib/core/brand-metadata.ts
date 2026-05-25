@@ -4,8 +4,6 @@ import type { Metadata } from "next";
 const DEFAULT_SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") || "http://localhost:3001";
 
-const DEFAULT_OG_IMAGE = "/og/default-brand.jpg";
-
 function getBaseUrl(brand: BrandConfig) {
   return brand.seo?.siteUrl?.replace(/\/+$/, "") || DEFAULT_SITE_URL;
 }
@@ -26,8 +24,6 @@ export function buildBrandMetadata(brand: BrandConfig): Metadata {
   const path = brand.seo?.path ?? "/";
   const canonical = absoluteUrl(path, baseUrl);
 
-  const ogImage = absoluteUrl(brand.seo?.image ?? DEFAULT_OG_IMAGE, baseUrl);
-
   const keywords = [
     ...(brand.seo?.keywords ?? [brand.name, brand.slug, "business system", "brand ecosystem"]),
   ];
@@ -46,20 +42,11 @@ export function buildBrandMetadata(brand: BrandConfig): Metadata {
       url: canonical,
       siteName: brand.name,
       type: "website",
-      images: [
-        {
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: `${brand.name} preview image`,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [ogImage],
     },
     robots: {
       index: true,
