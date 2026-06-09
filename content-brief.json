@@ -506,259 +506,521 @@
       "aelor": {
         "packages": [
           {
-            "name": "UX Audit",
+            "name": "Foundation",
             "level": "entry",
-            "target_client": "Negocios con web o app que no convierten",
+            "target_client": "Freelancers, emprendedores y negocios pequeños que necesitan mejorar su percepción visual y claridad digital",
             "includes": [
-              "Auditoría UX/UI completa",
-              "Identificación de problemas",
-              "Recomendaciones claras",
-              "Mejora de estructura visual"
+              "Auditoría visual y UX",
+              "Dirección visual estratégica",
+              "Refinación de identidad digital",
+              "Sistema básico de branding",
+              "Optimización de estructura visual",
+              "Guía de claridad y percepción"
             ],
-            "result": ["Claridad de problemas", "Plan de mejora", "Mejor experiencia base"],
-            "price_range": "300 - 800 USD"
+            "result": [
+              "Marca más profesional",
+              "Mayor claridad visual",
+              "Mejor primera impresión",
+              "Base sólida para crecer"
+            ],
+            "price_range": "700 - 1500 USD"
           },
           {
-            "name": "Landing Conversion",
+            "name": "Conversion Landing",
             "level": "basic",
-            "target_client": "Negocios que quieren vender con una landing optimizada",
+            "target_client": "Negocios que necesitan una landing optimizada para captar clientes y aumentar conversión",
             "includes": [
-              "Diseño UX/UI de landing",
-              "Estructura de conversión",
+              "Estrategia de conversión",
+              "Wireframe UX",
               "Copy base estructurado",
-              "Diseño visual completo"
+              "Diseño completo de landing",
+              "Jerarquía visual optimizada",
+              "Optimización responsive",
+              "CTA strategy",
+              "Diseño orientado a confianza y acción"
             ],
-            "result": ["Página lista para vender", "Mayor conversión", "Mensaje claro"],
-            "price_range": "800 - 2000 USD"
+            "result": [
+              "Landing clara y profesional",
+              "Mayor conversión",
+              "Mejor percepción de valor",
+              "Mensaje más sólido"
+            ],
+            "price_range": "1500 - 3000 USD"
           },
           {
-            "name": "Product Experience",
+            "name": "Digital Experience",
             "level": "mid",
-            "target_client": "Startups o negocios con producto digital",
+            "target_client": "Startups y negocios digitales que necesitan una experiencia de producto clara y escalable",
             "includes": [
               "UX/UI completo",
               "Arquitectura de experiencia",
+              "User flows",
               "Sistema visual",
-              "Flujos de usuario"
+              "Design system base",
+              "Interfaces responsive",
+              "Optimización de usabilidad",
+              "Estructura escalable"
             ],
-            "result": ["Producto usable", "Experiencia clara", "Base profesional"],
-            "price_range": "2000 - 5000 USD"
+            "result": [
+              "Producto más claro",
+              "Experiencia profesional",
+              "Mejor usabilidad",
+              "Base lista para crecer"
+            ],
+            "price_range": "3000 - 8000 USD"
           },
           {
-            "name": "Brand Experience System",
-            "level": "mid_high",
-            "target_client": "Negocios que quieren una identidad sólida",
-            "includes": [
-              "Branding completo",
-              "Sistema visual",
-              "Aplicación digital",
-              "Diseño de comunicación"
-            ],
-            "result": ["Marca profesional", "Coherencia visual", "Diferenciación"],
-            "price_range": "1500 - 4000 USD"
-          },
-          {
-            "name": "CRO Optimization",
+            "name": "Conversion System",
             "level": "advanced",
-            "target_client": "Negocios con tráfico que buscan mejorar resultados",
+            "target_client": "Negocios con tráfico y presencia digital que buscan maximizar conversión y rendimiento",
             "includes": [
-              "Auditoría profunda",
-              "Rediseño UX/UI",
+              "Auditoría profunda UX/CRO",
+              "Rediseño estratégico",
               "Optimización de conversión",
-              "Testing visual"
+              "Refinación de percepción visual",
+              "Mejora de estructura de ventas",
+              "UX friction analysis",
+              "Testing visual estratégico",
+              "Sistema de mejora continua"
             ],
-            "result": ["Más ventas", "Mejor rendimiento", "Optimización continua"],
-            "price_range": "2000 - 6000 USD"
+            "result": [
+              "Más conversión",
+              "Mejor rendimiento",
+              "Mayor percepción premium",
+              "Experiencia digital optimizada"
+            ],
+            "price_range": "5000 - 12000 USD"
           }
         ]
       },
       "raxor": {
         "packages": [
           {
-            "name": "Sistema Base",
+            "name": "Foundation System",
             "level": "entry",
-            "target_client": "Negocios que necesitan digitalizarse",
-            "includes": ["Web funcional", "Estructura básica", "Sistema simple"],
-            "result": ["Presencia digital funcional"],
-            "price_range": "500 - 1500 USD"
+            "target_client": "Freelancers, emprendimientos y negocios pequeños que necesitan estructura digital profesional",
+            "includes": [
+              "Sitio web profesional",
+              "Estructura digital inicial",
+              "Captación y gestión básica de clientes",
+              "Panel administrativo simple",
+              "Organización operativa básica",
+              "Configuración de herramientas principales",
+              "Responsive design",
+              "Base preparada para crecimiento"
+            ],
+            "result": [
+              "Presencia digital profesional",
+              "Operación inicial organizada",
+              "Mejor gestión de clientes"
+            ],
+            "price_range": "$800 - $2,000 USD"
           },
           {
-            "name": "Sistema Operativo",
+            "name": "Operations System",
             "level": "basic",
-            "target_client": "Negocios que necesitan organización interna",
-            "includes": ["Web + estructura interna", "Gestión de clientes", "Panel básico"],
-            "result": ["Negocio organizado"],
-            "price_range": "1500 - 4000 USD"
+            "target_client": "Negocios que necesitan organizar operaciones internas y centralizar procesos",
+            "includes": [
+              "Plataforma operativa interna",
+              "Gestión de clientes y procesos",
+              "Paneles administrativos",
+              "Workflows operativos",
+              "Dashboards básicos",
+              "Automatizaciones esenciales",
+              "Organización de equipos",
+              "Sistema centralizado"
+            ],
+            "result": ["Operación más clara", "Procesos organizados", "Mayor control operativo"],
+            "price_range": "$2,500 - $6,000 USD"
           },
           {
-            "name": "Plataforma Funcional",
+            "name": "Business Platform",
             "level": "mid",
-            "target_client": "Negocios que necesitan operar con sistemas",
-            "includes": ["Plataforma completa", "Gestión interna", "Flujos operativos"],
-            "result": ["Sistema listo para operar"],
-            "price_range": "4000 - 10000 USD"
+            "target_client": "Negocios en crecimiento que necesitan operar sobre un sistema centralizado",
+            "includes": [
+              "Plataforma empresarial personalizada",
+              "Arquitectura operacional",
+              "Gestión avanzada de operaciones",
+              "Roles y permisos",
+              "Paneles de control",
+              "Integraciones esenciales",
+              "Portales internos o de clientes",
+              "Optimización de procesos"
+            ],
+            "result": [
+              "Operación centralizada",
+              "Infraestructura digital sólida",
+              "Mayor escalabilidad operativa"
+            ],
+            "price_range": "$6,000 - $15,000 USD"
           },
           {
-            "name": "MVP Profesional",
-            "level": "mid",
-            "target_client": "Startups que quieren validar producto",
-            "includes": ["Producto funcional", "Estructura escalable", "UX base integrado"],
-            "result": ["Producto listo para validar"],
-            "price_range": "3000 - 8000 USD"
-          },
-          {
-            "name": "Sistema Escalable",
-            "level": "advanced",
-            "target_client": "Negocios en crecimiento",
-            "includes": ["Arquitectura no-code avanzada", "Integraciones base", "Optimización"],
-            "result": ["Base para escalar"],
-            "price_range": "6000 - 12000 USD"
+            "name": "MVP Launch System",
+            "level": "specialized",
+            "target_client": "Startups y founders que necesitan validar productos digitales rápidamente",
+            "includes": [
+              "MVP funcional",
+              "Arquitectura no-code/low-code",
+              "Interfaces de usuario",
+              "Sistema operativo base",
+              "Gestión de usuarios",
+              "Lógica principal del producto",
+              "Integraciones esenciales",
+              "Base escalable"
+            ],
+            "result": [
+              "Producto listo para validar",
+              "Lanzamiento más rápido",
+              "Base profesional para crecimiento"
+            ],
+            "price_range": "$4,000 - $12,000 USD"
           }
         ]
       },
       "nixen": {
         "packages": [
           {
-            "name": "Automatización Básica",
+            "name": "Operational Foundation",
             "level": "entry",
-            "target_client": "Freelancers o pequeños negocios",
-            "includes": ["1-3 automatizaciones simples", "Flujos básicos"],
-            "result": ["Ahorro de tiempo inmediato"],
-            "price_range": "200 - 800 USD"
+            "target_client": "Freelancers, emprendedores y pequeños negocios",
+            "description": "Diseñado para negocios que todavía operan manualmente y necesitan estructura básica para ahorrar tiempo y reducir tareas repetitivas.",
+            "includes": [
+              "Automatización de tareas repetitivas",
+              "Integraciones básicas entre herramientas",
+              "Automatización de formularios y respuestas",
+              "Flujos operativos simples",
+              "Conexión entre email, CRM y plataformas básicas",
+              "Optimización inicial de procesos"
+            ],
+            "deliverables": [
+              "1-3 workflows automatizados",
+              "Sistema operativo básico conectado",
+              "Documentación simple de procesos"
+            ],
+            "result": [
+              "Menos trabajo manual",
+              "Ahorro inmediato de tiempo",
+              "Operaciones más organizadas",
+              "Menos errores humanos"
+            ],
+            "estimated_delivery": "1-2 semanas",
+            "price_range": "300 - 1200 USD"
           },
           {
-            "name": "Automatización Operativa",
-            "level": "basic",
-            "target_client": "Negocios con procesos repetitivos",
-            "includes": ["Integraciones", "Flujos intermedios"],
-            "result": ["Operación más eficiente"],
-            "price_range": "800 - 2500 USD"
-          },
-          {
-            "name": "Sistema Automatizado",
-            "level": "mid",
-            "target_client": "Negocios en crecimiento",
-            "includes": ["Automatización completa de procesos"],
-            "result": ["Negocio semi-automatizado"],
-            "price_range": "2500 - 6000 USD"
-          },
-          {
-            "name": "Automatización de Ventas",
-            "level": "mid_high",
-            "target_client": "Negocios que buscan escalar ventas",
-            "includes": ["Captación de leads", "Seguimiento automático", "Pipeline automatizado"],
-            "result": ["Sistema que vende automáticamente"],
+            "name": "Operational System",
+            "level": "basic_mid",
+            "target_client": "Negocios pequeños y medianos con operaciones repetitivas",
+            "description": "Sistema operativo automatizado para negocios que necesitan conectar herramientas, organizar procesos y mejorar eficiencia interna.",
+            "includes": [
+              "Automatización de procesos operativos",
+              "Integraciones avanzadas entre plataformas",
+              "Automatización de seguimiento y tareas internas",
+              "Diseño de workflows conectados",
+              "Sistemas de notificaciones y control operativo",
+              "Optimización de procesos administrativos",
+              "Interfaces operativas básicas"
+            ],
+            "deliverables": [
+              "Sistema operativo conectado",
+              "Dashboards o paneles básicos",
+              "Workflows automatizados multi-step",
+              "Arquitectura operativa inicial"
+            ],
+            "result": [
+              "Operación más eficiente",
+              "Mayor control interno",
+              "Menos fricción operativa",
+              "Equipos más coordinados"
+            ],
+            "estimated_delivery": "2-4 semanas",
             "price_range": "1500 - 5000 USD"
           },
           {
-            "name": "Automatización Empresarial",
+            "name": "Growth Automation",
+            "level": "mid_high",
+            "target_client": "Negocios en crecimiento que necesitan automatizar ventas y operaciones",
+            "description": "Infraestructura automatizada enfocada en captación, seguimiento y escalamiento operativo para negocios que buscan crecer sin aumentar carga manual.",
+            "includes": [
+              "Automatización de leads",
+              "Seguimiento automatizado",
+              "Pipelines de ventas",
+              "Integración CRM",
+              "Automatización de onboarding",
+              "Sistemas de comunicación automatizada",
+              "Dashboards comerciales",
+              "Interfaces internas para operaciones y ventas"
+            ],
+            "deliverables": [
+              "Sistema automatizado de ventas",
+              "Pipeline operativo conectado",
+              "Panel de seguimiento comercial",
+              "Automatización de comunicación"
+            ],
+            "result": [
+              "Seguimiento más rápido",
+              "Más oportunidades convertidas",
+              "Procesos comerciales más eficientes",
+              "Operación preparada para escalar"
+            ],
+            "estimated_delivery": "3-6 semanas",
+            "price_range": "3000 - 8000 USD"
+          },
+          {
+            "name": "Operational Infrastructure",
             "level": "advanced",
-            "target_client": "Empresas con operaciones complejas",
-            "includes": ["Flujos complejos", "Integración total de sistemas"],
-            "result": ["Operación automatizada"],
-            "price_range": "5000 - 12000 USD"
+            "target_client": "Empresas con operaciones complejas o múltiples sistemas internos",
+            "description": "Diseño e implementación de infraestructura operativa completa para empresas que necesitan automatización avanzada, sistemas internos e integración total de operaciones.",
+            "includes": [
+              "Arquitectura completa de workflows",
+              "Automatización avanzada multi-sistema",
+              "Integración total entre plataformas",
+              "Desarrollo de interfaces operativas internas",
+              "Dashboards administrativos",
+              "Lógica operacional personalizada",
+              "Automatización entre departamentos",
+              "Optimización continua de procesos",
+              "Escalabilidad operativa"
+            ],
+            "deliverables": [
+              "Infraestructura operativa completa",
+              "Sistema centralizado de operaciones",
+              "Interfaces internas personalizadas",
+              "Arquitectura escalable automatizada"
+            ],
+            "result": [
+              "Operaciones altamente eficientes",
+              "Reducción masiva de trabajo manual",
+              "Mayor capacidad de escalamiento",
+              "Procesos empresariales conectados",
+              "Infraestructura preparada para crecimiento"
+            ],
+            "estimated_delivery": "4-10 semanas",
+            "price_range": "7000 - 20000 USD"
           }
         ]
       },
       "ixera": {
         "packages": [
           {
-            "name": "AI Básica",
+            "name": "AI Launch System",
             "level": "entry",
-            "target_client": "Negocios que quieren empezar con AI",
-            "includes": ["Chatbot simple", "Automatización básica con AI"],
-            "result": ["Uso inicial de inteligencia artificial"],
-            "price_range": "300 - 1000 USD"
+            "target_client": "Freelancers, emprendedores y negocios pequeños que quieren comenzar a integrar inteligencia artificial en sus operaciones",
+            "includes": [
+              "Chatbot AI básico para web o WhatsApp",
+              "Sistema de respuestas inteligentes",
+              "Automatización básica de leads o consultas",
+              "Configuración inicial de prompts empresariales",
+              "Integración ligera con formularios o herramientas existentes",
+              "Mini dashboard o interfaz operativa simple"
+            ],
+            "result": [
+              "Atención más rápida y organizada",
+              "Menos trabajo manual repetitivo",
+              "Primer sistema AI integrado dentro del negocio"
+            ],
+            "price_range": "500 - 1500 USD"
           },
           {
-            "name": "AI Aplicada",
-            "level": "basic",
-            "target_client": "Negocios que buscan eficiencia",
-            "includes": ["AI en marketing o soporte"],
-            "result": ["Mejor eficiencia operativa"],
-            "price_range": "1000 - 3000 USD"
+            "name": "Smart Business Operations",
+            "level": "basic_mid",
+            "target_client": "Negocios pequeños a medianos que buscan optimizar operaciones y mejorar eficiencia interna",
+            "includes": [
+              "Sistema AI para soporte o atención al cliente",
+              "Automatización operativa inteligente",
+              "Integración con CRM y herramientas existentes",
+              "Dashboard o interfaz administrativa personalizada",
+              "Procesamiento inteligente de información",
+              "Optimización de workflows operativos"
+            ],
+            "result": [
+              "Operaciones más eficientes y organizadas",
+              "Reducción de carga manual en equipos",
+              "Mayor capacidad operativa sin aumentar personal"
+            ],
+            "price_range": "2000 - 5000 USD"
           },
           {
-            "name": "AI para Ventas",
+            "name": "AI Growth Engine",
             "level": "mid",
-            "target_client": "Negocios enfocados en crecimiento",
-            "includes": ["Bots de ventas", "Respuestas inteligentes"],
-            "result": ["Incremento en ventas automatizadas"],
-            "price_range": "2000 - 6000 USD"
+            "target_client": "Empresas digitales, startups y negocios enfocados en crecimiento y ventas",
+            "includes": [
+              "Sistema AI para ventas y captación de leads",
+              "Bots inteligentes comerciales",
+              "Automatización de seguimiento de clientes",
+              "AI para respuestas comerciales y contenido",
+              "Dashboard comercial o panel de leads",
+              "Integración con CRM y canales de comunicación"
+            ],
+            "result": [
+              "Mayor velocidad de respuesta comercial",
+              "Mejor conversión y seguimiento de leads",
+              "Sistema de crecimiento más automatizado y eficiente"
+            ],
+            "price_range": "4000 - 9000 USD"
           },
           {
-            "name": "Asistente Empresarial",
-            "level": "mid_high",
-            "target_client": "Equipos operativos",
-            "includes": ["Sistema inteligente interno"],
-            "result": ["Soporte inteligente en operaciones"],
-            "price_range": "4000 - 10000 USD"
-          },
-          {
-            "name": "Sistema Inteligente",
+            "name": "Intelligent Business System",
             "level": "advanced",
-            "target_client": "Empresas en crecimiento",
-            "includes": ["AI + automatización + datos"],
-            "result": ["Negocio inteligente y optimizado"],
-            "price_range": "8000 - 20000 USD"
+            "target_client": "Empresas en crecimiento que necesitan infraestructura operativa inteligente y sistemas escalables",
+            "includes": [
+              "Sistema AI empresarial personalizado",
+              "Interfaces operativas internas",
+              "Asistentes AI para equipos y operaciones",
+              "Automatización avanzada multiárea",
+              "Dashboards inteligentes y procesamiento de datos",
+              "Integración entre herramientas, workflows y operaciones",
+              "Arquitectura escalable para crecimiento futuro"
+            ],
+            "result": [
+              "Operaciones centralizadas y optimizadas",
+              "Mayor capacidad de ejecución empresarial",
+              "Infraestructura inteligente lista para escalar"
+            ],
+            "price_range": "8000 - 20000+ USD"
           }
         ]
       },
       "dextor": {
         "packages": [
           {
-            "name": "Dashboard Básico",
+            "name": "DEXTOR START",
             "level": "entry",
-            "price_range": "300 - 1000 USD"
+            "target_client": "Freelancers, startups early-stage, ecommerce pequeños y negocios que necesitan claridad básica sobre sus operaciones.",
+            "includes": [
+              "Dashboard principal personalizado",
+              "Configuración de KPIs básicos",
+              "Tracking de ingresos, ventas y rendimiento",
+              "Integración simple de herramientas y reportes ejecutivos"
+            ],
+            "result": [
+              "Mayor claridad sobre el estado real del negocio",
+              "Mejores decisiones basadas en métricas",
+              "Visibilidad inicial de ingresos y rendimiento"
+            ],
+            "price_range": "500 - 1500 USD"
           },
           {
-            "name": "Sistema de Métricas",
-            "level": "basic",
-            "price_range": "1000 - 3000 USD"
-          },
-          {
-            "name": "Control Financiero",
-            "level": "mid",
+            "name": "DEXTOR CONTROL",
+            "level": "growth",
+            "target_client": "Negocios pequeños y medianos que necesitan control operativo y financiero para crecer con estructura.",
+            "includes": [
+              "Sistema de dashboards operativos y financieros",
+              "Control de flujo de caja, costos e ingresos",
+              "Integración centralizada de herramientas y datos",
+              "Reportes automatizados y sistema de visibilidad ejecutiva"
+            ],
+            "result": [
+              "Control financiero y operativo más claro",
+              "Reducción de decisiones basadas en intuición",
+              "Información centralizada para el negocio"
+            ],
             "price_range": "2000 - 5000 USD"
           },
           {
-            "name": "BI Empresarial",
-            "level": "mid_high",
-            "price_range": "4000 - 10000 USD"
+            "name": "DEXTOR INTELLIGENCE",
+            "level": "advanced",
+            "target_client": "Empresas en crecimiento con operaciones complejas que necesitan inteligencia empresarial para tomar decisiones estratégicas.",
+            "includes": [
+              "Sistema avanzado de Business Intelligence",
+              "Integración de múltiples fuentes de datos",
+              "Dashboards estratégicos y análisis avanzado",
+              "Arquitectura de datos escalable y reportes ejecutivos"
+            ],
+            "result": [
+              "Decisiones empresariales más rápidas y precisas",
+              "Identificación de oportunidades y problemas operativos",
+              "Mayor capacidad de crecimiento con control"
+            ],
+            "price_range": "5000 - 12000 USD"
           },
           {
-            "name": "Sistema de Inteligencia",
-            "level": "advanced",
-            "price_range": "8000 - 20000 USD"
+            "name": "DEXTOR OS",
+            "level": "enterprise",
+            "target_client": "Empresas medianas, startups en escala y operaciones complejas que necesitan infraestructura completa de inteligencia y control empresarial.",
+            "includes": [
+              "Arquitectura completa de inteligencia empresarial",
+              "Sistema centralizado de métricas y reporting",
+              "Integraciones avanzadas y ecosistema multi-dashboard",
+              "Optimización continua y soporte estratégico"
+            ],
+            "result": [
+              "Infraestructura empresarial lista para escalar",
+              "Una sola fuente de verdad para decisiones ejecutivas",
+              "Control operativo avanzado y visibilidad total"
+            ],
+            "price_range": "10000 - 25000+ USD"
           }
         ]
       },
       "vaxen": {
         "packages": [
           {
-            "name": "Desarrollo a medida",
+            "name": "Foundation",
             "level": "entry",
-            "price_range": "3000 - 8000 USD"
+            "target_client": "Freelancers, emprendedores digitales, startups iniciales y pequeños negocios que necesitan una infraestructura digital profesional para operar.",
+            "includes": [
+              "Desarrollo de interfaz web personalizada",
+              "Sistema de autenticación y usuarios",
+              "Backend estructurado y base de datos",
+              "Integraciones esenciales y deployment inicial"
+            ],
+            "result": [
+              "Centralización inicial de operaciones",
+              "Infraestructura digital profesional y escalable",
+              "Mayor control sobre procesos y datos"
+            ],
+            "price_range": "3000 - 6000 USD"
           },
           {
-            "name": "Sistema empresarial",
+            "name": "Operations System",
             "level": "basic",
-            "price_range": "8000 - 20000 USD"
+            "target_client": "Negocios pequeños a medianos y empresas en crecimiento que necesitan organizar operaciones internas y eliminar procesos manuales.",
+            "includes": [
+              "Plataforma operativa personalizada",
+              "Módulos internos y panel administrativo",
+              "Integraciones entre plataformas y APIs",
+              "Arquitectura backend preparada para crecimiento"
+            ],
+            "result": [
+              "Operaciones centralizadas y organizadas",
+              "Reducción de procesos manuales y errores operativos",
+              "Mayor eficiencia y control empresarial"
+            ],
+            "price_range": "7000 - 15000 USD"
           },
           {
-            "name": "Plataforma avanzada",
+            "name": "Digital Platform",
             "level": "mid",
-            "price_range": "15000 - 40000 USD"
+            "target_client": "Startups con producto validado, empresas digitales y negocios con operaciones activas que necesitan una plataforma sólida y escalable.",
+            "includes": [
+              "Desarrollo full custom frontend y backend",
+              "Arquitectura API avanzada e integraciones complejas",
+              "Infraestructura cloud y procesamiento de datos",
+              "Optimización de rendimiento y seguridad avanzada"
+            ],
+            "result": [
+              "Plataforma preparada para crecimiento real",
+              "Mayor estabilidad y rendimiento operativo",
+              "Infraestructura escalable para usuarios y operaciones"
+            ],
+            "price_range": "15000 - 35000 USD"
           },
           {
-            "name": "Arquitectura completa",
-            "level": "mid_high",
-            "price_range": "20000 - 60000 USD"
-          },
-          {
-            "name": "Ingeniería avanzada",
+            "name": "Scale Infrastructure",
             "level": "advanced",
-            "price_range": "50000 - 150000 USD"
+            "target_client": "Empresas en expansión, startups de alto crecimiento y negocios con necesidades técnicas críticas y operaciones complejas.",
+            "includes": [
+              "Arquitectura empresarial avanzada y distribuida",
+              "Infraestructura cloud escalable y de alto rendimiento",
+              "Ingeniería backend avanzada y sistemas de datos complejos",
+              "Integraciones empresariales profundas y optimización crítica"
+            ],
+            "result": [
+              "Infraestructura preparada para crecimiento sostenido",
+              "Alto rendimiento y estabilidad operativa",
+              "Control técnico avanzado y escalabilidad empresarial"
+            ],
+            "price_range": "35000 - 100000+ USD"
           }
         ]
       }

@@ -7,148 +7,113 @@ import type React from "react";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-// ── Snub Cube — Archimedean solid, fully triangulated ────────────────────────
+// ── Icosahedron — Platonic solid ─────────────────────────────────────────────
 //
-//  24 vertices, 60 edges + 6 square diagonals = 66 segments, all faces triangular.
-//  Vertices: all even elements of the signed permutation group B₃ applied to
-//  (1, 1/ξ, ξ), where ξ ≈ 1.8393 is the tribonacci constant (real root of
-//  x³ − x² − x − 1 = 0). "Even element" = det +1 = (even perm × even neg
-//  count) or (odd perm × odd neg count).
+//  12 vertices, 30 edges, 20 equilateral-triangular faces.
+//  Vertices: all signed permutations of (0, ±1, ±φ), where φ = (1+√5)/2.
 //
-//  Two-tier point system (same pattern as AutomationFlow):
-//    • Nodes  (large)  — 24 vertices at radius R
-//    • Edges  (small)  — (majorSegments−1) interior pts per edge, straight lerp
+//  Two-tier point system:
+//    • Nodes   (large)  — 12 vertices at radius R, cfg.pointSize × NODE_SIZE_RATIO
+//    • Surface (normal) — edge interior + face barycentric fill, cfg.pointSize
+//                         edge: (majorSegments−1) pts per edge, spacing consistent with nodes
+//                         face: FACE_SUBDIVISIONS=7 → 15 interior pts per face (300 total)
 //
-//  NODE_SIZE_RATIO hardcoded — Dextor-exclusive, not in shared contract.
+//  NODE_SIZE_RATIO, FACE_SUBDIVISIONS — Dextor-exclusive, not in shared contract.
 
-const NODE_SIZE_RATIO = 2.0;
-const Z_ROTATION_SPEED = 0.015; // secondary axis — slow precession, ~7 min full cycle
+const NODE_SIZE_RATIO = 1.4;
+const FACE_SUBDIVISIONS = 7; // n=7 → C(6,2)=15 interior pts per triangular face
+const Z_ROTATION_SPEED = 0.008;
 
-// ── Tribonacci constant ────────────────────────────────────────────────────────
+// ── Golden ratio ──────────────────────────────────────────────────────────────
 
-const ξ = 1.8392867552141612; // real root of x³ − x² − x − 1 = 0
-const ξi = 1 / ξ; // ≈ 0.5437
+const φ = (1 + Math.sqrt(5)) / 2;
+const φNorm = Math.sqrt(1 + φ * φ);
 
 // ── Geometry ──────────────────────────────────────────────────────────────────
 
-interface SnubGeometry {
-  nodePositions: Float32Array;
-  edgePositions: Float32Array;
+interface IcoGeometry {
+  nodePositions: Float32Array; // 12 vertex pts
+  surfacePositions: Float32Array; // edge interior + face interior pts
 }
 
-function buildSnubCube(cfg: ParamObjectConfig): SnubGeometry {
+function buildIcosahedron(cfg: ParamObjectConfig): IcoGeometry {
   const R = cfg.majorRadius;
 
-  // 24 raw vertices — even B₃ signed permutations of (a, b, c) = (1, 1/ξ, ξ)
-  const a = 1,
-    b = ξi,
-    c = ξ;
+  // 12 vertices — all signed permutations of (0, ±1, ±φ), normalized to radius R
   const rawVerts: [number, number, number][] = [
-    // Even permutations, 0 negatives (3)
-    [a, b, c],
-    [b, c, a],
-    [c, a, b],
-    // Even permutations, 2 negatives (9)
-    [-a, -b, c],
-    [-a, b, -c],
-    [a, -b, -c],
-    [-b, -c, a],
-    [-b, c, -a],
-    [b, -c, -a],
-    [-c, -a, b],
-    [-c, a, -b],
-    [c, -a, -b],
-    // Odd permutations, 1 negative (9)
-    [-a, c, b],
-    [a, -c, b],
-    [a, c, -b],
-    [-c, b, a],
-    [c, -b, a],
-    [c, b, -a],
-    [-b, a, c],
-    [b, -a, c],
-    [b, a, -c],
-    // Odd permutations, 3 negatives (3)
-    [-a, -c, -b],
-    [-c, -b, -a],
-    [-b, -a, -c],
+    [0, 1, φ],
+    [0, -1, φ],
+    [0, 1, -φ],
+    [0, -1, -φ],
+    [1, φ, 0],
+    [-1, φ, 0],
+    [1, -φ, 0],
+    [-1, -φ, 0],
+    [φ, 0, 1],
+    [-φ, 0, 1],
+    [φ, 0, -1],
+    [-φ, 0, -1],
   ];
 
-  // Normalize each vertex to radius R (snub cube is vertex-transitive: all |v| equal)
-  const verts = rawVerts.map(([x, y, z]) => {
-    const len = Math.sqrt(x * x + y * y + z * z);
-    return new THREE.Vector3((x * R) / len, (y * R) / len, (z * R) / len);
-  });
+  const verts = rawVerts.map(
+    ([x, y, z]) => new THREE.Vector3((x * R) / φNorm, (y * R) / φNorm, (z * R) / φNorm),
+  );
 
-  // Edge detection: adjacent vertices share the snub cube edge length
-  // From v0=(a,b,c) to v1=(b,c,a): rawEdgeLen^2 = (a-b)^2+(b-c)^2+(c-a)^2
-  const rawEdgeLen2 = (a - b) * (a - b) + (b - c) * (b - c) + (c - a) * (c - a);
-  const rawNorm2 = a * a + b * b + c * c; // same for all vertices
-  const edgeLen2 = rawEdgeLen2 * ((R * R) / rawNorm2);
-  const eps = edgeLen2 * 0.08;
+  // Edge detection — raw squared distance between adjacent vertices = 4.
+  const edgeLen2 = (4 * R * R) / (1 + φ * φ);
+  const eps = edgeLen2 * 0.06;
 
   const edges: [number, number][] = [];
-  for (let i = 0; i < 24; i++) {
-    for (let j = i + 1; j < 24; j++) {
+  const adjSet = new Map<number, Set<number>>();
+  for (let i = 0; i < 12; i++) adjSet.set(i, new Set());
+
+  for (let i = 0; i < 12; i++) {
+    for (let j = i + 1; j < 12; j++) {
       if (Math.abs(verts[i]!.distanceToSquared(verts[j]!) - edgeLen2) < eps) {
         edges.push([i, j]);
+        adjSet.get(i)!.add(j);
+        adjSet.get(j)!.add(i);
       }
     }
   }
+  // Detects exactly 30 edges.
 
-  // Find 6 square faces and add one diagonal per square, making every face triangular.
-  // Square [u, a, c, b]: u adjacent to a and b (not each other), c adjacent to both a and b (not u).
-  // Diagonal: u-c (opposite corners of the square).
-  const adjSet = new Map<number, Set<number>>();
-  for (let i = 0; i < 24; i++) adjSet.set(i, new Set());
-  for (const [ei, ej] of edges) {
-    adjSet.get(ei)!.add(ej);
-    adjSet.get(ej)!.add(ei);
-  }
-
-  const squareKeys = new Set<string>();
-  const diagonals: [number, number][] = [];
-
-  for (let u = 0; u < 24; u++) {
-    const nbrs = [...adjSet.get(u)!];
-    for (let i = 0; i < nbrs.length; i++) {
-      for (let j = i + 1; j < nbrs.length; j++) {
-        const na = nbrs[i]!,
-          nb = nbrs[j]!;
-        if (adjSet.get(na)!.has(nb)) continue; // triangle face, skip
-        for (const c of adjSet.get(na)!) {
-          if (c === u || !adjSet.get(nb)!.has(c)) continue;
-          const key = [u, na, c, nb].sort((x, y) => x - y).join(",");
-          if (!squareKeys.has(key)) {
-            squareKeys.add(key);
-            diagonals.push([Math.min(u, c), Math.max(u, c)]);
-          }
-        }
+  // Face detection — 20 triangles: triplets where every pair is adjacent.
+  const faces: [number, number, number][] = [];
+  for (let a = 0; a < 12; a++) {
+    const nbA = adjSet.get(a)!;
+    for (const b of nbA) {
+      if (b <= a) continue;
+      const nbB = adjSet.get(b)!;
+      for (const c of nbB) {
+        if (c <= b || !nbA.has(c)) continue;
+        faces.push([a, b, c]);
       }
     }
   }
+  // Detects exactly 20 faces.
 
-  // All segments: 60 edges + 6 square diagonals
-  const allSegments = [...edges, ...diagonals];
-
-  // Node positions (24 vertices)
-  const nodePositions = new Float32Array(24 * 3);
+  // Node positions — 12 vertices
+  const nodePositions = new Float32Array(12 * 3);
   verts.forEach((v, i) => {
     nodePositions[i * 3] = v.x;
     nodePositions[i * 3 + 1] = v.y;
     nodePositions[i * 3 + 2] = v.z;
   });
 
-  // Edge interior points — straight lerp, (majorSegments-1) pts per segment
+  // Surface points — edge interior + face interior
+  const surfacePts: number[] = [];
+
+  // Edge interior — straight lerp, (majorSegments−1) pts per segment.
+  // Vertex→first-interior dist = edgeLen/N = same as interior spacing. ✓
   const N = Math.max(2, cfg.majorSegments);
   const edgePtMap = new Map<string, true>();
-  const edgePts: number[] = [];
 
   function posKey(v: THREE.Vector3): string {
     return `${v.x.toFixed(5)},${v.y.toFixed(5)},${v.z.toFixed(5)}`;
   }
 
-  for (const [ai, bi] of allSegments) {
+  for (const [ai, bi] of edges) {
     const va = verts[ai]!;
     const vb = verts[bi]!;
     for (let step = 1; step < N; step++) {
@@ -157,14 +122,33 @@ function buildSnubCube(cfg: ParamObjectConfig): SnubGeometry {
       const k = posKey(p);
       if (!edgePtMap.has(k)) {
         edgePtMap.set(k, true);
-        edgePts.push(p.x, p.y, p.z);
+        surfacePts.push(p.x, p.y, p.z);
+      }
+    }
+  }
+
+  // Face interior fill — barycentric grid, interior points only (i,j,k > 0).
+  // FACE_SUBDIVISIONS=7: C(6,2)=15 interior pts per face × 20 faces = 300 pts.
+  const D = FACE_SUBDIVISIONS;
+  for (const [ai, bi, ci] of faces) {
+    const va = verts[ai]!;
+    const vb = verts[bi]!;
+    const vc = verts[ci]!;
+    for (let ii = 1; ii < D; ii++) {
+      for (let jj = 1; jj < D - ii; jj++) {
+        const kk = D - ii - jj;
+        surfacePts.push(
+          (ii * va.x + jj * vb.x + kk * vc.x) / D,
+          (ii * va.y + jj * vb.y + kk * vc.y) / D,
+          (ii * va.z + jj * vb.z + kk * vc.z) / D,
+        );
       }
     }
   }
 
   return {
     nodePositions,
-    edgePositions: new Float32Array(edgePts),
+    surfacePositions: new Float32Array(surfacePts),
   };
 }
 
@@ -196,8 +180,8 @@ const fragmentShader = /* glsl */ `
 
 // ── State ─────────────────────────────────────────────────────────────────────
 
-interface SnubState {
-  edgeMat: THREE.ShaderMaterial;
+interface IcoState {
+  surfaceMat: THREE.ShaderMaterial;
   nodeMat: THREE.ShaderMaterial;
   scaleUni: THREE.IUniform<number>;
   nodeScaleUni: THREE.IUniform<number>;
@@ -228,7 +212,7 @@ export function StructuralFrame({
   scrollColorRef,
 }: StructuralFrameProps) {
   const groupRef = useRef<THREE.Group>(null);
-  const stateRef = useRef<SnubState | null>(null);
+  const stateRef = useRef<IcoState | null>(null);
   const { gl } = useThree();
 
   useEffect(() => {
@@ -236,7 +220,7 @@ export function StructuralFrame({
     if (!group || stateRef.current) return;
 
     const cfg = mergeParamObjectConfig(objectConfig);
-    const geo = buildSnubCube(cfg);
+    const geo = buildIcosahedron(cfg);
 
     const color = new THREE.Color(cfg.basePointColor);
     if (accentColor) color.lerp(new THREE.Color(accentColor), cfg.accentMix);
@@ -244,9 +228,10 @@ export function StructuralFrame({
     const scaleUni: THREE.IUniform<number> = { value: 600 };
     const nodeScaleUni: THREE.IUniform<number> = { value: 600 };
 
-    const edgeGeo = new THREE.BufferGeometry();
-    edgeGeo.setAttribute("position", new THREE.BufferAttribute(geo.edgePositions, 3));
-    const edgeMat = new THREE.ShaderMaterial({
+    // Surface points (edge interior + face interior)
+    const surfaceGeo = new THREE.BufferGeometry();
+    surfaceGeo.setAttribute("position", new THREE.BufferAttribute(geo.surfacePositions, 3));
+    const surfaceMat = new THREE.ShaderMaterial({
       vertexShader,
       fragmentShader,
       uniforms: {
@@ -259,6 +244,7 @@ export function StructuralFrame({
       depthWrite: false,
     });
 
+    // Node points (12 vertices, slightly larger)
     const nodeGeo = new THREE.BufferGeometry();
     nodeGeo.setAttribute("position", new THREE.BufferAttribute(geo.nodePositions, 3));
     const nodeMat = new THREE.ShaderMaterial({
@@ -274,12 +260,12 @@ export function StructuralFrame({
       depthWrite: false,
     });
 
-    group.add(new THREE.Points(edgeGeo, edgeMat));
+    group.add(new THREE.Points(surfaceGeo, surfaceMat));
     group.add(new THREE.Points(nodeGeo, nodeMat));
     group.scale.setScalar(cfg.objectScale);
 
     stateRef.current = {
-      edgeMat,
+      surfaceMat,
       nodeMat,
       scaleUni,
       nodeScaleUni,
@@ -298,8 +284,8 @@ export function StructuralFrame({
 
     return () => {
       group.clear();
-      edgeGeo.dispose();
-      edgeMat.dispose();
+      surfaceGeo.dispose();
+      surfaceMat.dispose();
       nodeGeo.dispose();
       nodeMat.dispose();
       stateRef.current = null;
@@ -322,14 +308,18 @@ export function StructuralFrame({
     const t = clock.getElapsedTime();
     const sc = scrollScaleRef?.current ?? 1;
     const colorT = scrollColorRef?.current ?? 0;
-    (state.edgeMat.uniforms.uColor!.value as THREE.Color)
+    const fade = Math.pow(1 - colorT, 2);
+
+    (state.surfaceMat.uniforms.uColor!.value as THREE.Color)
       .copy(state.initialColor)
       .lerp(state.bgColor, colorT);
     (state.nodeMat.uniforms.uColor!.value as THREE.Color)
       .copy(state.initialColor)
       .lerp(state.bgColor, colorT);
-    state.edgeMat.uniforms.uAlpha!.value = state.baseAlpha * Math.pow(1 - colorT, 2);
-    state.nodeMat.uniforms.uAlpha!.value = state.baseAlpha * Math.pow(1 - colorT, 2);
+
+    state.surfaceMat.uniforms.uAlpha!.value = state.baseAlpha * fade;
+    state.nodeMat.uniforms.uAlpha!.value = state.baseAlpha * fade;
+
     group.scale.setScalar(state.objectScale * sc);
     group.rotation.x = state.baseTiltX;
     group.rotation.y = state.objectRotationEnabled

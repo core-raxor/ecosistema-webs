@@ -64,36 +64,50 @@ const aelor_en = {
     title: "AELOR System",
     items: [
       {
-        name: "UX Audit",
-        label: "Clarity",
+        name: "Foundation",
+        label: "Foundation",
         description:
-          "A complete review of your digital experience to identify what is reducing clarity and conversion.",
-        includes: ["UX/UI audit", "Friction mapping", "Improvement plan", "Visual review"],
-        cta: "Apply",
-        price: "$300–$800",
-      },
-      {
-        name: "Product Experience",
-        label: "Interface",
-        description:
-          "A complete UX/UI system designed to guide users clearly through your product or service.",
-        includes: ["Full UX/UI", "Experience flows", "Visual system", "User journeys"],
-        cta: "Apply",
-        price: "$2,000–$5,000",
-      },
-      {
-        name: "CRO Optimization",
-        label: "Conversion",
-        description:
-          "Strategic redesign focused on improving user flow, perception and conversion performance.",
+          "A complete visual audit and strategic direction to sharpen your brand perception and digital clarity.",
         includes: [
-          "Advanced UX audit",
-          "Interface redesign",
-          "Conversion structure",
+          "Visual & UX audit",
+          "Strategic visual direction",
+          "Digital identity refinement",
+          "Basic branding system",
+        ],
+        cta: "Apply",
+        price: "$700–$1,500",
+      },
+      {
+        name: "Conversion Landing",
+        label: "Landing",
+        description:
+          "A fully optimized landing page designed to turn visitors into clients through clear structure and persuasive design.",
+        includes: ["Conversion strategy", "UX wireframe", "Full landing design", "CTA strategy"],
+        cta: "Apply",
+        price: "$1,500–$3,000",
+      },
+      {
+        name: "Digital Experience",
+        label: "Experience",
+        description:
+          "A complete UX/UI system built for clarity, usability and scalability across your digital product.",
+        includes: ["Full UX/UI", "Experience architecture", "User flows", "Design system"],
+        cta: "Apply",
+        price: "$3,000–$8,000",
+      },
+      {
+        name: "Conversion System",
+        label: "System",
+        description:
+          "A deep strategic redesign focused on maximizing conversion performance and visual perception at every touchpoint.",
+        includes: [
+          "Deep UX/CRO audit",
+          "Strategic redesign",
+          "Conversion optimization",
           "Visual testing",
         ],
         cta: "Apply",
-        price: "$2,000–$6,000",
+        price: "$5,000–$12,000",
       },
     ],
   },
@@ -180,36 +194,60 @@ const aelor_es = {
     title: "Sistema AELOR",
     items: [
       {
-        name: "Auditoría UX",
-        label: "Clarity",
+        name: "Foundation",
+        label: "Foundation",
         description:
-          "Una revisión completa de tu experiencia digital para identificar qué está reduciendo claridad y conversión.",
-        includes: ["Auditoría UX/UI", "Mapeo de fricción", "Plan de mejora", "Revisión visual"],
-        cta: "Solicitar",
-        price: "$300–$800",
-      },
-      {
-        name: "Experiencia de Producto",
-        label: "Interface",
-        description:
-          "Un sistema UX/UI completo diseñado para guiar usuarios claramente a través de tu producto o servicio.",
-        includes: ["UX/UI completo", "Flujos de experiencia", "Sistema visual", "User journeys"],
-        cta: "Solicitar",
-        price: "$2,000–$5,000",
-      },
-      {
-        name: "Optimización CRO",
-        label: "Conversion",
-        description:
-          "Rediseño estratégico enfocado en mejorar flujo de usuario, percepción y rendimiento de conversión.",
+          "Una auditoría visual completa y dirección estratégica para mejorar la percepción de tu marca y claridad digital.",
         includes: [
-          "Auditoría UX avanzada",
-          "Rediseño de interfaz",
-          "Estructura de conversión",
-          "Testing visual",
+          "Auditoría visual y UX",
+          "Dirección visual estratégica",
+          "Refinación de identidad digital",
+          "Sistema básico de branding",
         ],
         cta: "Solicitar",
-        price: "$2,000–$6,000",
+        price: "$700–$1,500",
+      },
+      {
+        name: "Conversion Landing",
+        label: "Landing",
+        description:
+          "Una landing completamente optimizada para convertir visitantes en clientes mediante estructura clara y diseño persuasivo.",
+        includes: [
+          "Estrategia de conversión",
+          "Wireframe UX",
+          "Diseño completo de landing",
+          "CTA strategy",
+        ],
+        cta: "Solicitar",
+        price: "$1,500–$3,000",
+      },
+      {
+        name: "Digital Experience",
+        label: "Experience",
+        description:
+          "Un sistema UX/UI completo diseñado para claridad, usabilidad y escalabilidad en tu producto digital.",
+        includes: [
+          "UX/UI completo",
+          "Arquitectura de experiencia",
+          "Flujos de usuario",
+          "Design system",
+        ],
+        cta: "Solicitar",
+        price: "$3,000–$8,000",
+      },
+      {
+        name: "Conversion System",
+        label: "System",
+        description:
+          "Un rediseño estratégico profundo enfocado en maximizar conversión y percepción visual en cada punto de contacto.",
+        includes: [
+          "Auditoría UX/CRO profunda",
+          "Rediseño estratégico",
+          "Optimización de conversión",
+          "Testing visual estratégico",
+        ],
+        cta: "Solicitar",
+        price: "$5,000–$12,000",
       },
     ],
   },

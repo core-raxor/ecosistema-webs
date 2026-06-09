@@ -29,6 +29,11 @@ function getStoredLocale(): Locale | null {
   return v === "en" || v === "es" ? v : null;
 }
 
+function getBrowserLocale(): Locale | null {
+  const lang = navigator.language.slice(0, 2);
+  return lang === "es" ? "es" : null;
+}
+
 // ── Provider ───────────────────────────────────────────────────────────────────
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
@@ -50,7 +55,8 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     setManualLocale(next);
   };
 
-  const locale: Locale = manualLocale ?? storedLocale ?? "en";
+  const locale: Locale =
+    manualLocale ?? storedLocale ?? (isClient ? getBrowserLocale() : null) ?? "en";
   const isInitialized = isClient;
   const hasStoredLocale = isClient && (storedLocale !== null || manualLocale !== null);
 
